@@ -1,8 +1,8 @@
 package eped.parking.tdef;
 
-public enum TSection {
+public enum TGate {
 	A,
 	B,
-	D,
-	C
+	C,
+	D
 }
