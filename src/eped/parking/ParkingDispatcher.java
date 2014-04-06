@@ -3,22 +3,26 @@ package eped.parking;
 import eped.parking.vehicle.Vehicle;
 import eped.parking.vehicle.VehicleGenerator;
 import eped.parking.vehicle.VehicleQueue;
-import eped.queue.QueueDynamic;
 import eped.queue.QueueIF;
 
 
 public class ParkingDispatcher {
-
+	
+	
 	public static void main(String[] args) {
-		
-		QueueIF<Vehicle> vQueue = new VehicleQueue();
 		
 		try{
 			
-			
 			int seed = Integer.parseInt(args[0]);
 			
+			QueueIF<Vehicle> vQueue = new VehicleQueue();
+			
+			init();
+			
+			
 			VehicleGenerator vGenerator = new VehicleGenerator(seed);
+			
+			
 			
 			for(int i=0; i<100;i++){
 				vQueue.add(vGenerator.generate());
@@ -39,13 +43,17 @@ public class ParkingDispatcher {
 				vQueue.remove();
 			}
 			
-		}catch(Exception ex){
-			 ex.printStackTrace();
-			 System.out.println("Introduce valor nœmerico");
+		
 			
+		}catch(Exception ex){
+			ExceptionManager.getMessage(ex);	
 		}
 		
-
+	}
+	
+	private static void init(){
+		
+		Parking parking = new Parking();
 	}
 
 }

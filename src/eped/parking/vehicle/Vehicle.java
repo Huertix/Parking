@@ -1,17 +1,17 @@
 package eped.parking.vehicle;
 
-import eped.parking.tdef.TGate;
-import eped.parking.tdef.TType;
+import eped.parking.ParkingConf;
+
 
 public class Vehicle {
 	
 	private int id;
-	private TType type;
-	private TGate gate;
+	private ParkingConf.TType type;
+	private ParkingConf.TGate gate;
 	private int hour;
 	
 	
-	public Vehicle(int id, TType type, TGate gate, int hour) {
+	public Vehicle(int id, ParkingConf.TType type, ParkingConf.TGate gate, int hour) {
 		super();
 		this.id = id;
 		this.type = type;
@@ -26,16 +26,16 @@ public class Vehicle {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public TType getType() {
+	public ParkingConf.TType getType() {
 		return type;
 	}
-	public void setType(TType type) {
+	public void setType(ParkingConf.TType type) {
 		this.type = type;
 	}
-	public TGate getGate() {
+	public ParkingConf.TGate getGate() {
 		return gate;
 	}
-	public void setGate(TGate gate) {
+	public void setGate(ParkingConf.TGate gate) {
 		this.gate = gate;
 	}
 	public int getHour() {

@@ -4,8 +4,8 @@ package eped.parking.vehicle;
 
 import java.util.Random;
 
-import eped.parking.tdef.TGate;
-import eped.parking.tdef.TType;
+import eped.parking.ParkingConf;
+
 
 
 public class VehicleGenerator {
@@ -32,8 +32,8 @@ public class VehicleGenerator {
     public Vehicle generate () {
     
         int id      = nextId ();
-        TType type  = nextType ();
-        TGate gate  = nextGate ();
+        ParkingConf.TType type  = nextType ();
+        ParkingConf.TGate gate  = nextGate ();
         int   hours = nextHours ();
         
         return new Vehicle (id, type, gate, hours);
@@ -52,20 +52,20 @@ public class VehicleGenerator {
     * Returns a type.
     * @return a type.
     */
-    private TType nextType () {
+    private ParkingConf.TType nextType () {
     
         int rType = this.random.nextInt (2);
-        return TType.values ()[rType];
+        return ParkingConf.TType.values ()[rType];
     }
     
    /**
     * Returns a gate.
     * @return a gate.
     */
-    private TGate nextGate () {
+    private ParkingConf.TGate nextGate () {
     
         int rGate = this.random.nextInt (4);
-        return TGate.values ()[rGate];
+        return ParkingConf.TGate.values ()[rGate];
     }
     
    /**
