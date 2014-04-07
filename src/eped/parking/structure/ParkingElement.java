@@ -5,7 +5,7 @@ import eped.tree.TreeIF;
 
 
 
-public interface ParkingElement extends TreeIF{
+public interface ParkingElement {
 	
 	public IteratorIF<Object> getIterator();
 

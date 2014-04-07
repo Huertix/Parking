@@ -22,7 +22,7 @@ public class Parking {
 	public void setFloors(int floors){
 		
 		for(int i=1; i<=floors;i++){
-			parkingT.addChild((TreeIF) new ParkingFloor(i));
+			parkingT.addChild(new ParkingFloor(i));
 		}		
 	}
 	

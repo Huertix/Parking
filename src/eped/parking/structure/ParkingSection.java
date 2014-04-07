@@ -6,7 +6,7 @@ import eped.parking.ParkingConf;
 import eped.tree.TreeDynamic;
 import eped.tree.TreeIF;
 
-public class ParkingSection implements ParkingElement{
+public class ParkingSection extends TreeDynamic<ParkingElement> implements ParkingElement{
 	
 	private ParkingConf.TGate gate;
 	private TreeIF<ParkingElement> sectionT;
@@ -33,7 +33,7 @@ public class ParkingSection implements ParkingElement{
 		ParkingConf.TZone[] zones = ParkingConf.TZone.values();	
 		int zoneSize = zones.length;
 		for(int i = 0;i<zoneSize;i++){
-			sectionT.addChild((TreeIF) new ParkingArea(zones[i]));
+			sectionT.addChild(new ParkingArea(zones[i]));
 		}
 	}	
 
@@ -43,68 +43,5 @@ public class ParkingSection implements ParkingElement{
 		return null;
 	}
 
-
-	@Override
-	public void addChild(TreeIF arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public boolean contains(Object arg0) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
-	@Override
-	public ListIF getChildren() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public IteratorIF getIterator(int arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Object getRoot() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
-	@Override
-	public boolean isLeaf() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
-	@Override
-	public void removeChild(int arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void setRoot(Object arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 
 }
