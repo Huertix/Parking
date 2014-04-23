@@ -8,52 +8,55 @@ import eped.queue.QueueIF;
 
 public class ParkingDispatcher {
 	
+	private static VehicleGenerator vGenerator;
+	private static QueueIF<Vehicle> vQueue;
+
 	
 	public static void main(String[] args) {
 		
 		try{
 			
-			int seed = Integer.parseInt(args[0]);
-			
-			QueueIF<Vehicle> vQueue = new VehicleQueue();
-			
-			init();
-			
-			
-			VehicleGenerator vGenerator = new VehicleGenerator(seed);
+			int n = Integer.parseInt(args[0]);
+			int seed = Integer.parseInt(args[1]);
+					
+			init(n, seed);
 			
 			
-			
-			for(int i=0; i<100;i++){
-				vQueue.add(vGenerator.generate());
-			}
-			
-			
-			while(!vQueue.isEmpty()){
-				Vehicle v = vQueue.getFirst();
-				System.out.println("["+
-									v.getId()+
-									","+
-									v.getType()+
-									","+
-									v.getGate()+
-									","+
-									v.getHour()+
-									"]");
-				vQueue.remove();
-			}
-			
-		
-			
+			dispatch();
+				
 		}catch(Exception ex){
 			ExceptionManager.getMessage(ex);	
 		}
 		
 	}
 	
-	private static void init(){
+	private static void init(int n, int seed){
+		
+		vGenerator  = new VehicleGenerator(seed);
+		
+		vQueue   = new VehicleQueue();
+		
+		for(int i=0; i<=n;i++)
+			vQueue.add(vGenerator.generate());
 		
 		Parking parking = new Parking();
+	}
+	
+	
+	private static void dispatch(){
+		while(!vQueue.isEmpty()){
+			Vehicle v = vQueue.getFirst();
+			System.out.println("["+
+								v.getId()+
+								","+
+								v.getType()+
+								","+
+								v.getGate()+
+								","+
+								v.getHour()+
+								"]");
+			vQueue.remove();
+		}
 	}
 
 }

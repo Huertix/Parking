@@ -31,12 +31,12 @@ public class VehicleGenerator {
     */
     public Vehicle generate () {
     
-        int id      = nextId ();
+    	int id      = nextId ();
         ParkingConf.TType type  = nextType ();
         ParkingConf.TGate gate  = nextGate ();
-        int   hours = nextHours ();
+        int   time = nextTime ();
         
-        return new Vehicle (id, type, gate, hours);
+        return new Vehicle (id, type, gate, time);
     }
     
    /**
@@ -72,9 +72,9 @@ public class VehicleGenerator {
     * Returns the hours.
     * @return the hours.
     */
-    private int nextHours () {
+    private int nextTime () {
     
-        return this.random.nextInt (24);
+        return 10 + this.random.nextInt (23*60);
     }
 
 }

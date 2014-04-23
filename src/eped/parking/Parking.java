@@ -9,12 +9,14 @@ import eped.tree.TreeIF;
 public class Parking {	
 	
 	private TreeIF<ParkingElement> parkingT;
+
 	
 	
 	public Parking(){
 		parkingT = new TreeDynamic<ParkingElement>();
 		parkingT.setRoot(null);
-		setFloors(ParkingConf.getFloors());
+		setFloors(ParkingConf.FLOORS);
+		
 			
 	}
 	
@@ -31,7 +33,7 @@ public class Parking {
 	}
 	
 	public boolean hasSpace(ParkingConf.TType type){
-		return (Boolean) null;
+		return ParkingState.hasSpaces(type);
 	}
 	
 	

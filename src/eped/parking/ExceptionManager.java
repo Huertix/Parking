@@ -16,10 +16,7 @@ public class ExceptionManager extends Exception {
 			 tailMessage();
 		 }
 		 else
-			 System.out.println("Error en programa: \n"+ex.getMessage());
-		 
-		 
-		
+			 System.out.println("Error en programa: \n"+ex.getMessage());	
 	}
 	
 	private static void tailMessage(){

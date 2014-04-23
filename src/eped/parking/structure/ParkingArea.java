@@ -4,6 +4,7 @@ import eped.IteratorIF;
 import eped.parking.ParkingConf;
 import eped.tree.TreeDynamic;
 import eped.tree.TreeIF;
+import eped.tree.TreeIterator;
 
 public class ParkingArea extends TreeDynamic<ParkingElement> implements ParkingElement{
 	
@@ -31,7 +32,7 @@ public class ParkingArea extends TreeDynamic<ParkingElement> implements ParkingE
 		ParkingConf.TType[] types = ParkingConf.TType.values();	
 		int typeSize = types.length;
 		for(int i = 0;i<typeSize;i++){
-			for(int j = 0;j<ParkingConf.getSpaces();j++){
+			for(int j = 0;j<ParkingConf.SPACES;j++){
 				areaT.addChild(new ParkingSpace(types[i]));
 			}
 		}
@@ -40,8 +41,11 @@ public class ParkingArea extends TreeDynamic<ParkingElement> implements ParkingE
 
 	@Override
 	public IteratorIF<Object> getIterator() {
-		// TODO Auto-generated method stub
-		return null;
+		IteratorIF<ParkingSpace> it = new TreeIterator<ParkingSpace>(handler, type)
+	}
+	
+	public String toString(){
+		return "" + zone; 
 	}
 
 

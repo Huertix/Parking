@@ -2,6 +2,7 @@ package eped.parking.structure;
 
 import eped.IteratorIF;
 import eped.parking.ParkingConf;
+import eped.parking.ParkingState;
 import eped.parking.vehicle.Vehicle;
 import eped.tree.TreeDynamic;
 
@@ -15,8 +16,7 @@ public class ParkingSpace  extends TreeDynamic<ParkingElement> implements Parkin
 	
 	public ParkingSpace(ParkingConf.TType type){
 		vType = type;
-		spaceID = ParkingConf.spaceID;
-		ParkingConf.spaceID++;	
+		spaceID = ParkingState.getNextSpaceID(type);
 		spaceT =  new TreeDynamic<ParkingElement>();
 		spaceT.setRoot(this);
 		spaceT.addChild(null);
@@ -49,10 +49,12 @@ public class ParkingSpace  extends TreeDynamic<ParkingElement> implements Parkin
 	
 	
 	public IteratorIF<Object> getIterator() {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	public String toString(){
+		return ""+ spaceID;
+	}
 
 	
 
