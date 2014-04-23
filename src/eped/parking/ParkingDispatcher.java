@@ -1,5 +1,6 @@
 package eped.parking;
 
+import eped.parking.structure.ParkingSpace;
 import eped.parking.vehicle.Vehicle;
 import eped.parking.vehicle.VehicleGenerator;
 import eped.parking.vehicle.VehicleQueue;
@@ -10,6 +11,7 @@ public class ParkingDispatcher {
 	
 	private static VehicleGenerator vGenerator;
 	private static QueueIF<Vehicle> vQueue;
+	private static Parking parking;
 
 	
 	public static void main(String[] args) {
@@ -39,11 +41,27 @@ public class ParkingDispatcher {
 		for(int i=0; i<=n;i++)
 			vQueue.add(vGenerator.generate());
 		
-		Parking parking = new Parking();
+		 parking = new Parking();
 	}
 	
 	
 	private static void dispatch(){
+		Vehicle v = vQueue.getFirst();
+		
+		
+		
+		if(parking.hasSpace(v.getType())){
+			ParkingSpace s = parking.getSpace(v.getType(),v.getGate());
+		}
+		
+		
+		
+		
+
+	}
+	
+	
+	private static void toPrint(){
 		while(!vQueue.isEmpty()){
 			Vehicle v = vQueue.getFirst();
 			System.out.println("["+

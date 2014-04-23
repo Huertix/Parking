@@ -38,9 +38,13 @@ public class ParkingSection extends TreeDynamic<ParkingElement> implements Parki
 	}	
 
 	@Override
-	public IteratorIF<Object> getIterator() {
+	public IteratorIF<TreeIF<ParkingElement>> getIterator() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public String toString(){
+		return gate.toString();
 	}
 
 

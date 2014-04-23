@@ -6,7 +6,7 @@ import eped.tree.TreeDynamic;
 import eped.tree.TreeIF;
 import eped.tree.TreeIterator;
 
-public class ParkingArea extends TreeDynamic<ParkingElement> implements ParkingElement{
+public class ParkingArea extends TreeDynamic<ParkingElement> implements ParkingElement, TreeIF<ParkingElement>{
 	
 	private ParkingConf.TZone zone;
 	private TreeIF<ParkingElement> areaT;
@@ -40,8 +40,8 @@ public class ParkingArea extends TreeDynamic<ParkingElement> implements ParkingE
 	}
 
 	@Override
-	public IteratorIF<Object> getIterator() {
-		IteratorIF<ParkingSpace> it = new TreeIterator<ParkingSpace>(handler, type)
+	public IteratorIF<TreeIF<ParkingElement>> getIterator() {
+		return null;
 	}
 	
 	public String toString(){

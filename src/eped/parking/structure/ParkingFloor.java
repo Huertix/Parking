@@ -1,9 +1,11 @@
 package eped.parking.structure;
 
 import eped.IteratorIF;
+import eped.list.ListIF;
 import eped.parking.ParkingConf;
 import eped.tree.TreeDynamic;
 import eped.tree.TreeIF;
+import eped.tree.TreeIterator;
 
 public class ParkingFloor extends TreeDynamic<ParkingElement> implements ParkingElement{
 	
@@ -37,8 +39,27 @@ public class ParkingFloor extends TreeDynamic<ParkingElement> implements Parking
 
 
 	@Override
-	public IteratorIF<Object> getIterator(){
-		// TODO Auto-generated method stub
-		return null;
-	}	
+	public IteratorIF<TreeIF<ParkingElement>> getIterator(Integer order){
+		System.out.println(toString());
+		ListIF<TreeIF<ParkingElement>> childrenList = floorT.getChildren();
+		
+		
+		IteratorIF<TreeIF<ParkingElement>> childIT = childrenList.getIterator();
+		
+		while(childIT.hasNext()){
+			ParkingSection section = (ParkingSection) childIT.getNext();
+			ParkingConf.TGate[] values =  ParkingConf.TGate.values();
+			
+			if(values[order] == section.getGate()){
+				System.out.println("igual");
+				
+			}
+		}
+		
+		return childIT;
+	}
+	
+	public String toString(){
+		return "" + floorLevel;
+	}
 }

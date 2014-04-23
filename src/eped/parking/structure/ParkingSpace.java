@@ -48,7 +48,7 @@ public class ParkingSpace  extends TreeDynamic<ParkingElement> implements Parkin
 	}
 	
 	
-	public IteratorIF<Object> getIterator() {
+	public IteratorIF<ParkingElement> getIterator() {
 		return null;
 	}
 	

@@ -20,10 +20,15 @@ public class ParkingState {
 		 int a = (absolutSpaceID/2);		
 		 
 		 
-		 if(type.equals(ParkingConf.TType.normal))
-			  return a - usedNormalSpaces;
-		 else
-			 return a - usedFamiliarSpaces;
+		 if(type.equals(ParkingConf.TType.normal)){
+			 int b =  usedNormalSpaces;
+			 return a - b;
+		 }
+		 else{
+			 int b = usedFamiliarSpaces;
+			 return a - b;
+		 }
+			 
 	
 	}
 	
@@ -33,7 +38,8 @@ public class ParkingState {
 	
 	public static boolean hasSpaces(ParkingConf.TType type){
 		
-		return getSpaces(type) > 0;		
+		int value = getSpaces(type);
+		return  value > 0;		
 	}
 	
 	
@@ -76,12 +82,7 @@ public class ParkingState {
 		
 		if(nextSpaceID<2 && type.equals(TType.normal))
 			nextSpaceID ++;
-		
-		if(type.equals(TType.normal))
-			usedNormalSpaces++;
-		else
-			usedFamiliarSpaces++;
-		
+				
 		next = nextSpaceID;
 		absolutSpaceID++;
 		nextSpaceID += 2;
