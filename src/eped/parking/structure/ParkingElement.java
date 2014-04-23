@@ -7,6 +7,6 @@ import eped.tree.TreeIF;
 
 public interface ParkingElement {
 	
-	public IteratorIF<TreeIF<ParkingElement>> getIterator(Integer order);
+	public IteratorIF<TreeIF<ParkingElement>> getIterator();
 
 }

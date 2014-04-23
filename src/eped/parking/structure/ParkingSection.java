@@ -39,8 +39,12 @@ public class ParkingSection extends TreeDynamic<ParkingElement> implements Parki
 
 	@Override
 	public IteratorIF<TreeIF<ParkingElement>> getIterator() {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println(toString());
+		ListIF<TreeIF<ParkingElement>> childrenList = sectionT.getChildren();
+		
+		IteratorIF<TreeIF<ParkingElement>> childIT = childrenList.getIterator();
+		
+		return childIT;
 	}
 	
 	public String toString(){

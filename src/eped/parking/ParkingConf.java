@@ -13,6 +13,7 @@ public final class ParkingConf {
 	private static Integer[] b= {2,3,1,4};
 	private static Integer[] c= {3,4,2,1};
 	private static Integer[] d= {4,1,3,2};
+	
 
 	public enum TGate{
 		A,

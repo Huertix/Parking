@@ -5,6 +5,7 @@ import eped.parking.ParkingConf;
 import eped.parking.ParkingState;
 import eped.parking.vehicle.Vehicle;
 import eped.tree.TreeDynamic;
+import eped.tree.TreeIF;
 
 
 public class ParkingSpace  extends TreeDynamic<ParkingElement> implements ParkingElement{
@@ -48,7 +49,7 @@ public class ParkingSpace  extends TreeDynamic<ParkingElement> implements Parkin
 	}
 	
 	
-	public IteratorIF<ParkingElement> getIterator() {
+	public IteratorIF<TreeIF<ParkingElement>> getIterator() {
 		return null;
 	}
 	
