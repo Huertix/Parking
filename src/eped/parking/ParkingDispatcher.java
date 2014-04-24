@@ -1,5 +1,6 @@
 package eped.parking;
 
+import eped.IteratorIF;
 import eped.parking.structure.ParkingSpace;
 import eped.parking.vehicle.Vehicle;
 import eped.parking.vehicle.VehicleGenerator;
@@ -46,12 +47,16 @@ public class ParkingDispatcher {
 	
 	
 	private static void dispatch(){
-		Vehicle v = vQueue.getFirst();
 		
+		IteratorIF<Vehicle> vQueueIT = vQueue.getIterator();
 		
+		while(vQueueIT.hasNext()){
 		
-		if(parking.hasSpace(v.getType())){
-			ParkingSpace s = parking.getSpace(v.getType(),v.getGate());
+			Vehicle v = vQueueIT.getNext();
+					
+			if(parking.hasSpace(v.getType())){
+				ParkingSpace s = parking.getSpace(v.getType(),v.getGate(),v.getId());
+			}
 		}
 		
 		

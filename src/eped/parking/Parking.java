@@ -23,7 +23,7 @@ public class Parking {
 		parkingT = new TreeDynamic<ParkingElement>();
 		parkingT.setRoot(null);
 		setFloors(ParkingConf.FLOORS);
-		initSearcher(); 
+		//initSearcher(); 
 		
 				
 	}
@@ -36,67 +36,97 @@ public class Parking {
 		}		
 	}
 	
-	public ParkingSpace getSpace(ParkingConf.TType type, ParkingConf.TGate gate){
-		System.out.println(type.toString() +" "+ gate.toString());
+	public ParkingSpace getSpace(ParkingConf.TType type, ParkingConf.TGate gate, int ID){
 		
-		Integer[] path  = ParkingConf.getSearchingPath(gate);
-		ParkingConf.TGate[] gateValues =  ParkingConf.TGate.values();
-		ParkingConf.TZone[] zoneValues =  ParkingConf.TZone.values();
+		ParkingSpace parkingSpace = null;
+		
+		
+		
+		System.out.println("Current Car: "+ID+" "+type.toString() +" "+ gate.toString());
+		System.out.println("----------------------------------");
+		
+		Integer[] sectionsPath  = ParkingConf.getSearchingPath(gate); // vector rutas de busqueda de puertas en funcion de la puerta asignada a coche
+		// A (1,2,4,3) B(2,3,1,4) C(3,4,2,1) D(4,1,3,2)  A=1 B=2 C=3 D=4
+		
+		Integer[] areasPath = ParkingConf.getAreasPath(); // vector ruta de busqueda de las areas
+		// 1ºSeccion(I,II,IV,III) 2ºSeccion(IV,I,III,II) 3ºSeccion(II,III,I,IV) 4ºSeccion(III,IV,II,I)
+		
+		ParkingConf.TGate[] gateValues =  ParkingConf.TGate.values(); // vector valores de puertas
+		ParkingConf.TZone[] zoneValues =  ParkingConf.TZone.values(); // vector valores de areas
 	
 		boolean found = false;
 		
-		ListIF<TreeIF<ParkingElement>> parkingChildrenList = parkingT.getChildren();
+		ListIF<TreeIF<ParkingElement>> parkingChildrenList = parkingT.getChildren(); 			//   Iterador de 
+		IteratorIF<TreeIF<ParkingElement>> parkingChildrendIT = parkingChildrenList.getIterator();//	niveles
 		
-		IteratorIF<TreeIF<ParkingElement>> parkingChildrendIT = parkingChildrenList.getIterator();
-		IteratorIF<Integer[]> sectionSearcherIT = sectionSearcher.getIterator();
+			
 		
-		
-		
-		/*
 		// 1º Selector de seccion ----------------------------------
+		int currentSection = 0;
+		int currentArea = 0;
+		int currentLevel = 1;
 		
-		for(int i=1;i<=path.length;i++){
+		while(!found && currentSection+1<=sectionsPath.length){
+			ParkingConf.TGate currentGate =  gateValues[sectionsPath[currentSection]-1]; // Sección actual de busqueda
+			System.out.println("Gate: "+currentGate.toString());
+				
+			// 2º Selector de zonas ----------------------------------
+			
+			ParkingConf.TZone currentZone = zoneValues[areasPath[currentArea]-1];
+			System.out.println("Zone: "+currentZone.toString());
+			
+			
+			if(currentArea>=areasPath.length){
+				currentArea=0;
+				
+			}
+						
+			if((currentArea+1)%4==0)
+				currentSection++;
+			
+			
+			currentArea++;
 			
 		}
-		
-		// 2º Selector de zonas ----------------------------------
-		
-		
-		// 3º Selector de nivel----------------------------------
+						
+			// 3º Selector de nivel----------------------------------
 		
 		
-		*/
+			System.out.println("Fin Busqueda");
+			System.out.println();
+			return parkingSpace;
+	}
+	
+	private boolean checkArea(ParkingSection section) {
+		IteratorIF<TreeIF<ParkingElement>> sectionIT = section.getIterator();
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		//------------------------------------Control de areas------------
-		
-		Integer[]  nextSectionSearcher = null;
-		if(sectionSearcherIT.hasNext()){
-			nextSectionSearcher = sectionSearcherIT.getNext();
-		}
-		//-----------------------------------------------------------------
-		
-		
-		
-		
+		return false;
+	}
+
+
+	public boolean hasSpace(ParkingConf.TType type){
+		return ParkingState.hasSpaces(type);
+	}
+	
+}
+
+
+
+
+
+
+
+/*
+ * 		
 		for(int i=0; i<path.length;i++){ // section bucle for
 			
 			
-			if(found)
-				break;
+			
 			
 			parkingChildrendIT.reset();
 			
 			
-			ParkingConf.TZone zone = zoneValues[nextSectionSearcher[i]-1];
-			System.out.println("zone "+zone.toString());
+			
 			
 			while(!found && parkingChildrendIT.hasNext()){
 				
@@ -120,32 +150,35 @@ public class Parking {
 			}		
 		} // for bucle end
 		return null;
-	}
-	
-	private boolean checkArea(ParkingSection section) {
-		IteratorIF<TreeIF<ParkingElement>> sectionIT = section.getIterator();
 		
-		return false;
-	}
+ */
 
 
-	public boolean hasSpace(ParkingConf.TType type){
-		return ParkingState.hasSpaces(type);
-	}
-	
-	public void initSearcher(){
-		sectionSearcher = new ListStatic<Integer[]>(4);
-		sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.C));
-		sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.B));
-		sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.D));
-		sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.A));
-		
-	}
-	
-	public static ListIF<Integer[]> getSectionSearcher(){
-		return sectionSearcher;
-	}
-	
-	
 
+
+
+
+/*
+ * 
+ * 
+ 	IteratorIF<Integer[]> sectionSearcherIT = sectionSearcher.getIterator();  //Iterador rutas de areas. Cada iteracion contiene un vector
+		// 1º (I,II,IV,III) 	2º(IV,I,III,II) 	3º(II,III,I,IV) 	4º(III,IV,II,I)
+		 
+	Integer[]  nextSectionSearcher = null;
+	if(sectionSearcherIT.hasNext()){
+		nextSectionSearcher = sectionSearcherIT.getNext();
+  
+public void initSearcher(){
+	sectionSearcher = new ListStatic<Integer[]>(4);
+	sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.C));
+	sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.B));
+	sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.D));
+	sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.A));
+	
 }
+
+public static ListIF<Integer[]> getSectionSearcher(){
+	return sectionSearcher;
+}
+*/
+

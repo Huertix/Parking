@@ -13,6 +13,7 @@ public final class ParkingConf {
 	private static Integer[] b= {2,3,1,4};
 	private static Integer[] c= {3,4,2,1};
 	private static Integer[] d= {4,1,3,2};
+	private static Integer[] areasPath = {1,2,4,3,4,1,3,2,2,3,1,4,3,4,2,1};
 	
 
 	public enum TGate{
@@ -32,6 +33,11 @@ public final class ParkingConf {
 	public enum TType {
 		normal,
 		familiar
+	}
+	
+	public static Integer[] getAreasPath(){
+		return areasPath;
+		
 	}
 
 	
