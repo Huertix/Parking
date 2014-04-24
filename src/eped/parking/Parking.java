@@ -3,6 +3,7 @@ package eped.parking;
 import eped.IteratorIF;
 import eped.list.ListIF;
 import eped.list.ListStatic;
+import eped.parking.structure.ParkingArea;
 import eped.parking.structure.ParkingElement;
 import eped.parking.structure.ParkingFloor;
 import eped.parking.structure.ParkingSection;
@@ -76,16 +77,23 @@ public class Parking {
 			System.out.println("Zone: "+currentZone.toString());
 			
 			
-			if(currentArea>=areasPath.length){
+			while(parkingChildrendIT.hasNext()){
+				ParkingFloor currentFloor = (ParkingFloor) parkingChildrendIT.getNext();
+				System.out.println("Floor: "+currentFloor.toString());
+				parkingSpace = getSpace(currentGate,currentZone,type,currentFloor.getIterator());
+			}
+			
+		
+			if(currentArea>=areasPath.length)
 				currentArea=0;
 				
-			}
 						
 			if((currentArea+1)%4==0)
 				currentSection++;
 			
 			
 			currentArea++;
+			parkingChildrendIT.reset();
 			
 		}
 						
@@ -96,6 +104,66 @@ public class Parking {
 			System.out.println();
 			return parkingSpace;
 	}
+	
+	
+	
+	private ParkingSpace getSpace(ParkingConf.TGate gate,ParkingConf.TZone zone, ParkingConf.TType type, IteratorIF<TreeIF<ParkingElement>> IT){
+		
+		ParkingSpace pSpace = null;
+
+		if(!IT.hasNext()){
+			return pSpace;
+		}
+		
+		else{
+			ParkingElement nextParkingElement = (ParkingElement) IT.getNext();
+			IteratorIF<TreeIF<ParkingElement>> nextParkingElementIT = nextParkingElement.getIterator();
+			
+			
+			//---------------- Bloque recursividad Seccion ---------------------------------
+			if((nextParkingElement.getClass() == ParkingSection.class)){
+				ParkingSection section = (ParkingSection) nextParkingElement;
+				if(section.getGate()==gate){
+					// Si es la puerta correcta iterar sobre las areas
+					getSpace(gate,zone,type,nextParkingElementIT);
+				}
+				
+				else{
+					// Si no es la seccion correcta, pasar a la siguiente seccion
+					getSpace(gate,zone,type,IT);				
+				}			
+			}
+			
+			
+			//---------------- Bloque recursividad Area ---------------------------------
+			if((nextParkingElement.getClass() == ParkingArea.class)){
+				ParkingArea area = (ParkingArea) nextParkingElement;
+				if(area.getArea() == area){
+					// Si es el area correcta iterar sobre las plazas
+					getSpace(gate,zone,type,nextParkingElementIT);
+				}
+				
+				else{
+					// Si no es el area correcta, pasar al siguiente area
+					getSpace(gate,zone,type,IT);				
+				}			
+			}
+			
+			//---------------- Bloque Plazas ---------------------------------
+			if((nextParkingElement.getClass() == ParkingSpace.class)){
+				ParkingSpace space = (ParkingSpace) nextParkingElement;
+				if(space.getType() == type){
+					if(!space.hasVehicle())
+						pSpace = space;
+				}				
+			}		
+			return pSpace;
+		}
+	}
+	
+	
+	
+	
 	
 	private boolean checkArea(ParkingSection section) {
 		IteratorIF<TreeIF<ParkingElement>> sectionIT = section.getIterator();
