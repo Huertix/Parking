@@ -51,21 +51,52 @@ public class Parking {
 		IteratorIF<Integer[]> sectionSearcherIT = sectionSearcher.getIterator();
 		
 		
-		for(int i=0; i<path.length;i++){ // section bucle 
+		
+		/*
+		// 1º Selector de seccion ----------------------------------
+		
+		for(int i=1;i<=path.length;i++){
+			
+		}
+		
+		// 2º Selector de zonas ----------------------------------
+		
+		
+		// 3º Selector de nivel----------------------------------
+		
+		
+		*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//------------------------------------Control de areas------------
+		
+		Integer[]  nextSectionSearcher = null;
+		if(sectionSearcherIT.hasNext()){
+			nextSectionSearcher = sectionSearcherIT.getNext();
+		}
+		//-----------------------------------------------------------------
+		
+		
+		
+		
+		for(int i=0; i<path.length;i++){ // section bucle for
 			
 			
 			if(found)
 				break;
 			
 			parkingChildrendIT.reset();
-			Integer[]  nextSectionSearcher = null;
 			
-			if(sectionSearcherIT.hasNext()){
-				nextSectionSearcher = sectionSearcherIT.getNext();
-			}
 			
-			ParkingConf.TZone zone = zoneValues[nextSectionSearcher[i]];
-			System.out.println(zone.toString());
+			ParkingConf.TZone zone = zoneValues[nextSectionSearcher[i]-1];
+			System.out.println("zone "+zone.toString());
 			
 			while(!found && parkingChildrendIT.hasNext()){
 				
@@ -104,10 +135,10 @@ public class Parking {
 	
 	public void initSearcher(){
 		sectionSearcher = new ListStatic<Integer[]>(4);
-		sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.A));
-		sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.D));
-		sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.B));
 		sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.C));
+		sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.B));
+		sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.D));
+		sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.A));
 		
 	}
 	
