@@ -56,6 +56,10 @@ public class ParkingDispatcher {
 					
 			if(parking.hasSpace(v.getType())){
 				ParkingSpace s = parking.getSpace(v.getType(),v.getGate(),v.getId());
+				s.setCurrentVehicle(v);
+				
+				System.out.println("Car ID: "+v.getId()+" to Space: "+s.toString());
+				System.out.println();
 			}
 		}
 		

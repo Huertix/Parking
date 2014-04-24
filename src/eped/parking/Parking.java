@@ -55,7 +55,6 @@ public class Parking {
 		ParkingConf.TGate[] gateValues =  ParkingConf.TGate.values(); // vector valores de puertas
 		ParkingConf.TZone[] zoneValues =  ParkingConf.TZone.values(); // vector valores de areas
 	
-		boolean found = false;
 		
 		ListIF<TreeIF<ParkingElement>> parkingChildrenList = parkingT.getChildren(); 			//   Iterador de 
 		IteratorIF<TreeIF<ParkingElement>> parkingChildrendIT = parkingChildrenList.getIterator();//	niveles
@@ -67,7 +66,7 @@ public class Parking {
 		int currentArea = 0;
 		int currentLevel = 1;
 		
-		while(!found && currentSection+1<=sectionsPath.length){
+		while(parkingSpace==null && currentSection+1<=sectionsPath.length){
 			ParkingConf.TGate currentGate =  gateValues[sectionsPath[currentSection]-1]; // Sección actual de busqueda
 			System.out.println("Gate: "+currentGate.toString());
 				
@@ -77,7 +76,7 @@ public class Parking {
 			System.out.println("Zone: "+currentZone.toString());
 			
 			
-			while(parkingChildrendIT.hasNext()){
+			while(parkingSpace==null && parkingChildrendIT.hasNext()){
 				ParkingFloor currentFloor = (ParkingFloor) parkingChildrendIT.getNext();
 				System.out.println("Floor: "+currentFloor.toString());
 				parkingSpace = getSpace(currentGate,currentZone,type,currentFloor.getIterator());
@@ -99,9 +98,10 @@ public class Parking {
 						
 			// 3º Selector de nivel----------------------------------
 		
-		
+			if(parkingSpace!=null)
+				System.out.println("Parking ID: "+parkingSpace.getID());
 			System.out.println("Fin Busqueda");
-			System.out.println();
+			
 			return parkingSpace;
 	}
 	
@@ -111,7 +111,7 @@ public class Parking {
 		
 		ParkingSpace pSpace = null;
 
-		if(!IT.hasNext()){
+		if(IT==null || !IT.hasNext()){
 			return pSpace;
 		}
 		
@@ -125,12 +125,12 @@ public class Parking {
 				ParkingSection section = (ParkingSection) nextParkingElement;
 				if(section.getGate()==gate){
 					// Si es la puerta correcta iterar sobre las areas
-					getSpace(gate,zone,type,nextParkingElementIT);
+					pSpace = getSpace(gate,zone,type,nextParkingElementIT);
 				}
 				
 				else{
 					// Si no es la seccion correcta, pasar a la siguiente seccion
-					getSpace(gate,zone,type,IT);				
+					pSpace = getSpace(gate,zone,type,IT);				
 				}			
 			}
 			
@@ -140,7 +140,7 @@ public class Parking {
 				ParkingArea area = (ParkingArea) nextParkingElement;
 				if(area.getArea() == area){
 					// Si es el area correcta iterar sobre las plazas
-					getSpace(gate,zone,type,nextParkingElementIT);
+					pSpace = getSpace(gate,zone,type,nextParkingElementIT);
 				}
 				
 				else{
@@ -155,7 +155,12 @@ public class Parking {
 				if(space.getType() == type){
 					if(!space.hasVehicle())
 						pSpace = space;
-				}				
+					else
+						getSpace(gate,zone,type,IT);
+						
+				}
+				else
+					pSpace = getSpace(gate,zone,type,IT);
 			}		
 			return pSpace;
 		}
