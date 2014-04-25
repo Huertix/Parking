@@ -18,6 +18,10 @@ public class Parking {
 	public static ListIF<Integer[]> sectionSearcher;
 	private boolean topFloorReached = false;
 	private int currentFloor = 0;
+	private int currentSpace = 0;
+	private int currentSection;
+	private int currentArea;
+	
 	
 
 	
@@ -43,6 +47,10 @@ public class Parking {
 		
 		ParkingSpace parkingSpace = null;
 		
+		currentSection = 0;
+		currentArea = 0;
+		
+		
 		
 		
 		System.out.println("Current Car: "+ID+" "+type.toString() +" "+ gate.toString());
@@ -64,8 +72,7 @@ public class Parking {
 			
 		
 		// 1º Selector de seccion ----------------------------------
-		int currentSection = 0;
-		int currentArea = 0;
+		
 		
 		
 		while(parkingSpace==null && currentSection+1<=sectionsPath.length){
@@ -80,8 +87,8 @@ public class Parking {
 			
 			while(parkingSpace==null && parkingChildrendIT.hasNext()){
 				ParkingFloor floor = (ParkingFloor) parkingChildrendIT.getNext();
-				currentFloor = floor.getFloor();
-				System.out.println("		Floor: "+floor.toString());
+				currentFloor = floor.getFloor();								//Registra valor floor.
+				System.out.println("		Floor: "+currentFloor);
 				parkingSpace = getSpace(currentGate,currentZone,type,floor.getIterator());
 			}
 			
@@ -90,12 +97,21 @@ public class Parking {
 				currentArea=0;
 				
 						
-			if((currentArea+1)%4==0)
+			if((currentArea+1)%4==0 && currentSpace>ParkingConf.SPACES*2){
 				currentSection++;
+				currentArea++;
+				currentSpace=0;
+			}
 			
 			
-			currentArea++;
+			if(currentSpace>ParkingConf.SPACES*2){
+				currentArea++;
+				if(currentFloor==ParkingConf.FLOORS)
+					currentSpace=0;
+			}
+			
 			parkingChildrendIT.reset();
+			
 			
 		}
 						
@@ -141,33 +157,42 @@ public class Parking {
 			//---------------- Bloque recursividad Area ---------------------------------
 			if((nextParkingElement.getClass() == ParkingArea.class)){
 				ParkingArea area = (ParkingArea) nextParkingElement;
-				if(area.getArea() == area){
+				if(area.getZone() == zone){
 					// Si es el area correcta iterar sobre las plazas
 					pSpace = getSpace(gate,zone,type,nextParkingElementIT);
 				}
 				
 				else{
 					// Si no es el area correcta, pasar al siguiente area
-					getSpace(gate,zone,type,IT);				
+					pSpace = getSpace(gate,zone,type,IT);				
 				}			
 			}
 			
 			//---------------- Bloque Plazas ---------------------------------
 			if((nextParkingElement.getClass() == ParkingSpace.class)){
 				ParkingSpace space = (ParkingSpace) nextParkingElement;
-				System.out.println("				Spaces:" +space.getID()+" ");
+			
+				while(space.getID()<currentSpace)			//NullPointerException
+					space = (ParkingSpace)IT.getNext();
+				
+				currentSpace= space.getID();
+				
+				System.out.println("				Spaces:" +space.getID());
+			
+					
 				
 				if(space.getType() == type){
 					if(!space.hasVehicle())
 						pSpace = space;
-					else{
-						getSpace(gate,zone,type,IT);
-					}	
-
-						
+					
+					
+					if(currentFloor>=ParkingConf.FLOORS)
+						currentSpace+=2;
+					
+									
 				}
-				else
-					pSpace = getSpace(gate,zone,type,IT);
+				else										// ?
+					pSpace = getSpace(gate,zone,type,IT);	// ?
 			}		
 			return pSpace;
 		}
