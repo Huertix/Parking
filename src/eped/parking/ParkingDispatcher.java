@@ -2,6 +2,7 @@ package eped.parking;
 
 import eped.IteratorIF;
 import eped.parking.structure.ParkingSpace;
+import eped.parking.vehicle.CopyOfVehicleGenerator;
 import eped.parking.vehicle.Vehicle;
 import eped.parking.vehicle.VehicleGenerator;
 import eped.parking.vehicle.VehicleQueue;
@@ -10,7 +11,8 @@ import eped.queue.QueueIF;
 
 public class ParkingDispatcher {
 	
-	private static VehicleGenerator vGenerator;
+	private static CopyOfVehicleGenerator vGenerator;
+	//private static VehicleGenerator vGenerator;
 	private static QueueIF<Vehicle> vQueue;
 	private static Parking parking;
 
@@ -35,7 +37,8 @@ public class ParkingDispatcher {
 	
 	private static void init(int n, int seed){
 		
-		vGenerator  = new VehicleGenerator(seed);
+		vGenerator  = new CopyOfVehicleGenerator(seed);
+		//vGenerator  = new VehicleGenerator(seed);
 		
 		vQueue   = new VehicleQueue();
 		

@@ -40,7 +40,6 @@ public class ParkingFloor extends TreeDynamic<ParkingElement> implements Parking
 
 	@Override
 	public IteratorIF<TreeIF<ParkingElement>> getIterator(){
-		System.out.println(toString());
 		ListIF<TreeIF<ParkingElement>> childrenList = floorT.getChildren();
 		
 		IteratorIF<TreeIF<ParkingElement>> childIT = childrenList.getIterator();

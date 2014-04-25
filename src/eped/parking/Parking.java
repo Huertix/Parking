@@ -16,6 +16,8 @@ public class Parking {
 	
 	private TreeIF<ParkingElement> parkingT;
 	public static ListIF<Integer[]> sectionSearcher;
+	private boolean topFloorReached = false;
+	private int currentFloor = 0;
 	
 
 	
@@ -64,22 +66,23 @@ public class Parking {
 		// 1º Selector de seccion ----------------------------------
 		int currentSection = 0;
 		int currentArea = 0;
-		int currentLevel = 1;
+		
 		
 		while(parkingSpace==null && currentSection+1<=sectionsPath.length){
 			ParkingConf.TGate currentGate =  gateValues[sectionsPath[currentSection]-1]; // Sección actual de busqueda
-			System.out.println("Gate: "+currentGate.toString());
+			System.out.print("Gate: "+currentGate.toString()+"\t");
 				
 			// 2º Selector de zonas ----------------------------------
 			
 			ParkingConf.TZone currentZone = zoneValues[areasPath[currentArea]-1];
-			System.out.println("Zone: "+currentZone.toString());
+			System.out.println("	Zone: "+currentZone.toString()+"\n");
 			
 			
 			while(parkingSpace==null && parkingChildrendIT.hasNext()){
-				ParkingFloor currentFloor = (ParkingFloor) parkingChildrendIT.getNext();
-				System.out.println("Floor: "+currentFloor.toString());
-				parkingSpace = getSpace(currentGate,currentZone,type,currentFloor.getIterator());
+				ParkingFloor floor = (ParkingFloor) parkingChildrendIT.getNext();
+				currentFloor = floor.getFloor();
+				System.out.println("		Floor: "+floor.toString());
+				parkingSpace = getSpace(currentGate,currentZone,type,floor.getIterator());
 			}
 			
 		
@@ -152,11 +155,15 @@ public class Parking {
 			//---------------- Bloque Plazas ---------------------------------
 			if((nextParkingElement.getClass() == ParkingSpace.class)){
 				ParkingSpace space = (ParkingSpace) nextParkingElement;
+				System.out.println("				Spaces:" +space.getID()+" ");
+				
 				if(space.getType() == type){
 					if(!space.hasVehicle())
 						pSpace = space;
-					else
+					else{
 						getSpace(gate,zone,type,IT);
+					}	
+
 						
 				}
 				else
