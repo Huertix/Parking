@@ -182,9 +182,13 @@ public class Parking {
 					
 				
 				if(space.getType() == type){
-					if(!space.hasVehicle())
+					if(!space.hasVehicle()){
 						pSpace = space;
-					
+						if(type == ParkingConf.TType.normal)
+							ParkingState.updateNormalUsedSpaces(1);
+						else
+							ParkingState.updateFamiliarUsedSpaces(1);
+					}
 					
 					if(currentFloor>=ParkingConf.FLOORS)
 						currentSpace+=2;
