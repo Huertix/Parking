@@ -11,8 +11,8 @@ import eped.queue.QueueIF;
 
 public class ParkingDispatcher {
 	
-	private static CopyOfVehicleGenerator vGenerator;
-	//private static VehicleGenerator vGenerator;
+	//private static CopyOfVehicleGenerator vGenerator;
+	private static VehicleGenerator vGenerator;
 	private static QueueIF<Vehicle> vQueue;
 	private static Parking parking;
 
@@ -37,8 +37,8 @@ public class ParkingDispatcher {
 	
 	private static void init(int n, int seed){
 		
-		vGenerator  = new CopyOfVehicleGenerator(seed);
-		//vGenerator  = new VehicleGenerator(seed);
+		//vGenerator  = new CopyOfVehicleGenerator(seed);
+		vGenerator  = new VehicleGenerator(seed);
 		
 		vQueue   = new VehicleQueue();
 		

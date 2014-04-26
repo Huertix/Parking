@@ -54,7 +54,7 @@ public class ParkingSpace  extends TreeDynamic<ParkingElement> implements Parkin
 	}
 	
 	public String toString(){
-		return ""+ spaceID;
+		return ""+vType+" "+ spaceID;
 	}
 
 	

@@ -18,7 +18,8 @@ public class Parking {
 	public static ListIF<Integer[]> sectionSearcher;
 	private boolean topFloorReached = false;
 	private int currentFloor = 0;
-	private int currentSpace = 0;
+	private int currentSpaceEven = 0;
+	private int currentSpaceOdd = 0;
 	private int currentSection;
 	private int currentArea;
 	
@@ -97,17 +98,30 @@ public class Parking {
 				currentArea=0;
 				
 						
-			if((currentArea+1)%4==0 && currentSpace>ParkingConf.SPACES*2){
+			if((currentArea+1)%4==0 && currentSpaceEven>ParkingConf.SPACES*2){ // 
 				currentSection++;
 				currentArea++;
-				currentSpace=0;
+				currentSpaceEven=0;
 			}
 			
+			if((currentArea+1)%4==0 && currentSpaceOdd>ParkingConf.SPACES*2){ // 
+				currentSection++;
+				currentArea++;
+				currentSpaceOdd=0;
+			}
 			
-			if(currentSpace>ParkingConf.SPACES*2){
+		
+			
+			if(currentSpaceEven>ParkingConf.SPACES*2){
 				currentArea++;
 				if(currentFloor==ParkingConf.FLOORS)
-					currentSpace=0;
+					currentSpaceEven=0;
+			}
+			
+			if(currentSpaceOdd>ParkingConf.SPACES*2){
+				currentArea++;
+				if(currentFloor==ParkingConf.FLOORS)
+					currentSpaceOdd=0;
 			}
 			
 			parkingChildrendIT.reset();
@@ -172,10 +186,29 @@ public class Parking {
 			if((nextParkingElement.getClass() == ParkingSpace.class)){
 				ParkingSpace space = (ParkingSpace) nextParkingElement;
 			
-				while(space.getID()<currentSpace)			//NullPointerException
-					space = (ParkingSpace)IT.getNext();
 				
-				currentSpace= space.getID();
+				if(space.getType()!=type){
+					space = (ParkingSpace)IT.getNext();
+					space = (ParkingSpace)IT.getNext();
+					space = (ParkingSpace)IT.getNext();
+					
+					while(space.getID()<currentSpaceEven){			// Comprueba el ID de plaza actual. Pasa a siguiente plaza si currentSpace no corresponde
+						space = (ParkingSpace)IT.getNext();
+					}
+					currentSpaceEven= space.getID();
+					
+					
+				}
+				
+				else{
+					while(space.getID()<currentSpaceOdd){			// Comprueba el ID de plaza actual. Pasa a siguiente plaza si currentSpace no corresponde
+						space = (ParkingSpace)IT.getNext();
+					}
+					currentSpaceOdd= space.getID();
+					
+				}
+				
+				
 				
 				System.out.println("				Spaces:" +space.getID());
 			
@@ -190,13 +223,16 @@ public class Parking {
 							ParkingState.updateFamiliarUsedSpaces(1);
 					}
 					
-					if(currentFloor>=ParkingConf.FLOORS)
-						currentSpace+=2;
-					
+					if(currentFloor>=ParkingConf.FLOORS){
+						
+						if(type==ParkingConf.TType.familiar)
+							currentSpaceEven+=2;
+						else
+							currentSpaceOdd+=2;
+					}
 									
 				}
-				else										// ?
-					pSpace = getSpace(gate,zone,type,IT);	// ?
+				
 			}		
 			return pSpace;
 		}
@@ -218,76 +254,3 @@ public class Parking {
 	}
 	
 }
-
-
-
-
-
-
-
-/*
- * 		
-		for(int i=0; i<path.length;i++){ // section bucle for
-			
-			
-			
-			
-			parkingChildrendIT.reset();
-			
-			
-			
-			
-			while(!found && parkingChildrendIT.hasNext()){
-				
-				ParkingFloor floor = (ParkingFloor) parkingChildrendIT.getNext();
-				
-				IteratorIF<TreeIF<ParkingElement>> sectionIT = floor.getIterator();
-				
-				
-				
-				while(sectionIT.hasNext()){
-					ParkingSection section = (ParkingSection) sectionIT.getNext();
-					System.out.println("path "+ path[i] + " Section "+ section.toString());
-					if(gateValues[path[i]-1] == section.getGate()){
-						
-						boolean ocu = checkArea(section);
-						
-						System.out.println("igual ");
-						
-					}				
-				}			
-			}		
-		} // for bucle end
-		return null;
-		
- */
-
-
-
-
-
-
-/*
- * 
- * 
- 	IteratorIF<Integer[]> sectionSearcherIT = sectionSearcher.getIterator();  //Iterador rutas de areas. Cada iteracion contiene un vector
-		// 1º (I,II,IV,III) 	2º(IV,I,III,II) 	3º(II,III,I,IV) 	4º(III,IV,II,I)
-		 
-	Integer[]  nextSectionSearcher = null;
-	if(sectionSearcherIT.hasNext()){
-		nextSectionSearcher = sectionSearcherIT.getNext();
-  
-public void initSearcher(){
-	sectionSearcher = new ListStatic<Integer[]>(4);
-	sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.C));
-	sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.B));
-	sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.D));
-	sectionSearcher.insert(ParkingConf.getSearchingPath(ParkingConf.TGate.A));
-	
-}
-
-public static ListIF<Integer[]> getSectionSearcher(){
-	return sectionSearcher;
-}
-*/
-
