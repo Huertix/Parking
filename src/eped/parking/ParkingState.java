@@ -33,7 +33,7 @@ public class ParkingState {
 	}
 	
 	public static boolean hasSpaces(){
-		return getNormalSpaces() > 0;	
+		return getUsedSpaces() < getAbsolutSpaces();	
 	}
 	
 	public static boolean hasSpaces(ParkingConf.TType type){

@@ -8,6 +8,10 @@ import eped.parking.structure.ParkingElement;
 import eped.parking.structure.ParkingFloor;
 import eped.parking.structure.ParkingSection;
 import eped.parking.structure.ParkingSpace;
+import eped.parking.vehicle.Vehicle;
+import eped.parking.vehicle.VehicleQueue;
+import eped.stack.StackDynamic;
+import eped.stack.StackIF;
 import eped.tree.TreeDynamic;
 import eped.tree.TreeIF;
 import eped.tree.TreeIterator;
@@ -50,6 +54,8 @@ public class Parking {
 		
 		currentSection = 0;
 		currentArea = 0;
+		currentSpaceEven = 1;
+		currentSpaceOdd = 2;
 		
 		
 		
@@ -94,17 +100,17 @@ public class Parking {
 			}
 			
 		
-			if(currentArea>=areasPath.length)
+			if(currentArea>=areasPath.length) // Resetea la posicion del vector para las areas
 				currentArea=0;
 				
 						
-			if((currentArea+1)%4==0 && currentSpaceEven>ParkingConf.SPACES*2){ // 
+			if((currentArea+1)%4==0 && currentSpaceEven>ParkingConf.SPACES*2){ // Pasa a la siguiente seccion impares
 				currentSection++;
 				currentArea++;
 				currentSpaceEven=0;
 			}
 			
-			if((currentArea+1)%4==0 && currentSpaceOdd>ParkingConf.SPACES*2){ // 
+			if((currentArea+1)%4==0 && currentSpaceOdd>ParkingConf.SPACES*2){ // Pasa a la siguiente seccion pares
 				currentSection++;
 				currentArea++;
 				currentSpaceOdd=0;
@@ -112,21 +118,20 @@ public class Parking {
 			
 		
 			
-			if(currentSpaceEven>ParkingConf.SPACES*2){
+			if(currentSpaceEven>ParkingConf.SPACES*2){ // Pasa a la siguiente area Impares
 				currentArea++;
 				if(currentFloor==ParkingConf.FLOORS)
 					currentSpaceEven=0;
 			}
 			
-			if(currentSpaceOdd>ParkingConf.SPACES*2){
+			if(currentSpaceOdd>ParkingConf.SPACES*2){ // Pasa a la siguiente area pares
 				currentArea++;
 				if(currentFloor==ParkingConf.FLOORS)
 					currentSpaceOdd=0;
 			}
-			
+		
 			parkingChildrendIT.reset();
-			
-			
+					
 		}
 						
 			// 3º Selector de nivel----------------------------------
@@ -239,6 +244,53 @@ public class Parking {
 	}
 	
 	
+	public VehicleQueue getOverTimeVehicleQueue(VehicleQueue outQueue, int time){
+		
+		StackIF<Vehicle> auxStack = new StackDynamic<Vehicle>();
+		VehicleQueue auxQueue = new VehicleQueue(outQueue);
+		
+		TreeIterator<ParkingElement> treeIT = new TreeIterator<ParkingElement>(parkingT,TreeIF.RLBREADTH);
+		
+		boolean stop = false;
+		
+		while(treeIT.hasNext() && !stop){
+			ParkingElement element = treeIT.getNext();
+			
+			if(element.getClass()==ParkingSpace.class){
+				ParkingSpace space = (ParkingSpace) element;
+				
+				Vehicle v = space.getCurrentVehicle();
+				if(v!=null && v.getHour() <= time){				
+					auxStack.push(v);					
+					ParkingState.updateUsedSpaces(-1);
+					
+					if(v.getType()== ParkingConf.TType.familiar)
+						ParkingState.updateFamiliarUsedSpaces(-1);
+					else
+						ParkingState.updateNormalUsedSpaces(-1);
+					
+					System.out.println("Car: "+v.getId()+" "+"Time: "+v.getHour()+" Out");
+					space.setCurrentVehicle(null);
+				}
+			}
+			
+			else
+				stop = true;
+				
+				
+		}
+		
+		while(!auxStack.isEmpty()){
+			auxQueue.add(auxStack.getTop());
+			auxStack.pop();
+		}
+		
+		return auxQueue;
+		
+	
+	}
+	
+	
 	
 	
 	
@@ -249,6 +301,10 @@ public class Parking {
 	}
 
 
+	public boolean hasSpace(){
+		return ParkingState.hasSpaces();
+	}
+	
 	public boolean hasSpace(ParkingConf.TType type){
 		return ParkingState.hasSpaces(type);
 	}

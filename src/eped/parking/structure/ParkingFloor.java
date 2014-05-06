@@ -10,12 +10,13 @@ import eped.tree.TreeIterator;
 public class ParkingFloor extends TreeDynamic<ParkingElement> implements ParkingElement{
 	
 	private int floorLevel;
-	private TreeIF<ParkingElement> floorT;
+	//private TreeIF<ParkingElement> floorT;
 	
 	public ParkingFloor (int level){
+		super();
 		floorLevel = level;
-		floorT = new TreeDynamic<ParkingElement>();
-		floorT.setRoot(this);
+		
+		this.setRoot(this);
 		
 		setSections();
 		
@@ -30,7 +31,7 @@ public class ParkingFloor extends TreeDynamic<ParkingElement> implements Parking
 		ParkingConf.TGate[] gates = ParkingConf.TGate.values();	
 		int gateSize = gates.length;
 		for(int i = 0;i<gateSize;i++){
-			floorT.addChild(new ParkingSection(gates[i]));
+			this.addChild(new ParkingSection(gates[i]));
 		}	
 	
 	}
@@ -40,7 +41,7 @@ public class ParkingFloor extends TreeDynamic<ParkingElement> implements Parking
 
 	@Override
 	public IteratorIF<TreeIF<ParkingElement>> getIterator(){
-		ListIF<TreeIF<ParkingElement>> childrenList = floorT.getChildren();
+		ListIF<TreeIF<ParkingElement>> childrenList = this.getChildren();
 		
 		IteratorIF<TreeIF<ParkingElement>> childIT = childrenList.getIterator();
 		

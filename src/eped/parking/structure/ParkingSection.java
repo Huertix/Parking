@@ -9,13 +9,14 @@ import eped.tree.TreeIF;
 public class ParkingSection extends TreeDynamic<ParkingElement> implements ParkingElement{
 	
 	private ParkingConf.TGate gate;
-	private TreeIF<ParkingElement> sectionT;
+	//private TreeIF<ParkingElement> sectionT;
 	
 	
 	public ParkingSection(ParkingConf.TGate gate){
+		super();
 		this.gate=gate;
-		sectionT = new TreeDynamic<ParkingElement>();
-		sectionT.setRoot(this);
+		
+		this.setRoot(this);
 		
 		setAreas();
 	}
@@ -33,13 +34,13 @@ public class ParkingSection extends TreeDynamic<ParkingElement> implements Parki
 		ParkingConf.TZone[] zones = ParkingConf.TZone.values();	
 		int zoneSize = zones.length;
 		for(int i = 0;i<zoneSize;i++){
-			sectionT.addChild(new ParkingArea(zones[i]));
+			this.addChild(new ParkingArea(zones[i]));
 		}
 	}	
 
 	@Override
 	public IteratorIF<TreeIF<ParkingElement>> getIterator() {
-		ListIF<TreeIF<ParkingElement>> childrenList = sectionT.getChildren();
+		ListIF<TreeIF<ParkingElement>> childrenList = this.getChildren();
 		
 		IteratorIF<TreeIF<ParkingElement>> childIT = childrenList.getIterator();
 		

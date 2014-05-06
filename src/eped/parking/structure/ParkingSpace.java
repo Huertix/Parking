@@ -13,14 +13,15 @@ public class ParkingSpace  extends TreeDynamic<ParkingElement> implements Parkin
 	private int spaceID;
 	private Vehicle currentVehicle;
 	private ParkingConf.TType vType;
-	private TreeDynamic<ParkingElement> spaceT;
+	//private TreeDynamic<ParkingElement> spaceT;
 	
 	public ParkingSpace(ParkingConf.TType type){
+		super();
 		vType = type;
 		spaceID = ParkingState.getNextSpaceID(type);
-		spaceT =  new TreeDynamic<ParkingElement>();
-		spaceT.setRoot(this);
-		spaceT.addChild(null);
+		//spaceT =  new TreeDynamic<ParkingElement>();
+		this.setRoot(this);
+		this.addChild(null);
 	}
 	
 	
