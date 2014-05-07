@@ -34,6 +34,7 @@ public class Parking {
 	public Parking(){
 		parkingT = new TreeDynamic<ParkingElement>();
 		parkingT.setRoot(null);
+		
 		setFloors(ParkingConf.FLOORS);
 		//initSearcher(); 
 		
@@ -60,8 +61,8 @@ public class Parking {
 		
 		
 		
-		System.out.println("Current Car: "+ID+" "+type.toString() +" "+ gate.toString());
-		System.out.println("----------------------------------");
+		//System.out.println("Current Car: "+ID+" "+type.toString() +" "+ gate.toString());
+		//System.out.println("----------------------------------");
 		
 		Integer[] sectionsPath  = ParkingConf.getSearchingPath(gate); // vector rutas de busqueda de puertas en funcion de la puerta asignada a coche
 		// A (1,2,4,3) B(2,3,1,4) C(3,4,2,1) D(4,1,3,2)  A=1 B=2 C=3 D=4
@@ -84,18 +85,18 @@ public class Parking {
 		
 		while(parkingSpace==null && currentSection+1<=sectionsPath.length){
 			ParkingConf.TGate currentGate =  gateValues[sectionsPath[currentSection]-1]; // Sección actual de busqueda
-			System.out.print("Gate: "+currentGate.toString()+"\t");
+			//System.out.print("Gate: "+currentGate.toString()+"\t");
 				
 			// 2º Selector de zonas ----------------------------------
 			
 			ParkingConf.TZone currentZone = zoneValues[areasPath[currentArea]-1];
-			System.out.println("	Zone: "+currentZone.toString()+"\n");
+			//System.out.println("	Zone: "+currentZone.toString()+"\n");
 			
 			
 			while(parkingSpace==null && parkingChildrendIT.hasNext()){
 				ParkingFloor floor = (ParkingFloor) parkingChildrendIT.getNext();
 				currentFloor = floor.getFloor();								//Registra valor floor.
-				System.out.println("		Floor: "+currentFloor);
+				//System.out.println("		Floor: "+currentFloor);
 				parkingSpace = getSpace(currentGate,currentZone,type,floor.getIterator());
 			}
 			
@@ -136,11 +137,11 @@ public class Parking {
 						
 			// 3º Selector de nivel----------------------------------
 		
-			if(parkingSpace!=null)
-				System.out.println("Parking ID: "+parkingSpace.getID());
-			System.out.println("Fin Busqueda");
+			//if(parkingSpace!=null)
+				//System.out.println("Parking ID: "+parkingSpace.getID());
 			
-			return parkingSpace;
+			//System.out.println("Fin Busqueda");
+		return parkingSpace;
 	}
 	
 	
@@ -215,13 +216,13 @@ public class Parking {
 				
 				
 				
-				System.out.println("				Spaces:" +space.getID());
+				//System.out.println("				Spaces:" +space.getID());
 			
 					
 				
-				if(space.getType() == type){
-					if(!space.hasVehicle()){
-						pSpace = space;
+				if(space.getType() == type){						//	
+					if(!space.hasVehicle()){						//	Asignacion de plaza libre.			
+						pSpace = space;								//
 						if(type == ParkingConf.TType.normal)
 							ParkingState.updateNormalUsedSpaces(1);
 						else
@@ -260,7 +261,7 @@ public class Parking {
 				ParkingSpace space = (ParkingSpace) element;
 				
 				Vehicle v = space.getCurrentVehicle();
-				if(v!=null && v.getHour() <= time){				
+				if(v!=null && v.getTimeToGo() <= time){				
 					auxStack.push(v);					
 					ParkingState.updateUsedSpaces(-1);
 					
@@ -269,7 +270,7 @@ public class Parking {
 					else
 						ParkingState.updateNormalUsedSpaces(-1);
 					
-					System.out.println("Car: "+v.getId()+" "+"Time: "+v.getHour()+" Out");
+					//System.out.println("Car: "+v.getId()+" "+"Time: "+v.getHour()+" add to StackOut");
 					space.setCurrentVehicle(null);
 				}
 			}

@@ -31,7 +31,7 @@ public class ParkingFloor extends TreeDynamic<ParkingElement> implements Parking
 		ParkingConf.TGate[] gates = ParkingConf.TGate.values();	
 		int gateSize = gates.length;
 		for(int i = 0;i<gateSize;i++){
-			this.addChild(new ParkingSection(gates[i]));
+			this.addChild(new ParkingSection(gates[i],floorLevel));
 		}	
 	
 	}

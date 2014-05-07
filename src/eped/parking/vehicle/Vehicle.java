@@ -1,6 +1,7 @@
 package eped.parking.vehicle;
 
 import eped.parking.ParkingConf;
+import eped.parking.structure.ParkingSpace;
 
 
 public class Vehicle {
@@ -9,6 +10,8 @@ public class Vehicle {
 	private ParkingConf.TType type;
 	private ParkingConf.TGate gate;
 	private int hour;
+	private int timeToGo;
+	private ParkingSpace spaceAsigned;
 	
 	
 	public Vehicle(int id, ParkingConf.TType type, ParkingConf.TGate gate, int hour) {
@@ -43,6 +46,24 @@ public class Vehicle {
 	}
 	public void setHour(int hour) {
 		this.hour = hour;
+	}
+	
+	public void setSpace(ParkingSpace space){
+		spaceAsigned = space;
+	}
+	
+	public ParkingSpace getSpace(){
+		return spaceAsigned;
+	}
+
+
+	public int getTimeToGo() {
+		return timeToGo;
+	}
+
+
+	public void setTimeToGo(int timeToGo) {
+		this.timeToGo = timeToGo;
 	}
 	
 

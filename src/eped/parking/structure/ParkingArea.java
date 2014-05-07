@@ -9,13 +9,17 @@ import eped.tree.TreeIterator;
 
 public class ParkingArea extends TreeDynamic<ParkingElement> implements ParkingElement, TreeIF<ParkingElement>{
 	
+	private int floor;
 	private ParkingConf.TZone zone;
+	private ParkingConf.TGate gate;
 	//private TreeIF<ParkingElement> areaT;
 	
 	
-	public ParkingArea(ParkingConf.TZone zone){
+	public ParkingArea(ParkingConf.TZone zone, int floor,ParkingConf.TGate gate ){
 		super();
-		this.zone=zone;
+		this.zone = zone;
+		this.gate = gate;
+		this.floor = floor;
 		//areaT = new TreeDynamic<ParkingElement>();
 		this.setRoot(this);
 		
@@ -35,7 +39,7 @@ public class ParkingArea extends TreeDynamic<ParkingElement> implements ParkingE
 		int typeSize = types.length;
 		for(int i = 0;i<typeSize;i++){
 			for(int j = 0;j<ParkingConf.SPACES;j++){
-				this.addChild(new ParkingSpace(types[i]));
+				this.addChild(new ParkingSpace(types[i],floor,gate,zone));
 			}
 		}
 			
@@ -48,6 +52,14 @@ public class ParkingArea extends TreeDynamic<ParkingElement> implements ParkingE
 		IteratorIF<TreeIF<ParkingElement>> childIT = childrenList.getIterator();
 		
 		return childIT;
+	}
+	
+	public int getFloor(){
+		return floor;
+	}
+	
+	public ParkingConf.TGate getGate(){
+		return gate;
 	}
 	
 	public String toString(){

@@ -1,5 +1,7 @@
 package eped.parking;
 
+import java.io.IOException;
+import eped.Writer;
 import java.util.Scanner;
 
 import eped.IteratorIF;
@@ -19,6 +21,7 @@ public class ParkingDispatcher {
 	private static VehicleQueue vQueueOut;
 	private static Parking parking;
 	private static int time;
+	
 
 	
 	public static void main(String[] args) {
@@ -31,6 +34,7 @@ public class ParkingDispatcher {
 			init(n, seed);
 			
 			
+			
 			dispatch();
 				
 		}catch(Exception ex){
@@ -40,6 +44,8 @@ public class ParkingDispatcher {
 	}
 	
 	private static void init(int n, int seed){
+		
+	
 		
 		time = 0;
 		
@@ -58,7 +64,9 @@ public class ParkingDispatcher {
 	}
 	
 	
-	private static void dispatch(){
+	private static void dispatch() throws IOException{
+		
+		Writer w = new Writer();
 		
 		boolean bothQueuesEmpty = false;
 		
@@ -66,40 +74,69 @@ public class ParkingDispatcher {
 		
 			if(!vQueueIn.isEmpty()){
 				Vehicle v = vQueueIn.getFirst();
+				v.setTimeToGo(v.getHour()+time);
+				//System.out.println("V In - ID: "+v.getId()+" Type: "+v.getType()+" Time: "+v.getHour()); 
 			
-			
-				if(v.getHour() <= time){
-					vQueueIn.remove();
-					Scanner in = new Scanner(System.in);
-				}
+				
 						
 				if(parking.hasSpace(v.getType())){
 			
 					ParkingSpace s = parking.getSpace(v.getType(),v.getGate(),v.getId());
 					
 					if(s!=null){
+						v.setSpace(s);
 						s.setCurrentVehicle(v);
 						ParkingState.updateUsedSpaces(1);
 						vQueueIn.remove();
-						System.out.println("Car ID: "+v.getId()+" to Space: "+s.toString());
+						String line = "ENTRA: "+v.getId()+
+								" - "+v.getType()+
+								" - "+v.getGate()+
+								" - "+v.getHour()+
+								" - "+s.toString();
+						w.write(line);
+						//System.out.println(line);
 					}
 					else{
 						vQueueIn.remove();				
 					}
-					System.out.println("Queue Length: "+vQueueIn.getLength());
-					System.out.println("SpaceLeft: "+ParkingState.getSpaces());
-					System.out.println(v.getType().toString()+"Space Left: "+ParkingState.getSpaces(v.getType()));
+					//System.out.println("Queue Length: "+vQueueIn.getLength());
+					//System.out.println("SpaceLeft: "+ParkingState.getSpaces());
+					//System.out.println(v.getType().toString()+"Space Left: "+ParkingState.getSpaces(v.getType()));
 					
-					System.out.println();
+					//System.out.println();
 				}
 			}
 		
 			
 			vQueueOut = parking.getOverTimeVehicleQueue(vQueueOut, time);
-			vQueueOut.remove();
+			if(!vQueueOut.isEmpty()){
+				if(vQueueOut.getLength()> 1)
+					System.out.println(time);
+				Vehicle v = vQueueOut.getFirst();
+				String line = "SALE: "+v.getId()+
+						" - "+v.getType()+
+						" - "+v.getGate()+
+						" - "+v.getHour();
+				w.write(line);
+				//System.out.println(line);
+				
+				
+				
+				
+				
+				vQueueOut.remove();
+			}
 			time++;
-			System.out.println("time: "+time);
-			System.out.println("Queue Out Length: "+vQueueOut.getLength());
+			//System.out.println();
+			//System.out.println();
+			//VehicleQueue vAux = new VehicleQueue(vQueueOut);
+			
+			//while(!vAux.isEmpty()){
+			//	System.out.println("Car: "+vAux.getFirst().getId()+" Time: "+vAux.getFirst().getHour());
+			//	vAux.remove();
+			//}
+			//System.out.println("time: "+time);
+			//System.out.println("Queue Out Length: "+vQueueOut.getLength());
 			
 			
 			bothQueuesEmpty = vQueueIn.isEmpty() && vQueueOut.isEmpty();
