@@ -71,14 +71,20 @@ public class ParkingDispatcher {
 		boolean bothQueuesEmpty = false;
 		
 		while(!bothQueuesEmpty){
+			
+			
 		
+			
+			//------------------------- GEstion de entrada
 			if(!vQueueIn.isEmpty()){
 				Vehicle v = vQueueIn.getFirst();
 				v.setTimeToGo(v.getHour()+time);
 				//System.out.println("V In - ID: "+v.getId()+" Type: "+v.getType()+" Time: "+v.getHour()); 
 			
 				
-						
+
+				
+				
 				if(parking.hasSpace(v.getType())){
 			
 					ParkingSpace s = parking.getSpace(v.getType(),v.getGate(),v.getId());
@@ -94,36 +100,38 @@ public class ParkingDispatcher {
 								" - "+v.getHour()+
 								" - "+s.toString();
 						w.write(line);
-						//System.out.println(line);
+						System.out.println(line);
 					}
 					else{
 						vQueueIn.remove();				
 					}
+					
 					//System.out.println("Queue Length: "+vQueueIn.getLength());
 					//System.out.println("SpaceLeft: "+ParkingState.getSpaces());
 					//System.out.println(v.getType().toString()+"Space Left: "+ParkingState.getSpaces(v.getType()));
 					
 					//System.out.println();
 				}
+				
+				
+				if(v.getId()==999)
+					System.out.println(vQueueOut.getLength());
 			}
 		
 			
+			//---------- devuelve cola de las vehiculos en cola de salida. libera plaza.
 			vQueueOut = parking.getOverTimeVehicleQueue(vQueueOut, time);
+			
+			// ------------------------- Gestion de salida
 			if(!vQueueOut.isEmpty()){
-				if(vQueueOut.getLength()> 1)
-					System.out.println(time);
+				//if(vQueueOut.getLength()> 1)
+					//System.out.println(time);
 				Vehicle v = vQueueOut.getFirst();
 				String line = "SALE: "+v.getId()+
 						" - "+v.getType()+
-						" - "+v.getGate()+
-						" - "+v.getHour();
+						" - "+v.getGate();
 				w.write(line);
-				//System.out.println(line);
-				
-				
-				
-				
-				
+				System.out.println(line);			
 				vQueueOut.remove();
 			}
 			time++;
@@ -139,14 +147,19 @@ public class ParkingDispatcher {
 			//System.out.println("Queue Out Length: "+vQueueOut.getLength());
 			
 			
-			bothQueuesEmpty = vQueueIn.isEmpty() && vQueueOut.isEmpty();
+			
+			
+			
+			//bothQueuesEmpty = vQueueIn.isEmpty() && vQueueOut.isEmpty();
+			bothQueuesEmpty = vQueueIn.isEmpty() && ParkingState.getUsedSpaces()==0;
+			//System.out.println("Plazas ocupadas: "+ParkingState.getUsedSpaces());
 		}
 		
 		
+		System.out.println("Parking Vacio");
 		
 		
-		
-		toPrint();
+		//toPrint();
 		
 		
 

@@ -20,7 +20,6 @@ public class Parking {
 	
 	private TreeIF<ParkingElement> parkingT;
 	public static ListIF<Integer[]> sectionSearcher;
-	private boolean topFloorReached = false;
 	private int currentFloor = 0;
 	private int currentSpaceEven = 0;
 	private int currentSpaceOdd = 0;
@@ -98,9 +97,30 @@ public class Parking {
 				currentFloor = floor.getFloor();								//Registra valor floor.
 				//System.out.println("		Floor: "+currentFloor);
 				parkingSpace = getSpace(currentGate,currentZone,type,floor.getIterator());
+			
+			
+				
+				if(parkingSpace==null){
+					if(currentArea==1 ||  currentArea==5 || currentArea==9 ||  currentArea==13){
+						int auxEve = currentSpaceEven;
+						int auxOdd = currentSpaceOdd;
+						if(currentFloor >= 6){
+							currentSpaceOdd-=2;
+							currentSpaceEven-=2;
+							
+						}
+						parkingSpace = getSpace(currentGate,zoneValues[areasPath[currentArea+1]-1],type,floor.getIterator());
+						
+						currentSpaceEven = auxEve;
+						currentSpaceOdd = auxOdd;
+												
+					}
+				}
+		
 			}
 			
-		
+			
+			
 			if(currentArea>=areasPath.length) // Resetea la posicion del vector para las areas
 				currentArea=0;
 				
@@ -228,6 +248,9 @@ public class Parking {
 						else
 							ParkingState.updateFamiliarUsedSpaces(1);
 					}
+					
+					
+						
 					
 					if(currentFloor>=ParkingConf.FLOORS){
 						
