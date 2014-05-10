@@ -84,7 +84,7 @@ public class TreeIterator<T> implements IteratorIF<T>{
         IteratorIF <TreeIF <T>> childrenIt = tree.getChildren ().getIterator ();
         while (childrenIt.hasNext ()) {
             TreeIF <T> aChild = childrenIt.getNext ();
-            QueueIF <T> aTraverse = preorder (aChild);
+            QueueIF <T> aTraverse = postorder (aChild);
             addAll (traverse, aTraverse);
         }
         traverse.add (element);

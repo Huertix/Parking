@@ -10,6 +10,8 @@ import eped.parking.structure.ParkingSection;
 import eped.parking.structure.ParkingSpace;
 import eped.parking.vehicle.Vehicle;
 import eped.parking.vehicle.VehicleQueue;
+import eped.queue.QueueDynamic;
+import eped.queue.QueueIF;
 import eped.stack.StackDynamic;
 import eped.stack.StackIF;
 import eped.tree.TreeDynamic;
@@ -23,8 +25,8 @@ public class Parking {
 	private int currentFloor = 0;
 	private int currentSpaceEven = 0;
 	private int currentSpaceOdd = 0;
-	private int currentSection;
-	private int currentArea;
+	//private int currentSection;
+	//private int currentArea;
 	
 	
 
@@ -35,7 +37,7 @@ public class Parking {
 		parkingT.setRoot(null);
 		
 		setFloors(ParkingConf.FLOORS);
-		//initSearcher(); 
+		 
 		
 				
 	}
@@ -48,17 +50,49 @@ public class Parking {
 		}		
 	}
 	
-	public ParkingSpace getSpace(ParkingConf.TType type, ParkingConf.TGate gate, int ID){
+	
+	
+	public void prueba(Vehicle v){
+		
+		
+	//----------------------- PRUEBA ------------------------------
+		TreeIterator<ParkingElement> treeIT = new TreeIterator<ParkingElement>(parkingT,TreeIF.LRBREADTH);
+		
+		System.out.println("VType: "+v.getType()+" VGate: "+v.getGate()); 
+		System.out.println("");
+		while(treeIT.hasNext()){
+			ParkingElement element = treeIT.getNext();
+			
+			if(element.getClass()==ParkingSpace.class){
+				ParkingSpace space = (ParkingSpace) element;
+				if(v.getType()==space.getType()){
+					setDistance(v.getGate(), space);
+								
+					System.out.println("Space: "+space.getType()+" "+space.toString() + " Value: "+space.getValue());
+				}
+			}
+				
+		
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	// ----------------------------- Vieja Rutina busqueda mejor plaza -------------------------------------------------------
+	public ParkingSpace getSpace(ParkingConf.TType type, ParkingConf.TGate gate){
 		
 		ParkingSpace parkingSpace = null;
 		
-		currentSection = 0;
-		currentArea = 0;
+		int currentSection = 0;
+		int currentArea = 0;
 		currentSpaceEven = 1;
 		currentSpaceOdd = 2;
-		
-		
-		
+	
+		getTicket(type, gate);
 		
 		//System.out.println("Current Car: "+ID+" "+type.toString() +" "+ gate.toString());
 		//System.out.println("----------------------------------");
@@ -111,8 +145,8 @@ public class Parking {
 						}
 						parkingSpace = getSpace(currentGate,zoneValues[areasPath[currentArea+1]-1],type,floor.getIterator());
 						
-						currentSpaceEven = auxEve;
-						currentSpaceOdd = auxOdd;
+						//currentSpaceEven = auxEve;
+						//currentSpaceOdd = auxOdd;
 												
 					}
 				}
@@ -267,7 +301,7 @@ public class Parking {
 		}
 	}
 	
-	
+	//------------------------------ Busqueda de los vehiculos con tiempo agotado --------------------------------------
 	public VehicleQueue getOverTimeVehicleQueue(VehicleQueue outQueue, int time){
 		
 		StackIF<Vehicle> auxStack = new StackDynamic<Vehicle>();
@@ -318,6 +352,200 @@ public class Parking {
 	
 	
 	
+	
+	
+//--------------------------------------  Nuevas Rutinas Asignacion pesos plazas ------------------------------- 
+	
+	public void setDistance(ParkingConf.TGate gate, ParkingSpace space){
+		
+		Integer[] path = ParkingConf.getSearchingPath(gate);
+		
+		ParkingConf.TGate spaceGate = space.getGate();
+		ParkingConf.TZone spaceZone = space.getZone();
+		
+		ParkingConf.TGate[] gateValues =  ParkingConf.TGate.values(); 
+		
+		
+			
+		
+		for(int i=0;i<4;i++){
+			ParkingConf.TGate currentGate =  gateValues[path[i]-1];			
+			if(currentGate==spaceGate){			
+				if(i==0){space.setValue(space.getID()+setDistance(i,spaceZone));}		
+				else if(i==1){space.setValue(100*(space.getID()+setDistance(i,spaceZone)));}		
+				else if(i==2){space.setValue(100*(space.getID()+setDistance(i,spaceZone)));}	
+				else if(i==3){space.setValue(1000*(space.getID()+setDistance(i,spaceZone)));}	
+				
+			}
+		}
+				
+				
+	}
+	
+	private int setDistance(int loop,ParkingConf.TZone spaceZone){
+		
+		ParkingConf.TZone[] zoneValues =  ParkingConf.TZone.values();
+			
+		Integer[] areaPath = ParkingConf.getNextAreaPath(loop);
+		int value = loop;
+		for(int i = 0;i<4;i++){
+			ParkingConf.TZone currentZone =  zoneValues[areaPath[i]-1];
+			if(currentZone==spaceZone){
+				if(i==0){value = 0;}
+				else if(i==1){value = 5;}
+				else if(i==2){value = 5;}
+				else if(i==3){value = 10;}
+			}
+		}
+		
+		return value;
+	}
+	
+	
+
+	
+	
+	
+	
+
+    
+	// ---------------------------------- Nuevas Rutinas busqueda mejor plaza ------------------------------------------
+	
+	public ParkingSpace getTicket(ParkingConf.TType type, ParkingConf.TGate gate){
+	
+		ParkingSpace pSpace = null;
+		
+		QueueIF<ParkingElement> queueSpace = new QueueDynamic<ParkingElement> ();
+	
+		IteratorIF <TreeIF <ParkingElement>> floorsIT = parkingT.getChildren ().getIterator ();
+			
+		while(floorsIT.hasNext()){
+			TreeIF<ParkingElement> floorTree = floorsIT.getNext();
+			IteratorIF<TreeIF<ParkingElement>> sectionsIT = floorTree.getChildren().getIterator();
+			QueueIF<ParkingElement> queueSections = new QueueDynamic<ParkingElement>();
+			while(sectionsIT.hasNext()){
+				
+				getTicket(queueSections, sectionsIT.getNext(),gate,type);	
+			}
+			
+			quickSort(queueSections);
+			ParkingSpace auxSpace = (ParkingSpace) queueSections.getFirst();
+			queueSpace.add(queueSections.getFirst());			
+		}	
+		
+		while(!queueSpace.isEmpty()){
+			if(pSpace==null){
+				pSpace = (ParkingSpace) queueSpace.getFirst();
+				
+			}
+			else{
+				ParkingSpace auxSpace = (ParkingSpace) queueSpace.getFirst();
+				if(pSpace.getValue() > auxSpace.getValue())
+					pSpace = auxSpace;
+			}
+			queueSpace.remove();
+		}
+		
+		return pSpace;
+	}
+	
+	
+	public void quickSort(QueueIF<ParkingElement> queue) {
+	    // Caso base
+	    if (queue.getLength() <=1 )
+	      return;
+	    // Caso recursivo
+	    
+    	//ParkingSpace pivot = (ParkingSpace) queue.getFirst();// La cola no esta vacía
+    	//queue.remove();
+    	
+	    QueueIF<ParkingElement> menores = new QueueDynamic<ParkingElement>(); // Una cola para los menores que x
+	    QueueIF<ParkingElement> mayores = new QueueDynamic<ParkingElement>(); // Una cola para los mayores que x
+	    QueueIF<ParkingElement> iguales = new QueueDynamic<ParkingElement>(); // Una cola para los mayores que x
+	    // Particionamiento
+	   
+	    iguales.add(queue.getFirst());
+	    queue.remove();
+	    
+	    
+	    while (!queue.isEmpty()) {
+	    	/*ParkingSpace x = (ParkingSpace) queue.getFirst();
+	    	if (x.getValue()>pivot.getValue())
+	    		mayores.add(x);
+	    	else
+	    		menores.add(x);
+	    	
+	    	queue.remove();
+	    	*/
+	    	ParkingSpace pivot = (ParkingSpace) iguales.getFirst();
+	    	ParkingSpace x = (ParkingSpace) queue.getFirst();
+	    	queue.remove();
+	    	
+	    	if(x.getValue() < pivot.getValue()) menores.add(x);
+	    	else if (x.getValue() > pivot.getValue()) mayores.add(x);
+	    	else iguales.add(x);
+	    	
+	    	
+	    }
+	    quickSort(menores); // Se ordenan los menores recursivamente
+	    quickSort(mayores); // Se ordenan los mayores recursivamente
+	    // Se regresan los valores a la cola inicial
+	    while (!menores.isEmpty()){
+	      queue.add(menores.getFirst());
+	      menores.remove();
+	    }
+	    //queue.add(pivot);
+	    while (!iguales.isEmpty()){
+		      queue.add(iguales.getFirst());
+		      iguales.remove();
+		    }
+	    while (!mayores.isEmpty()){
+	      queue.add(mayores.getFirst());
+	      mayores.remove();
+	    }
+	    
+	}
+	  
+	
+	
+	private QueueIF<ParkingElement> getTicket(QueueIF<ParkingElement> queueSpaces, TreeIF<ParkingElement> tree,  ParkingConf.TGate gate, ParkingConf.TType type){
+		
+		QueueIF<ParkingElement> traverse = new QueueDynamic<ParkingElement> ();
+		ParkingElement element = tree.getRoot ();
+		traverse.add (element);
+		if(element.getClass()==ParkingSpace.class){
+			ParkingSpace space = (ParkingSpace) element;
+			if(!space.hasVehicle() && space.getType()==type){
+				setDistance(gate,space);
+				queueSpaces.add(space);
+			}
+		}
+		IteratorIF <TreeIF <ParkingElement>> childrenIt = tree.getChildren ().getIterator ();
+		while (childrenIt.hasNext ()) {
+            TreeIF <ParkingElement> aChild = childrenIt.getNext ();
+            QueueIF <ParkingElement> aTraverse = getTicket (queueSpaces,aChild, gate, type);
+            addAll (traverse, aTraverse);
+        }
+        return traverse;		
+	}
+	
+
+	
+    private void addAll (QueueIF<ParkingElement> q, QueueIF<ParkingElement> p){
+        while (!p.isEmpty ()) {
+        	ParkingElement element = p.getFirst ();
+            q.add (element);
+            p.remove ();
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+	// Bloque sin uso --------------------------------
 	private boolean checkArea(ParkingSection section) {
 		IteratorIF<TreeIF<ParkingElement>> sectionIT = section.getIterator();
 		
@@ -332,5 +560,6 @@ public class Parking {
 	public boolean hasSpace(ParkingConf.TType type){
 		return ParkingState.hasSpaces(type);
 	}
+	
 	
 }

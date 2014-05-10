@@ -16,6 +16,7 @@ public class ParkingSpace  extends TreeDynamic<ParkingElement> implements Parkin
 	private ParkingConf.TType vType;
 	private ParkingConf.TGate gate;
 	private ParkingConf.TZone zone;
+	private int value;
 	//private TreeDynamic<ParkingElement> spaceT;
 	
 	public ParkingSpace(ParkingConf.TType type, int floor, ParkingConf.TGate gate, ParkingConf.TZone zone){
@@ -70,6 +71,14 @@ public class ParkingSpace  extends TreeDynamic<ParkingElement> implements Parkin
 	
 	public int getFloor(){
 		return floor;
+	}
+	
+	public int getValue(){
+		return value;
+	}
+	
+	public void setValue(int value){
+		this.value = value;
 	}
 	
 	

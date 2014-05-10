@@ -74,7 +74,7 @@ public class ParkingState {
 	 * @param Vehicle type (familiar or normal)
 	 * @return next space ID (1,3,5) or (2,4,6)
 	 */
-	public static int getNextSpaceID( TType type){
+	public static int getNextSpaceID(TType type){
 		int next = 0;
 		
 		if(nextSpaceID > ParkingConf.SPACES*2)

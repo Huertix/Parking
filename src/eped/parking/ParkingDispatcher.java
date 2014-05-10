@@ -1,22 +1,27 @@
 package eped.parking;
 
 import java.io.IOException;
+
 import eped.Writer;
+
 import java.util.Scanner;
 
 import eped.IteratorIF;
+import eped.parking.structure.ParkingElement;
 import eped.parking.structure.ParkingSpace;
 import eped.parking.vehicle.CopyOfVehicleGenerator;
 import eped.parking.vehicle.Vehicle;
 import eped.parking.vehicle.VehicleGenerator;
 import eped.parking.vehicle.VehicleQueue;
 import eped.queue.QueueIF;
+import eped.tree.TreeIF;
+import eped.tree.TreeIterator;
 
 
 public class ParkingDispatcher {
 	
-	//private static CopyOfVehicleGenerator vGenerator;
-	private static VehicleGenerator vGenerator;
+	private static CopyOfVehicleGenerator vGenerator;
+	//private static VehicleGenerator vGenerator;
 	private static VehicleQueue vQueueIn;
 	private static VehicleQueue vQueueOut;
 	private static Parking parking;
@@ -49,8 +54,8 @@ public class ParkingDispatcher {
 		
 		time = 0;
 		
-		//vGenerator  = new CopyOfVehicleGenerator(seed);
-		vGenerator  = new VehicleGenerator(seed);
+		vGenerator  = new CopyOfVehicleGenerator(seed);
+		//vGenerator  = new VehicleGenerator(seed);
 		
 		vQueueIn   = new VehicleQueue();
 		vQueueOut   = new VehicleQueue();
@@ -83,13 +88,24 @@ public class ParkingDispatcher {
 			
 				
 
+				//parking.prueba(v);
+				
+				
+				
+				
+				
 				
 				
 				if(parking.hasSpace(v.getType())){
 			
-					ParkingSpace s = parking.getSpace(v.getType(),v.getGate(),v.getId());
+					//ParkingSpace s = parking.getSpace(v.getType(),v.getGate());
+					ParkingSpace s = parking.getTicket(v.getType(),v.getGate());
 					
 					if(s!=null){
+						
+						//parking.setDistance(v.getGate(), s);
+						//System.out.println(s.getValue());
+						
 						v.setSpace(s);
 						s.setCurrentVehicle(v);
 						ParkingState.updateUsedSpaces(1);
@@ -114,8 +130,8 @@ public class ParkingDispatcher {
 				}
 				
 				
-				if(v.getId()==999)
-					System.out.println(vQueueOut.getLength());
+				//if(v.getId()==999)
+					//System.out.println(vQueueOut.getLength());
 			}
 		
 			
