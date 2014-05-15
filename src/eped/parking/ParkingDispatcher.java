@@ -91,7 +91,9 @@ public class ParkingDispatcher {
 				//parking.prueba(v);
 				
 				
-				
+				if(v.getId()==227){
+					int a = 0;
+				}
 				
 				
 				
