@@ -371,10 +371,10 @@ public class Parking {
 		for(int i=0;i<4;i++){
 			ParkingConf.TGate currentGate =  gateValues[path[i]-1];			
 			if(currentGate==spaceGate){			
-				if(i==0){space.setValue(space.getID()+setDistance(i,spaceZone));}		
-				else if(i==1){space.setValue(100*(space.getID()+setDistance(i,spaceZone)));}		
-				else if(i==2){space.setValue(100*(space.getID()+setDistance(i,spaceZone)));}	
-				else if(i==3){space.setValue(10000*(space.getID()+setDistance(i,spaceZone)));}	
+				if(i==0){space.setValue((space.getID()+setDistance(i,spaceZone)));}		
+				else if(i==1){space.setValue((20+space.getID()+setDistance(i,spaceZone)));}		
+				else if(i==2){space.setValue((40+space.getID()+setDistance(i,spaceZone)));}	
+				else if(i==3){space.setValue((60+space.getID()+setDistance(i,spaceZone)));}	
 				
 			}
 		}
@@ -382,7 +382,7 @@ public class Parking {
 				
 	}
 	
-	private int setDistance(int loop,ParkingConf.TZone spaceZone){
+	private int setDistance(int loop, ParkingConf.TZone spaceZone){
 		
 		ParkingConf.TZone[] zoneValues =  ParkingConf.TZone.values();
 			
@@ -423,23 +423,28 @@ public class Parking {
 			TreeIF<ParkingElement> floorTree = floorsIT.getNext(); // Arbol de Niveles
 			IteratorIF<TreeIF<ParkingElement>> sectionsIT = floorTree.getChildren().getIterator(); // Iterador de Secciones
 			QueueIF<ParkingElement> queueSections = new QueueDynamic<ParkingElement>();
+			
 			int count = 0;
 			while(sectionsIT.hasNext()){ // While que pasa por las secciones
-				int treeSearchigType;
-				if(count<1)
-					treeSearchigType = TreeIF.LRBREADTH;
+				ParkingElement result = null;
+				if(count>1)
+					 result = getTicket(sectionsIT.getNext(),TreeIF.RLBREADTH, gate,type);
 				else
-					treeSearchigType = TreeIF.RLBREADTH;
+					result = getTicket(sectionsIT.getNext(),TreeIF.PREORDER,gate,type);
+					
 				
-				ParkingElement result = getTicket(sectionsIT.getNext(),treeSearchigType,gate,type);
+				
 				//quickSort(queueSections);// Llamada 
 				queueSections.add(result);
 				count++;
+				
 			}
 			
 			
+			quickSort(queueSections);
 			
-			queueSpace.add(queueSections.getFirst());			
+			if(!queueSections.isEmpty())
+				queueSpace.add(queueSections.getFirst());			
 		}	
 		
 		while(!queueSpace.isEmpty()){
@@ -460,11 +465,11 @@ public class Parking {
 	
 	
 
-	private ParkingElement getTicket(TreeIF<ParkingElement> tree, int SearchigType, ParkingConf.TGate gate, ParkingConf.TType type){
+	private ParkingElement getTicket(TreeIF<ParkingElement> tree, int order, ParkingConf.TGate gate, ParkingConf.TType type){
 		
 		QueueIF<ParkingElement> queue = new QueueDynamic();
 		
-		TreeIterator<ParkingElement> treeIT = new TreeIterator<ParkingElement>(tree,SearchigType);
+		TreeIterator<ParkingElement> treeIT = new TreeIterator<ParkingElement>(tree,order);
 		
 		while(treeIT.hasNext()){
 			ParkingElement element = treeIT.getNext();
@@ -477,10 +482,11 @@ public class Parking {
 				}
 			}
 			
-			quickSort(queue);
+			
 			
 		}
 	
+		quickSort(queue);
 		if(queue.isEmpty())
 			return null;
 		else

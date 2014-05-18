@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import eped.Writer;
 
+import java.util.Date;
 import java.util.Scanner;
 
 import eped.IteratorIF;
@@ -31,6 +32,8 @@ public class ParkingDispatcher {
 	
 	public static void main(String[] args) {
 		
+		long lStartTime = new Date().getTime();
+		
 		try{
 			
 			int n = Integer.parseInt(args[0]);
@@ -45,6 +48,12 @@ public class ParkingDispatcher {
 		}catch(Exception ex){
 			ExceptionManager.getMessage(ex);	
 		}
+		
+		long lEndTime = new Date().getTime(); // end time
+        
+		long difference = lEndTime - lStartTime; // check different
+		 
+		System.out.println("Elapsed milliseconds: " + difference);
 		
 	}
 	
@@ -91,8 +100,9 @@ public class ParkingDispatcher {
 				//parking.prueba(v);
 				
 				
-				if(v.getId()==227){
+				if(v.getId()==312){
 					int a = 0;
+					a++;
 				}
 				
 				
@@ -117,7 +127,7 @@ public class ParkingDispatcher {
 								" - "+v.getGate()+
 								" - "+v.getHour()+
 								" - "+s.toString();
-						w.write(line);
+						//w.write(line);
 						System.out.println(line);
 					}
 					else{
@@ -148,7 +158,7 @@ public class ParkingDispatcher {
 				String line = "SALE: "+v.getId()+
 						" - "+v.getType()+
 						" - "+v.getGate();
-				w.write(line);
+				//w.write(line);
 				System.out.println(line);			
 				vQueueOut.remove();
 			}
