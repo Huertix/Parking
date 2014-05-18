@@ -100,7 +100,7 @@ public class ParkingDispatcher {
 				//parking.prueba(v);
 				
 				
-				if(v.getId()==312){
+				if(v.getId()==50){
 					int a = 0;
 					a++;
 				}
@@ -111,7 +111,7 @@ public class ParkingDispatcher {
 				if(parking.hasSpace(v.getType())){
 			
 					//ParkingSpace s = parking.getSpace(v.getType(),v.getGate());
-					ParkingSpace s = parking.getTicket(v.getType(),v.getGate());
+					ParkingSpace s = parking.getTicket(v.getType(),v.getGate(),time);
 					
 					if(s!=null){
 						
@@ -134,7 +134,7 @@ public class ParkingDispatcher {
 						vQueueIn.remove();				
 					}
 					
-					//System.out.println("Queue Length: "+vQueueIn.getLength());
+					System.out.println("Queue Length: "+vQueueIn.getLength());
 					//System.out.println("SpaceLeft: "+ParkingState.getSpaces());
 					//System.out.println(v.getType().toString()+"Space Left: "+ParkingState.getSpaces(v.getType()));
 					
@@ -148,7 +148,8 @@ public class ParkingDispatcher {
 		
 			
 			//---------- devuelve cola de las vehiculos en cola de salida. libera plaza.
-			vQueueOut = parking.getOverTimeVehicleQueue(vQueueOut, time);
+			//vQueueOut = parking.getOverTimeVehicleQueue(vQueueOut, time);
+			vQueueOut = parking.getQueueOut();
 			
 			// ------------------------- Gestion de salida
 			if(!vQueueOut.isEmpty()){
@@ -172,14 +173,14 @@ public class ParkingDispatcher {
 			//	vAux.remove();
 			//}
 			//System.out.println("time: "+time);
-			//System.out.println("Queue Out Length: "+vQueueOut.getLength());
+			System.out.println("Queue Out Length: "+vQueueOut.getLength());
 			
 			
 			
 			
 			
-			//bothQueuesEmpty = vQueueIn.isEmpty() && vQueueOut.isEmpty();
-			bothQueuesEmpty = vQueueIn.isEmpty() && ParkingState.getUsedSpaces()==0;
+			bothQueuesEmpty = vQueueIn.isEmpty() && vQueueOut.isEmpty();
+			//bothQueuesEmpty = vQueueIn.isEmpty() && ParkingState.getUsedSpaces()==0;
 			//System.out.println("Plazas ocupadas: "+ParkingState.getUsedSpaces());
 		}
 		

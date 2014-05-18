@@ -25,6 +25,7 @@ public class Parking {
 	private int currentFloor = 0;
 	private int currentSpaceEven = 0;
 	private int currentSpaceOdd = 0;
+	private VehicleQueue vQueueOut;
 	//private int currentSection;
 	//private int currentArea;
 	
@@ -37,6 +38,7 @@ public class Parking {
 		parkingT.setRoot(null);
 		
 		setFloors(ParkingConf.FLOORS);
+		vQueueOut   = new VehicleQueue();
 		 
 		
 				
@@ -92,7 +94,7 @@ public class Parking {
 		currentSpaceEven = 1;
 		currentSpaceOdd = 2;
 	
-		getTicket(type, gate);
+		//getTicket(type, gate);
 		
 		//System.out.println("Current Car: "+ID+" "+type.toString() +" "+ gate.toString());
 		//System.out.println("----------------------------------");
@@ -301,53 +303,7 @@ public class Parking {
 		}
 	}
 	
-	//------------------------------ Busqueda de los vehiculos con tiempo agotado --------------------------------------
-	public VehicleQueue getOverTimeVehicleQueue(VehicleQueue outQueue, int time){
-		
-		StackIF<Vehicle> auxStack = new StackDynamic<Vehicle>();
-		VehicleQueue auxQueue = new VehicleQueue(outQueue);
-		
-		TreeIterator<ParkingElement> treeIT = new TreeIterator<ParkingElement>(parkingT,TreeIF.RLBREADTH);
-		
-		boolean stop = false;
-		
-		while(treeIT.hasNext() && !stop){
-			ParkingElement element = treeIT.getNext();
-			
-			if(element.getClass()==ParkingSpace.class){
-				ParkingSpace space = (ParkingSpace) element;
-				
-				Vehicle v = space.getCurrentVehicle();
-				if(v!=null && v.getTimeToGo() <= time){				
-					auxStack.push(v);					
-					ParkingState.updateUsedSpaces(-1);
-					
-					if(v.getType()== ParkingConf.TType.familiar)
-						ParkingState.updateFamiliarUsedSpaces(-1);
-					else
-						ParkingState.updateNormalUsedSpaces(-1);
-					
-					//System.out.println("Car: "+v.getId()+" "+"Time: "+v.getHour()+" add to StackOut");
-					space.setCurrentVehicle(null);
-				}
-			}
-			
-			else
-				stop = true;
-				
-				
-		}
-		
-		while(!auxStack.isEmpty()){
-			auxQueue.add(auxStack.getTop());
-			auxStack.pop();
-		}
-		
-		return auxQueue;
-		
-	
-	}
-	
+
 	
 	
 	
@@ -411,7 +367,7 @@ public class Parking {
     
 	// ---------------------------------- Nuevas Rutinas busqueda mejor plaza ------------------------------------------
 	
-	public ParkingSpace getTicket(ParkingConf.TType type, ParkingConf.TGate gate){
+	public ParkingSpace getTicket(ParkingConf.TType type, ParkingConf.TGate gate, int time){
 	
 		ParkingSpace pSpace = null;
 		
@@ -428,9 +384,9 @@ public class Parking {
 			while(sectionsIT.hasNext()){ // While que pasa por las secciones
 				ParkingElement result = null;
 				if(count>1)
-					 result = getTicket(sectionsIT.getNext(),TreeIF.RLBREADTH, gate,type);
+					 result = getTicket(sectionsIT.getNext(),TreeIF.RLBREADTH, gate,type, time);
 				else
-					result = getTicket(sectionsIT.getNext(),TreeIF.PREORDER,gate,type);
+					result = getTicket(sectionsIT.getNext(),TreeIF.PREORDER, gate,type, time);
 					
 				
 				
@@ -465,9 +421,11 @@ public class Parking {
 	
 	
 
-	private ParkingElement getTicket(TreeIF<ParkingElement> tree, int order, ParkingConf.TGate gate, ParkingConf.TType type){
+	private ParkingElement getTicket(TreeIF<ParkingElement> tree, int order, ParkingConf.TGate gate, ParkingConf.TType type, int time){
 		
 		QueueIF<ParkingElement> queue = new QueueDynamic();
+		StackIF<Vehicle> auxStack = new StackDynamic<Vehicle>();
+
 		
 		TreeIterator<ParkingElement> treeIT = new TreeIterator<ParkingElement>(tree,order);
 		
@@ -480,18 +438,97 @@ public class Parking {
 					setDistance(gate,space);
 					queue.add(space);
 				}
+				else
+					if(space.getCurrentVehicle()!=null && space.getCurrentVehicle().getTimeToGo() <= time){ 
+						
+						 auxStack.push(space.getCurrentVehicle());
+											
+							ParkingState.updateUsedSpaces(-1);
+							
+							if(space.getCurrentVehicle().getType() == ParkingConf.TType.familiar)
+								ParkingState.updateFamiliarUsedSpaces(-1);
+							else
+								ParkingState.updateNormalUsedSpaces(-1);
+							
+							 space.setCurrentVehicle(null);
+				 
+					}
 			}
 			
 			
 			
 		}
-	
-		quickSort(queue);
+		
+		while(!auxStack.isEmpty()){
+			vQueueOut.add(auxStack.getTop());
+			auxStack.pop();
+		}
+		
+
+		
 		if(queue.isEmpty())
 			return null;
-		else
+		else{
+			quickSort(queue);
 			return queue.getFirst();
+		}
 	}
+	
+	public VehicleQueue getQueueOut(){
+		return vQueueOut;
+	}
+	
+	
+
+	
+	
+	//------------------------------ Busqueda de los vehiculos con tiempo agotado --------------------------------------
+	public VehicleQueue getOverTimeVehicleQueue(VehicleQueue outQueue, int time){
+		
+		StackIF<Vehicle> auxStack = new StackDynamic<Vehicle>();
+		VehicleQueue auxQueue = new VehicleQueue(outQueue);
+		
+		TreeIterator<ParkingElement> treeIT = new TreeIterator<ParkingElement>(parkingT,TreeIF.RLBREADTH);
+		
+		boolean stop = false;
+		
+		while(treeIT.hasNext() && !stop){
+			ParkingElement element = treeIT.getNext();
+			
+			if(element.getClass()==ParkingSpace.class){
+				ParkingSpace space = (ParkingSpace) element;
+				
+				Vehicle v = space.getCurrentVehicle();
+				if(v!=null && v.getTimeToGo() <= time){				
+					auxStack.push(v);					
+					ParkingState.updateUsedSpaces(-1);
+					
+					if(v.getType()== ParkingConf.TType.familiar)
+						ParkingState.updateFamiliarUsedSpaces(-1);
+					else
+						ParkingState.updateNormalUsedSpaces(-1);
+					
+					//System.out.println("Car: "+v.getId()+" "+"Time: "+v.getHour()+" add to StackOut");
+					space.setCurrentVehicle(null);
+				}
+			}
+			
+			else
+				stop = true;
+				
+				
+		}
+		
+		while(!auxStack.isEmpty()){
+			auxQueue.add(auxStack.getTop());
+			auxStack.pop();
+		}
+		
+		return auxQueue;
+		
+	
+	}
+	
 		
 		
 		
