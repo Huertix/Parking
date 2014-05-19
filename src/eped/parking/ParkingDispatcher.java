@@ -14,6 +14,7 @@ import eped.parking.vehicle.CopyOfVehicleGenerator;
 import eped.parking.vehicle.Vehicle;
 import eped.parking.vehicle.VehicleGenerator;
 import eped.parking.vehicle.VehicleQueue;
+import eped.queue.QueueDynamic;
 import eped.queue.QueueIF;
 import eped.tree.TreeIF;
 import eped.tree.TreeIterator;
@@ -21,12 +22,12 @@ import eped.tree.TreeIterator;
 
 public class ParkingDispatcher {
 	
-	private static CopyOfVehicleGenerator vGenerator;
-	//private static VehicleGenerator vGenerator;
-	private static VehicleQueue vQueueIn;
-	private static VehicleQueue vQueueOut;
-	private static Parking parking;
-	private static int time;
+	//private CopyOfVehicleGenerator vGenerator;
+	private static VehicleGenerator vGenerator;
+	private VehicleQueue vQueueIn;
+	private VehicleQueue vQueueOut;
+	private Parking parking;
+	private int time;
 	
 
 	
@@ -36,14 +37,17 @@ public class ParkingDispatcher {
 		
 		try{
 			
+			
+			ParkingDispatcher ps = new ParkingDispatcher();
+			
 			int n = Integer.parseInt(args[0]);
 			int seed = Integer.parseInt(args[1]);
 					
-			init(n, seed);
+			ps.init(n, seed);
 			
 			
 			
-			dispatch();
+			ps.dispatch();
 				
 		}catch(Exception ex){
 			ExceptionManager.getMessage(ex);	
@@ -57,14 +61,14 @@ public class ParkingDispatcher {
 		
 	}
 	
-	private static void init(int n, int seed){
+	private void init(int n, int seed){
 		
 	
 		
 		time = 0;
 		
-		vGenerator  = new CopyOfVehicleGenerator(seed);
-		//vGenerator  = new VehicleGenerator(seed);
+		//vGenerator  = new CopyOfVehicleGenerator(seed);
+		vGenerator  = new VehicleGenerator(seed);
 		
 		vQueueIn   = new VehicleQueue();
 		vQueueOut   = new VehicleQueue();
@@ -78,7 +82,7 @@ public class ParkingDispatcher {
 	}
 	
 	
-	private static void dispatch() throws IOException{
+	private void dispatch() throws IOException{
 		
 		Writer w = new Writer();
 		
@@ -127,14 +131,15 @@ public class ParkingDispatcher {
 								" - "+v.getGate()+
 								" - "+v.getHour()+
 								" - "+s.toString();
-						//w.write(line);
+						w.write(line);
 						System.out.println(line);
+						
 					}
 					else{
 						vQueueIn.remove();				
 					}
 					
-					System.out.println("Queue Length: "+vQueueIn.getLength());
+					//System.out.println("Queue Length: "+vQueueIn.getLength());
 					//System.out.println("SpaceLeft: "+ParkingState.getSpaces());
 					//System.out.println(v.getType().toString()+"Space Left: "+ParkingState.getSpaces(v.getType()));
 					
@@ -149,7 +154,10 @@ public class ParkingDispatcher {
 			
 			//---------- devuelve cola de las vehiculos en cola de salida. libera plaza.
 			//vQueueOut = parking.getOverTimeVehicleQueue(vQueueOut, time);
-			vQueueOut = parking.getQueueOut();
+			vQueueOut = parking.getQueueOut(time);
+			
+
+				
 			
 			// ------------------------- Gestion de salida
 			if(!vQueueOut.isEmpty()){
@@ -159,7 +167,7 @@ public class ParkingDispatcher {
 				String line = "SALE: "+v.getId()+
 						" - "+v.getType()+
 						" - "+v.getGate();
-				//w.write(line);
+				w.write(line);
 				System.out.println(line);			
 				vQueueOut.remove();
 			}
@@ -173,14 +181,14 @@ public class ParkingDispatcher {
 			//	vAux.remove();
 			//}
 			//System.out.println("time: "+time);
-			System.out.println("Queue Out Length: "+vQueueOut.getLength());
+			//System.out.println("Queue Out Length: "+vQueueOut.getLength());
 			
 			
 			
 			
 			
-			bothQueuesEmpty = vQueueIn.isEmpty() && vQueueOut.isEmpty();
-			//bothQueuesEmpty = vQueueIn.isEmpty() && ParkingState.getUsedSpaces()==0;
+			//bothQueuesEmpty = vQueueIn.isEmpty() && vQueueOut.isEmpty();
+			bothQueuesEmpty = vQueueIn.isEmpty() && ParkingState.getUsedSpaces()==0;
 			//System.out.println("Plazas ocupadas: "+ParkingState.getUsedSpaces());
 		}
 		
@@ -194,8 +202,10 @@ public class ParkingDispatcher {
 
 	}
 	
+
 	
-	private static void toPrint(){
+	
+	private  void toPrint(){
 		while(!vQueueIn.isEmpty()){
 			Vehicle v = vQueueIn.getFirst();
 			System.out.println("["+

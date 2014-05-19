@@ -438,7 +438,7 @@ public class Parking {
 					setDistance(gate,space);
 					queue.add(space);
 				}
-				else
+				/*else
 					if(space.getCurrentVehicle()!=null && space.getCurrentVehicle().getTimeToGo() <= time){ 
 						
 						 auxStack.push(space.getCurrentVehicle());
@@ -452,17 +452,17 @@ public class Parking {
 							
 							 space.setCurrentVehicle(null);
 				 
-					}
+					}*/
 			}
 			
 			
 			
 		}
 		
-		while(!auxStack.isEmpty()){
-			vQueueOut.add(auxStack.getTop());
-			auxStack.pop();
-		}
+		//while(!auxStack.isEmpty()){
+		//	vQueueOut.add(auxStack.getTop());
+		//	auxStack.pop();
+		//}
 		
 
 		
@@ -474,21 +474,57 @@ public class Parking {
 		}
 	}
 	
-	public VehicleQueue getQueueOut(){
+	public VehicleQueue getQueueOut(int time){
+		updateQueueOut(parkingT, time);
 		return vQueueOut;
 	}
 	
-	
-
+		
+	public QueueIF<ParkingElement> updateQueueOut(TreeIF<ParkingElement> tree, int time){
+		QueueIF<ParkingElement> traverse = new QueueDynamic<ParkingElement> ();
+		ParkingElement element = tree.getRoot ();
+		
+		if(element!=null && element.getClass()==ParkingSpace.class){
+			ParkingSpace space = (ParkingSpace) element;
+			
+			Vehicle v = space.getCurrentVehicle();
+			if(v!=null && v.getTimeToGo() <= time){				
+				vQueueOut.add(v);					
+				ParkingState.updateUsedSpaces(-1);
+				
+				if(v.getType()== ParkingConf.TType.familiar)
+					ParkingState.updateFamiliarUsedSpaces(-1);
+				else
+					ParkingState.updateNormalUsedSpaces(-1);
+				
+				//System.out.println("Car: "+v.getId()+" "+"Time: "+v.getHour()+" add to StackOut");
+				space.setCurrentVehicle(null);
+			}
+		}
+		
+		
+        traverse.add (element);
+        IteratorIF <TreeIF <ParkingElement>> childrenIt = tree.getChildren ().getIterator ();
+        while (childrenIt.hasNext ()) {
+            TreeIF <ParkingElement> aChild = childrenIt.getNext ();
+            QueueIF <ParkingElement> aTraverse = updateQueueOut (aChild,time);
+            addAll (traverse, aTraverse);
+        }
+        return traverse;
+		
+	}
 	
 	
 	//------------------------------ Busqueda de los vehiculos con tiempo agotado --------------------------------------
-	public VehicleQueue getOverTimeVehicleQueue(VehicleQueue outQueue, int time){
+	/*public VehicleQueue getOverTimeVehicleQueue(VehicleQueue outQueue, int time){
 		
 		StackIF<Vehicle> auxStack = new StackDynamic<Vehicle>();
 		VehicleQueue auxQueue = new VehicleQueue(outQueue);
 		
 		TreeIterator<ParkingElement> treeIT = new TreeIterator<ParkingElement>(parkingT,TreeIF.RLBREADTH);
+		
+
+		
 		
 		boolean stop = false;
 		
@@ -527,44 +563,8 @@ public class Parking {
 		return auxQueue;
 		
 	
-	}
-	
-		
-		
-		
-		
-		
-		
-		
-		/*QueueIF<ParkingElement> traverse = new QueueDynamic<ParkingElement> ();
-		ParkingElement element = tree.getRoot ();
-		traverse.add (element);
-		
-		
-		
-		if(element.getClass()==ParkingSpace.class){
-			ParkingSpace space = (ParkingSpace) element;
-			if(!space.hasVehicle() && space.getType()==type){
-				setDistance(gate,space);
-				queue.add(space);
-				
-			}
-			return traverse;
-		}
-		else{
-			IteratorIF <TreeIF <ParkingElement>> childrenIt = tree.getChildren ().getIterator ();
-		
-			while (childrenIt.hasNext ()) {
-	            TreeIF <ParkingElement> aChild = childrenIt.getNext ();
-	            QueueIF <ParkingElement> aTraverse = getTicket (queue,aChild, gate, type);
-	            addAll (traverse, aTraverse);
-	        }
-	        return traverse;
-		}*/
-	
-	
+	}*/
 
-	
     private void addAll (QueueIF<ParkingElement> q, QueueIF<ParkingElement> p){
         while (!p.isEmpty ()) {
         	ParkingElement element = p.getFirst ();
@@ -578,11 +578,8 @@ public class Parking {
 	    // Caso base
 	    if (queue.getLength() <=1 )
 	      return;
+	  
 	    // Caso recursivo
-	    
-    	//ParkingSpace pivot = (ParkingSpace) queue.getFirst();// La cola no esta vacía
-    	//queue.remove();
-    	
 	    QueueIF<ParkingElement> menores = new QueueDynamic<ParkingElement>(); // Una cola para los menores que x
 	    QueueIF<ParkingElement> mayores = new QueueDynamic<ParkingElement>(); // Una cola para los mayores que x
 	    QueueIF<ParkingElement> iguales = new QueueDynamic<ParkingElement>(); // Una cola para los mayores que x
@@ -593,14 +590,6 @@ public class Parking {
 	    
 	    
 	    while (!queue.isEmpty()) {
-	    	/*ParkingSpace x = (ParkingSpace) queue.getFirst();
-	    	if (x.getValue()>pivot.getValue())
-	    		mayores.add(x);
-	    	else
-	    		menores.add(x);
-	    	
-	    	queue.remove();
-	    	*/
 	    	ParkingSpace pivot = (ParkingSpace) iguales.getFirst();
 	    	ParkingSpace x = (ParkingSpace) queue.getFirst();
 	    	queue.remove();
@@ -613,6 +602,7 @@ public class Parking {
 	    }
 	    quickSort(menores); // Se ordenan los menores recursivamente
 	    quickSort(mayores); // Se ordenan los mayores recursivamente
+	    
 	    // Se regresan los valores a la cola inicial
 	    while (!menores.isEmpty()){
 	      queue.add(menores.getFirst());
