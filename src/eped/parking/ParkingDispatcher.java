@@ -14,8 +14,11 @@ import eped.parking.vehicle.CopyOfVehicleGenerator;
 import eped.parking.vehicle.Vehicle;
 import eped.parking.vehicle.VehicleGenerator;
 import eped.parking.vehicle.VehicleQueue;
+import eped.parking.vehicle.VehicleTree;
 import eped.queue.QueueDynamic;
 import eped.queue.QueueIF;
+
+import eped.tree.BTreeIF;
 import eped.tree.TreeIF;
 import eped.tree.TreeIterator;
 
@@ -26,6 +29,7 @@ public class ParkingDispatcher {
 	private static VehicleGenerator vGenerator;
 	private VehicleQueue vQueueIn;
 	private VehicleQueue vQueueOut;
+	private BTreeIF<Vehicle> VehicleTimeTreeAVL;
 	private Parking parking;
 	private int time;
 	
@@ -33,11 +37,11 @@ public class ParkingDispatcher {
 	
 	public static void main(String[] args) {
 		
-		long lStartTime = new Date().getTime();
+		
 		
 		try{
 			
-			
+			long lStartTime = new Date().getTime();
 			ParkingDispatcher ps = new ParkingDispatcher();
 			
 			int n = Integer.parseInt(args[0]);
@@ -48,16 +52,18 @@ public class ParkingDispatcher {
 			
 			
 			ps.dispatch();
+			
+			long lEndTime = new Date().getTime(); // end time
+	        
+			long difference = lEndTime - lStartTime; // check different
+			 
+			System.out.println("Elapsed milliseconds: " + difference);
 				
 		}catch(Exception ex){
 			ExceptionManager.getMessage(ex);	
 		}
 		
-		long lEndTime = new Date().getTime(); // end time
-        
-		long difference = lEndTime - lStartTime; // check different
-		 
-		System.out.println("Elapsed milliseconds: " + difference);
+		
 		
 	}
 	
@@ -83,6 +89,8 @@ public class ParkingDispatcher {
 	
 	
 	private void dispatch() throws IOException{
+		
+		VehicleTimeTreeAVL = new VehicleTree();
 		
 		Writer w = new Writer();
 		
@@ -115,7 +123,12 @@ public class ParkingDispatcher {
 				if(parking.hasSpace(v.getType())){
 			
 					//ParkingSpace s = parking.getSpace(v.getType(),v.getGate());
+					
+					
+					
 					ParkingSpace s = parking.getTicket(v.getType(),v.getGate(),time);
+					
+					
 					
 					if(s!=null){
 						
@@ -124,6 +137,7 @@ public class ParkingDispatcher {
 						
 						v.setSpace(s);
 						s.setCurrentVehicle(v);
+						VehicleTimeTreeAVL = VehicleTimeTreeAVL.insert(v);
 						ParkingState.updateUsedSpaces(1);
 						vQueueIn.remove();
 						String line = "ENTRA: "+v.getId()+
@@ -154,7 +168,36 @@ public class ParkingDispatcher {
 			
 			//---------- devuelve cola de las vehiculos en cola de salida. libera plaza.
 			//vQueueOut = parking.getOverTimeVehicleQueue(vQueueOut, time);
-			vQueueOut = parking.getQueueOut(time);
+			
+			
+			boolean stop = false;
+			
+			while(!stop){
+				
+				if(!VehicleTimeTreeAVL.isEmpty()){
+					Vehicle v2Out = VehicleTimeTreeAVL.findMin().getRoot();
+				
+				
+					if(v2Out.getTimeToGo()<=time){
+						ParkingSpace s2Out = v2Out.getSpace();
+						s2Out.setCurrentVehicle(null);
+						vQueueOut.add(v2Out);
+						VehicleTimeTreeAVL.remove(v2Out);
+					}
+					else
+						stop=true;
+					
+					if(!stop){
+						v2Out = (Vehicle) VehicleTimeTreeAVL.findMin().getRoot();
+						stop = v2Out.getTimeToGo()<=time;
+					}
+				}
+			
+			}
+					
+			//vQueueOut = parking.getQueueOut(time);
+			
+			
 			
 
 				
