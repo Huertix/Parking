@@ -54,7 +54,7 @@ public class ParkingDispatcher {
 		vQueueIn   = new VehicleQueue();
 		vQueueOut   = new VehicleQueue();
 		
-		for(int i=0; i<n;i++)
+		for(int i=0; i<=n;i++)
 			vQueueIn.add(vGenerator.generate());
 		
 		 parking = new Parking();	 
@@ -67,7 +67,7 @@ public class ParkingDispatcher {
 		boolean bothQueuesEmpty = false;
 		
 		while(!bothQueuesEmpty){		
-			//------------------------- GEstion de entrada
+			//------------------------- Gesti—n de entrada
 			if(!vQueueIn.isEmpty()){
 				Vehicle v = vQueueIn.getFirst();
 				v.setTimeToGo(v.getHour()+time);
@@ -92,8 +92,8 @@ public class ParkingDispatcher {
 						
 					}
 					
-					else
-						vQueueIn.remove();					
+					//else
+						//vQueueIn.remove();					
 				}		
 			}
 				
