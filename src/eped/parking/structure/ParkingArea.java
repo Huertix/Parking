@@ -5,16 +5,15 @@ import eped.list.ListIF;
 import eped.parking.ParkingConf;
 import eped.tree.TreeDynamic;
 import eped.tree.TreeIF;
-import eped.tree.TreeIterator;
+
 
 public class ParkingArea extends TreeDynamic<ParkingElement> implements ParkingElement, TreeIF<ParkingElement>{
 	
 	private int floor;
 	private ParkingConf.TZone zone;
 	private ParkingConf.TGate gate;
-	//private TreeIF<ParkingElement> areaT;
-	
-	
+
+		
 	public ParkingArea(ParkingConf.TZone zone, int floor,ParkingConf.TGate gate ){
 		super();
 		this.zone = zone;

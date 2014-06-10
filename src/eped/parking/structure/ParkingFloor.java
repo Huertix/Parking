@@ -5,7 +5,7 @@ import eped.list.ListIF;
 import eped.parking.ParkingConf;
 import eped.tree.TreeDynamic;
 import eped.tree.TreeIF;
-import eped.tree.TreeIterator;
+
 
 public class ParkingFloor extends TreeDynamic<ParkingElement> implements ParkingElement{
 	
@@ -36,8 +36,6 @@ public class ParkingFloor extends TreeDynamic<ParkingElement> implements Parking
 	
 	}
 	
-
-
 
 	@Override
 	public IteratorIF<TreeIF<ParkingElement>> getIterator(){

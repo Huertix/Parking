@@ -10,8 +10,7 @@ public class ParkingSection extends TreeDynamic<ParkingElement> implements Parki
 	
 	private ParkingConf.TGate gate;
 	private int floor;
-	//private TreeIF<ParkingElement> sectionT;
-	
+
 	
 	public ParkingSection(ParkingConf.TGate gate, int floor){
 		super();

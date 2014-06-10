@@ -3,12 +3,10 @@ package eped.parking;
 
 public class ExceptionManager extends Exception {
 	
-	
-	
 	public static void getMessage(Exception ex){
 		String message = ex.getMessage();
 		 if(message.contains("string")){
-			 System.out.println("Argumento no valido.");//ex.printStackTrace();
+			 System.out.println("Argumento no valido.");
 			 tailMessage();
 		 }
 		 else if(message.contains("0")){

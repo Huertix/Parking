@@ -4,8 +4,6 @@ import eped.parking.ParkingConf.TType;
 
 public class ParkingState {
 
-	
-
 	private static int usedSpaces = 0;
 	private static int usedNormalSpaces = 0;
 	private static int usedFamiliarSpaces = 0;

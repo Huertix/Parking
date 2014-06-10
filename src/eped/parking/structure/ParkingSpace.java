@@ -17,7 +17,7 @@ public class ParkingSpace  extends TreeDynamic<ParkingElement> implements Parkin
 	private ParkingConf.TGate gate;
 	private ParkingConf.TZone zone;
 	private int value;
-	//private TreeDynamic<ParkingElement> spaceT;
+
 	
 	public ParkingSpace(ParkingConf.TType type, int floor, ParkingConf.TGate gate, ParkingConf.TZone zone){
 		super();
@@ -26,7 +26,6 @@ public class ParkingSpace  extends TreeDynamic<ParkingElement> implements Parkin
 		this.floor = floor;
 		this.gate = gate;
 		this.zone = zone;
-		//spaceT =  new TreeDynamic<ParkingElement>();
 		this.setRoot(this);
 		this.addChild(null);
 	}
