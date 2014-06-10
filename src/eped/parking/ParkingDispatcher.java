@@ -17,7 +17,6 @@ import eped.parking.vehicle.VehicleQueue;
 import eped.parking.vehicle.VehicleTree;
 import eped.queue.QueueDynamic;
 import eped.queue.QueueIF;
-
 import eped.tree.BTreeIF;
 import eped.tree.TreeIF;
 import eped.tree.TreeIterator;
@@ -169,33 +168,47 @@ public class ParkingDispatcher {
 			//---------- devuelve cola de las vehiculos en cola de salida. libera plaza.
 			//vQueueOut = parking.getOverTimeVehicleQueue(vQueueOut, time);
 			
-			
-			boolean stop = false;
+			/*
+			boolean stop = VehicleTimeTreeAVL==null;
 			
 			while(!stop){
 				
 				if(!VehicleTimeTreeAVL.isEmpty()){
 					Vehicle v2Out = VehicleTimeTreeAVL.findMin().getRoot();
-				
+					if(v2Out.getId()==988){
+						int a = 0;
+						a++;
+					}
 				
 					if(v2Out.getTimeToGo()<=time){
 						ParkingSpace s2Out = v2Out.getSpace();
 						s2Out.setCurrentVehicle(null);
 						vQueueOut.add(v2Out);
-						VehicleTimeTreeAVL.remove(v2Out);
+						ParkingState.updateUsedSpaces(-1);
+						
+						if(v2Out.getType()== ParkingConf.TType.familiar)
+							ParkingState.updateFamiliarUsedSpaces(-1);
+						else
+							ParkingState.updateNormalUsedSpaces(-1);
+						
+						VehicleTimeTreeAVL = VehicleTimeTreeAVL.remove(v2Out);
+						if(VehicleTimeTreeAVL==null){
+							stop=true;
+							continue;
+						}
 					}
 					else
 						stop=true;
 					
-					if(!stop){
+					if(!stop && !VehicleTimeTreeAVL.isEmpty()){
 						v2Out = (Vehicle) VehicleTimeTreeAVL.findMin().getRoot();
 						stop = v2Out.getTimeToGo()<=time;
 					}
 				}
 			
 			}
-					
-			//vQueueOut = parking.getQueueOut(time);
+				*/	
+			vQueueOut = parking.getQueueOut(time);
 			
 			
 			
@@ -232,6 +245,7 @@ public class ParkingDispatcher {
 			
 			//bothQueuesEmpty = vQueueIn.isEmpty() && vQueueOut.isEmpty();
 			bothQueuesEmpty = vQueueIn.isEmpty() && ParkingState.getUsedSpaces()==0;
+			//bothQueuesEmpty = vQueueIn.isEmpty() && VehicleTimeTreeAVL==null;
 			//System.out.println("Plazas ocupadas: "+ParkingState.getUsedSpaces());
 		}
 		

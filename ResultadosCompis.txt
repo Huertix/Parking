@@ -1,0 +1,2002 @@
+ENTRA: 0 - Familiar - B - 1383 - 1 - B - I - 1
+ENTRA: 1 - Normal - D - 523 - 1 - D - I - 2
+ENTRA: 2 - Normal - C - 727 - 1 - C - I - 2
+ENTRA: 3 - Normal - A - 888 - 1 - A - I - 2
+ENTRA: 4 - Normal - B - 1119 - 1 - B - I - 2
+ENTRA: 5 - Normal - D - 982 - 2 - D - I - 2
+ENTRA: 6 - Normal - A - 204 - 2 - A - I - 2
+ENTRA: 7 - Normal - A - 196 - 3 - A - I - 2
+ENTRA: 8 - Normal - A - 122 - 4 - A - I - 2
+ENTRA: 9 - Normal - D - 316 - 3 - D - I - 2
+ENTRA: 10 - Normal - D - 404 - 4 - D - I - 2
+ENTRA: 11 - Familiar - B - 1184 - 2 - B - I - 1
+ENTRA: 12 - Familiar - C - 763 - 1 - C - I - 1
+ENTRA: 13 - Normal - B - 240 - 2 - B - I - 2
+ENTRA: 14 - Normal - A - 20 - 5 - A - I - 2
+ENTRA: 15 - Familiar - D - 340 - 1 - D - I - 1
+ENTRA: 16 - Familiar - A - 987 - 1 - A - I - 1
+ENTRA: 17 - Normal - A - 1306 - 6 - A - I - 2
+ENTRA: 18 - Familiar - C - 528 - 2 - C - I - 1
+ENTRA: 19 - Familiar - D - 769 - 2 - D - I - 1
+ENTRA: 20 - Normal - B - 699 - 3 - B - I - 2
+ENTRA: 21 - Familiar - A - 960 - 2 - A - I - 1
+ENTRA: 22 - Familiar - A - 25 - 3 - A - I - 1
+ENTRA: 23 - Normal - D - 868 - 5 - D - I - 2
+ENTRA: 24 - Normal - D - 94 - 6 - D - I - 2
+ENTRA: 25 - Familiar - D - 638 - 3 - D - I - 1
+ENTRA: 26 - Normal - C - 1164 - 2 - C - I - 2
+ENTRA: 27 - Normal - D - 661 - 1 - D - I - 4
+ENTRA: 28 - Familiar - B - 240 - 3 - B - I - 1
+ENTRA: 29 - Familiar - B - 128 - 4 - B - I - 1
+ENTRA: 30 - Normal - C - 1155 - 3 - C - I - 2
+ENTRA: 31 - Normal - A - 621 - 1 - A - I - 4
+ENTRA: 32 - Normal - A - 734 - 2 - A - I - 4
+ENTRA: 33 - Familiar - A - 631 - 4 - A - I - 1
+ENTRA: 34 - Familiar - C - 554 - 3 - C - I - 1
+SALE: 14 - Normal - A
+ENTRA: 35 - Normal - A - 473 - 5 - A - I - 2
+ENTRA: 36 - Familiar - B - 1389 - 5 - B - I - 1
+ENTRA: 37 - Familiar - A - 526 - 5 - A - I - 1
+ENTRA: 38 - Familiar - C - 996 - 4 - C - I - 1
+ENTRA: 39 - Familiar - C - 324 - 5 - C - I - 1
+ENTRA: 40 - Familiar - C - 474 - 6 - C - I - 1
+ENTRA: 41 - Normal - B - 656 - 4 - B - I - 2
+ENTRA: 42 - Familiar - B - 181 - 6 - B - I - 1
+ENTRA: 43 - Familiar - D - 1203 - 4 - D - I - 1
+ENTRA: 44 - Familiar - A - 524 - 6 - A - I - 1
+ENTRA: 45 - Familiar - B - 796 - 1 - B - I - 3
+ENTRA: 46 - Normal - A - 331 - 3 - A - I - 4
+ENTRA: 47 - Familiar - B - 396 - 2 - B - I - 3
+SALE: 22 - Familiar - A
+ENTRA: 48 - Familiar - A - 785 - 3 - A - I - 1
+ENTRA: 49 - Normal - D - 460 - 2 - D - I - 4
+ENTRA: 50 - Normal - C - 112 - 4 - C - I - 2
+ENTRA: 51 - Familiar - C - 1136 - 1 - C - I - 3
+ENTRA: 52 - Familiar - C - 723 - 2 - C - I - 3
+ENTRA: 53 - Familiar - B - 547 - 3 - B - I - 3
+ENTRA: 54 - Normal - B - 866 - 5 - B - I - 2
+ENTRA: 55 - Normal - C - 306 - 5 - C - I - 2
+ENTRA: 56 - Normal - C - 338 - 6 - C - I - 2
+ENTRA: 57 - Normal - D - 526 - 3 - D - I - 4
+ENTRA: 58 - Normal - A - 475 - 4 - A - I - 4
+ENTRA: 59 - Familiar - A - 1178 - 1 - A - I - 3
+ENTRA: 60 - Familiar - D - 560 - 5 - D - I - 1
+ENTRA: 61 - Familiar - B - 131 - 4 - B - I - 3
+ENTRA: 62 - Normal - B - 466 - 6 - B - I - 2
+ENTRA: 63 - Familiar - B - 139 - 5 - B - I - 3
+ENTRA: 64 - Familiar - A - 889 - 2 - A - I - 3
+ENTRA: 65 - Familiar - D - 738 - 6 - D - I - 1
+ENTRA: 66 - Familiar - D - 499 - 1 - D - I - 3
+ENTRA: 67 - Familiar - B - 1274 - 6 - B - I - 3
+ENTRA: 68 - Familiar - D - 778 - 2 - D - I - 3
+ENTRA: 69 - Familiar - B - 1364 - 1 - B - I - 5
+ENTRA: 70 - Normal - B - 411 - 1 - B - I - 4
+ENTRA: 71 - Familiar - A - 1015 - 3 - A - I - 3
+ENTRA: 72 - Familiar - A - 1217 - 4 - A - I - 3
+ENTRA: 73 - Normal - B - 421 - 2 - B - I - 4
+ENTRA: 74 - Normal - C - 538 - 1 - C - I - 4
+ENTRA: 75 - Normal - A - 1001 - 5 - A - I - 4
+ENTRA: 76 - Normal - D - 745 - 4 - D - I - 4
+ENTRA: 77 - Normal - D - 345 - 5 - D - I - 4
+ENTRA: 78 - Familiar - D - 709 - 3 - D - I - 3
+ENTRA: 79 - Familiar - B - 618 - 2 - B - I - 5
+ENTRA: 80 - Familiar - B - 921 - 3 - B - I - 5
+ENTRA: 81 - Familiar - C - 1339 - 3 - C - I - 3
+ENTRA: 82 - Familiar - D - 49 - 4 - D - I - 3
+ENTRA: 83 - Normal - A - 993 - 6 - A - I - 4
+ENTRA: 84 - Normal - B - 243 - 3 - B - I - 4
+ENTRA: 85 - Normal - C - 387 - 2 - C - I - 4
+ENTRA: 86 - Normal - B - 882 - 4 - B - I - 4
+ENTRA: 87 - Familiar - A - 993 - 5 - A - I - 3
+ENTRA: 88 - Familiar - A - 996 - 6 - A - I - 3
+ENTRA: 89 - Familiar - C - 43 - 4 - C - I - 3
+ENTRA: 90 - Normal - A - 1358 - 1 - A - I - 6
+ENTRA: 91 - Familiar - D - 264 - 5 - D - I - 3
+ENTRA: 92 - Familiar - D - 334 - 6 - D - I - 3
+ENTRA: 93 - Familiar - B - 1145 - 4 - B - I - 5
+ENTRA: 94 - Normal - D - 301 - 6 - D - I - 4
+ENTRA: 95 - Familiar - A - 720 - 1 - A - I - 5
+ENTRA: 96 - Familiar - A - 1153 - 2 - A - I - 5
+ENTRA: 97 - Familiar - D - 820 - 1 - D - I - 5
+ENTRA: 98 - Normal - D - 382 - 1 - D - I - 6
+ENTRA: 99 - Normal - B - 70 - 5 - B - I - 4
+ENTRA: 100 - Familiar - D - 567 - 2 - D - I - 5
+ENTRA: 101 - Normal - C - 1072 - 3 - C - I - 4
+ENTRA: 102 - Familiar - A - 1353 - 3 - A - I - 5
+ENTRA: 103 - Normal - A - 833 - 2 - A - I - 6
+ENTRA: 104 - Familiar - A - 416 - 4 - A - I - 5
+ENTRA: 105 - Familiar - A - 424 - 5 - A - I - 5
+ENTRA: 106 - Normal - B - 524 - 6 - B - I - 4
+ENTRA: 107 - Normal - D - 1389 - 2 - D - I - 6
+ENTRA: 108 - Familiar - B - 312 - 5 - B - I - 5
+ENTRA: 109 - Familiar - C - 1231 - 5 - C - I - 3
+ENTRA: 110 - Normal - A - 417 - 3 - A - I - 6
+ENTRA: 111 - Normal - C - 18 - 4 - C - I - 4
+ENTRA: 112 - Normal - A - 299 - 4 - A - I - 6
+ENTRA: 113 - Familiar - C - 135 - 6 - C - I - 3
+ENTRA: 114 - Normal - C - 1037 - 5 - C - I - 4
+ENTRA: 115 - Familiar - C - 503 - 1 - C - I - 5
+ENTRA: 116 - Normal - B - 782 - 1 - B - I - 6
+ENTRA: 117 - Familiar - A - 491 - 6 - A - I - 5
+ENTRA: 118 - Familiar - D - 214 - 3 - D - I - 5
+SALE: 24 - Normal - D
+ENTRA: 119 - Normal - B - 357 - 2 - B - I - 6
+ENTRA: 120 - Normal - B - 1094 - 3 - B - I - 6
+ENTRA: 121 - Familiar - D - 331 - 4 - D - I - 5
+ENTRA: 122 - Normal - D - 655 - 6 - D - I - 2
+ENTRA: 123 - Normal - A - 186 - 5 - A - I - 6
+ENTRA: 124 - Familiar - C - 519 - 2 - C - I - 5
+ENTRA: 125 - Normal - A - 1271 - 6 - A - I - 6
+ENTRA: 126 - Familiar - B - 1369 - 6 - B - I - 5
+ENTRA: 127 - Normal - C - 170 - 6 - C - I - 4
+ENTRA: 128 - Familiar - B - 628 - 1 - B - II - 1
+ENTRA: 129 - Normal - C - 620 - 1 - C - I - 6
+SALE: 111 - Normal - C
+ENTRA: 130 - Normal - A - 679 - 1 - A - II - 2
+SALE: 8 - Normal - A
+ENTRA: 131 - Familiar - C - 913 - 3 - C - I - 5
+SALE: 82 - Familiar - D
+ENTRA: 132 - Normal - D - 551 - 3 - D - I - 6
+SALE: 89 - Familiar - C
+ENTRA: 133 - Familiar - D - 1051 - 4 - D - I - 3
+ENTRA: 134 - Normal - A - 1207 - 4 - A - I - 2
+ENTRA: 135 - Normal - A - 682 - 1 - A - IV - 2
+ENTRA: 136 - Familiar - B - 261 - 1 - B - IV - 1
+ENTRA: 137 - Normal - C - 365 - 4 - C - I - 4
+ENTRA: 138 - Familiar - B - 124 - 2 - B - II - 1
+ENTRA: 139 - Normal - D - 1061 - 4 - D - I - 6
+ENTRA: 140 - Normal - D - 587 - 5 - D - I - 6
+ENTRA: 141 - Familiar - D - 1015 - 5 - D - I - 5
+ENTRA: 142 - Familiar - B - 536 - 2 - B - IV - 1
+ENTRA: 143 - Normal - A - 348 - 2 - A - II - 2
+ENTRA: 144 - Normal - B - 539 - 4 - B - I - 6
+ENTRA: 145 - Normal - D - 580 - 6 - D - I - 6
+ENTRA: 146 - Familiar - A - 490 - 1 - A - II - 1
+ENTRA: 147 - Normal - C - 1175 - 2 - C - I - 6
+ENTRA: 148 - Normal - A - 541 - 2 - A - IV - 2
+ENTRA: 149 - Normal - C - 484 - 3 - C - I - 6
+ENTRA: 150 - Normal - C - 193 - 4 - C - I - 6
+ENTRA: 151 - Familiar - B - 911 - 3 - B - II - 1
+ENTRA: 152 - Familiar - C - 670 - 4 - C - I - 3
+ENTRA: 153 - Familiar - A - 464 - 1 - A - IV - 1
+ENTRA: 154 - Familiar - B - 724 - 3 - B - IV - 1
+ENTRA: 155 - Normal - D - 105 - 1 - D - II - 2
+ENTRA: 156 - Normal - A - 459 - 3 - A - II - 2
+ENTRA: 157 - Normal - A - 568 - 3 - A - IV - 2
+SALE: 29 - Familiar - B
+ENTRA: 158 - Normal - C - 1106 - 5 - C - I - 6
+ENTRA: 159 - Normal - D - 1380 - 1 - D - IV - 2
+ENTRA: 160 - Familiar - A - 1140 - 2 - A - II - 1
+ENTRA: 161 - Familiar - A - 164 - 2 - A - IV - 1
+ENTRA: 162 - Normal - B - 51 - 5 - B - I - 6
+SALE: 50 - Normal - C
+ENTRA: 163 - Familiar - A - 1221 - 3 - A - II - 1
+ENTRA: 164 - Normal - D - 641 - 2 - D - II - 2
+ENTRA: 165 - Normal - C - 220 - 4 - C - I - 2
+ENTRA: 166 - Normal - B - 440 - 6 - B - I - 6
+ENTRA: 167 - Familiar - C - 567 - 4 - C - I - 5
+ENTRA: 168 - Familiar - C - 1342 - 5 - C - I - 5
+ENTRA: 169 - Normal - D - 63 - 2 - D - IV - 2
+SALE: 99 - Normal - B
+ENTRA: 170 - Normal - A - 549 - 4 - A - II - 2
+ENTRA: 171 - Normal - A - 930 - 4 - A - IV - 2
+ENTRA: 172 - Normal - A - 1098 - 5 - A - II - 2
+ENTRA: 173 - Familiar - B - 336 - 4 - B - I - 1
+ENTRA: 174 - Familiar - B - 233 - 4 - B - II - 1
+ENTRA: 175 - Familiar - C - 1273 - 6 - C - I - 5
+ENTRA: 176 - Normal - A - 442 - 5 - A - IV - 2
+ENTRA: 177 - Familiar - D - 61 - 6 - D - I - 5
+ENTRA: 178 - Familiar - D - 1123 - 1 - D - II - 1
+ENTRA: 179 - Normal - D - 1049 - 3 - D - II - 2
+ENTRA: 180 - Familiar - A - 980 - 3 - A - IV - 1
+ENTRA: 181 - Normal - A - 973 - 6 - A - II - 2
+ENTRA: 182 - Familiar - D - 984 - 1 - D - IV - 1
+ENTRA: 183 - Familiar - C - 1169 - 1 - C - II - 1
+ENTRA: 184 - Normal - D - 127 - 3 - D - IV - 2
+ENTRA: 185 - Normal - A - 1116 - 6 - A - IV - 2
+ENTRA: 186 - Normal - D - 119 - 4 - D - II - 2
+ENTRA: 187 - Normal - D - 432 - 4 - D - IV - 2
+ENTRA: 188 - Normal - B - 458 - 5 - B - I - 4
+ENTRA: 189 - Familiar - A - 912 - 4 - A - II - 1
+ENTRA: 190 - Normal - C - 1107 - 6 - C - I - 6
+ENTRA: 191 - Familiar - B - 862 - 4 - B - IV - 1
+ENTRA: 192 - Familiar - C - 1197 - 1 - C - IV - 1
+SALE: 61 - Familiar - B
+ENTRA: 193 - Normal - D - 631 - 5 - D - II - 2
+ENTRA: 194 - Normal - D - 1268 - 5 - D - IV - 2
+ENTRA: 195 - Familiar - D - 572 - 2 - D - II - 1
+ENTRA: 196 - Familiar - C - 1264 - 2 - C - II - 1
+ENTRA: 197 - Familiar - B - 1284 - 4 - B - I - 3
+ENTRA: 198 - Normal - A - 621 - 1 - A - II - 4
+ENTRA: 199 - Familiar - C - 1202 - 2 - C - IV - 1
+ENTRA: 200 - Familiar - D - 654 - 2 - D - IV - 1
+ENTRA: 201 - Familiar - A - 1220 - 4 - A - IV - 1
+ENTRA: 202 - Familiar - A - 1170 - 5 - A - II - 1
+SALE: 63 - Familiar - B
+ENTRA: 203 - Familiar - D - 215 - 3 - D - II - 1
+SALE: 7 - Normal - A
+ENTRA: 204 - Normal - C - 591 - 1 - C - II - 2
+ENTRA: 205 - Normal - C - 851 - 1 - C - IV - 2
+ENTRA: 206 - Familiar - A - 1245 - 5 - A - IV - 1
+ENTRA: 207 - Normal - A - 172 - 3 - A - I - 2
+ENTRA: 208 - Normal - D - 1167 - 6 - D - II - 2
+ENTRA: 209 - Familiar - A - 696 - 6 - A - II - 1
+ENTRA: 210 - Familiar - B - 295 - 5 - B - I - 3
+SALE: 6 - Normal - A
+ENTRA: 211 - Familiar - C - 521 - 3 - C - II - 1
+ENTRA: 212 - Familiar - B - 1098 - 5 - B - II - 1
+ENTRA: 213 - Normal - A - 98 - 2 - A - I - 2
+SALE: 162 - Normal - B
+ENTRA: 214 - Normal - D - 1030 - 6 - D - IV - 2
+ENTRA: 215 - Familiar - C - 49 - 3 - C - IV - 1
+ENTRA: 216 - Normal - A - 134 - 1 - A - IV - 4
+ENTRA: 217 - Familiar - B - 56 - 5 - B - IV - 1
+ENTRA: 218 - Familiar - C - 598 - 4 - C - II - 1
+ENTRA: 219 - Familiar - A - 849 - 6 - A - IV - 1
+ENTRA: 220 - Familiar - C - 195 - 4 - C - IV - 1
+ENTRA: 221 - Normal - B - 1000 - 5 - B - I - 6
+ENTRA: 222 - Familiar - D - 848 - 3 - D - IV - 1
+ENTRA: 223 - Normal - A - 193 - 2 - A - II - 4
+SALE: 42 - Familiar - B
+ENTRA: 224 - Normal - A - 1225 - 2 - A - IV - 4
+ENTRA: 225 - Familiar - B - 1156 - 6 - B - I - 1
+ENTRA: 226 - Familiar - C - 599 - 5 - C - II - 1
+ENTRA: 227 - Familiar - B - 375 - 6 - B - II - 1
+ENTRA: 228 - Familiar - D - 865 - 4 - D - II - 1
+ENTRA: 229 - Normal - D - 98 - 1 - D - II - 4
+ENTRA: 230 - Normal - B - 222 - 1 - B - II - 2
+ENTRA: 231 - Normal - A - 921 - 3 - A - II - 4
+ENTRA: 232 - Normal - B - 562 - 1 - B - IV - 2
+SALE: 169 - Normal - D
+ENTRA: 233 - Normal - D - 743 - 2 - D - IV - 2
+ENTRA: 234 - Familiar - B - 885 - 6 - B - IV - 1
+ENTRA: 235 - Familiar - D - 106 - 4 - D - IV - 1
+ENTRA: 236 - Familiar - A - 176 - 1 - A - II - 3
+ENTRA: 237 - Familiar - B - 431 - 1 - B - II - 3
+ENTRA: 238 - Normal - C - 759 - 2 - C - II - 2
+SALE: 177 - Familiar - D
+ENTRA: 239 - Familiar - B - 25 - 1 - B - IV - 3
+ENTRA: 240 - Normal - D - 750 - 1 - D - IV - 4
+ENTRA: 241 - Normal - A - 899 - 3 - A - IV - 4
+ENTRA: 242 - Familiar - B - 216 - 2 - B - II - 3
+ENTRA: 243 - Normal - C - 754 - 2 - C - IV - 2
+ENTRA: 244 - Familiar - A - 1189 - 1 - A - IV - 3
+ENTRA: 245 - Familiar - D - 136 - 6 - D - I - 5
+ENTRA: 246 - Normal - A - 1316 - 4 - A - II - 4
+ENTRA: 247 - Normal - B - 642 - 2 - B - II - 2
+ENTRA: 248 - Normal - D - 389 - 2 - D - II - 4
+SALE: 113 - Familiar - C
+ENTRA: 249 - Familiar - B - 436 - 2 - B - IV - 3
+ENTRA: 250 - Normal - D - 948 - 2 - D - IV - 4
+ENTRA: 251 - Familiar - A - 1333 - 2 - A - II - 3
+ENTRA: 252 - Familiar - C - 779 - 6 - C - I - 3
+ENTRA: 253 - Familiar - B - 204 - 3 - B - II - 3
+SALE: 13 - Normal - B
+ENTRA: 254 - Normal - B - 254 - 2 - B - I - 2
+ENTRA: 255 - Normal - B - 255 - 2 - B - IV - 2
+ENTRA: 256 - Normal - D - 254 - 3 - D - II - 4
+ENTRA: 257 - Familiar - B - 921 - 3 - B - IV - 3
+ENTRA: 258 - Normal - A - 576 - 4 - A - IV - 4
+ENTRA: 259 - Familiar - C - 17 - 5 - C - IV - 1
+ENTRA: 260 - Familiar - B - 67 - 4 - B - II - 3
+SALE: 155 - Normal - D
+ENTRA: 261 - Normal - D - 815 - 1 - D - II - 2
+ENTRA: 262 - Familiar - D - 926 - 5 - D - II - 1
+SALE: 138 - Familiar - B
+ENTRA: 263 - Familiar - B - 579 - 2 - B - II - 1
+ENTRA: 264 - Normal - C - 797 - 3 - C - II - 2
+SALE: 239 - Familiar - B
+ENTRA: 265 - Normal - D - 1167 - 3 - D - IV - 4
+SALE: 215 - Familiar - C
+ENTRA: 266 - Normal - B - 64 - 3 - B - II - 2
+ENTRA: 267 - Familiar - A - 755 - 2 - A - IV - 3
+ENTRA: 268 - Normal - B - 1206 - 3 - B - IV - 2
+SALE: 28 - Familiar - B
+ENTRA: 269 - Normal - A - 1117 - 5 - A - II - 4
+ENTRA: 270 - Normal - B - 592 - 4 - B - II - 2
+ENTRA: 271 - Familiar - D - 240 - 5 - D - IV - 1
+ENTRA: 272 - Normal - B - 516 - 4 - B - IV - 2
+ENTRA: 273 - Familiar - B - 1072 - 3 - B - I - 1
+SALE: 217 - Familiar - B
+ENTRA: 274 - Normal - B - 673 - 5 - B - II - 2
+ENTRA: 275 - Normal - D - 701 - 4 - D - II - 4
+ENTRA: 276 - Normal - A - 587 - 5 - A - IV - 4
+SALE: 259 - Familiar - C
+ENTRA: 277 - Familiar - C - 1194 - 3 - C - IV - 1
+ENTRA: 278 - Familiar - B - 981 - 5 - B - IV - 1
+ENTRA: 279 - Normal - B - 1251 - 5 - B - IV - 2
+ENTRA: 280 - Familiar - B - 318 - 1 - B - IV - 3
+ENTRA: 281 - Normal - B - 644 - 6 - B - II - 2
+ENTRA: 282 - Normal - A - 1016 - 6 - A - II - 4
+ENTRA: 283 - Normal - D - 399 - 4 - D - IV - 4
+ENTRA: 284 - Normal - C - 86 - 3 - C - IV - 2
+ENTRA: 285 - Familiar - B - 334 - 4 - B - IV - 3
+ENTRA: 286 - Normal - C - 577 - 4 - C - II - 2
+ENTRA: 287 - Normal - D - 1250 - 5 - D - II - 4
+ENTRA: 288 - Normal - D - 899 - 5 - D - IV - 4
+ENTRA: 289 - Normal - B - 716 - 6 - B - IV - 2
+ENTRA: 290 - Familiar - D - 503 - 6 - D - II - 1
+ENTRA: 291 - Normal - D - 1039 - 6 - D - II - 4
+ENTRA: 292 - Normal - A - 388 - 6 - A - IV - 4
+ENTRA: 293 - Normal - A - 722 - 1 - A - II - 6
+ENTRA: 294 - Normal - A - 1278 - 1 - A - IV - 6
+ENTRA: 295 - Familiar - D - 1000 - 6 - D - IV - 1
+ENTRA: 296 - Normal - A - 1011 - 2 - A - II - 6
+ENTRA: 297 - Normal - B - 222 - 1 - B - II - 4
+SALE: 127 - Normal - C
+ENTRA: 298 - Familiar - B - 429 - 5 - B - II - 3
+ENTRA: 299 - Normal - B - 928 - 1 - B - IV - 4
+ENTRA: 300 - Familiar - C - 125 - 5 - C - IV - 1
+ENTRA: 301 - Normal - A - 1320 - 2 - A - IV - 6
+ENTRA: 302 - Familiar - B - 431 - 5 - B - IV - 3
+ENTRA: 303 - Familiar - A - 1281 - 3 - A - II - 3
+ENTRA: 304 - Normal - C - 1023 - 6 - C - I - 4
+ENTRA: 305 - Familiar - C - 229 - 6 - C - II - 1
+SALE: 186 - Normal - D
+ENTRA: 306 - Normal - A - 602 - 3 - A - II - 6
+ENTRA: 307 - Normal - B - 317 - 2 - B - II - 4
+ENTRA: 308 - Normal - B - 1357 - 2 - B - IV - 4
+ENTRA: 309 - Familiar - C - 1025 - 6 - C - IV - 1
+SALE: 123 - Normal - A
+ENTRA: 310 - Familiar - B - 907 - 6 - B - II - 3
+ENTRA: 311 - Normal - A - 1383 - 5 - A - I - 6
+SALE: 213 - Normal - A
+ENTRA: 312 - Familiar - C - 989 - 1 - C - II - 3
+SALE: 184 - Normal - D
+ENTRA: 313 - Familiar - B - 904 - 6 - B - IV - 3
+ENTRA: 314 - Normal - A - 860 - 2 - A - I - 2
+ENTRA: 315 - Familiar - A - 677 - 3 - A - IV - 3
+ENTRA: 316 - Familiar - B - 16 - 1 - B - II - 5
+ENTRA: 317 - Normal - D - 684 - 3 - D - IV - 2
+ENTRA: 318 - Familiar - C - 1308 - 1 - C - IV - 3
+ENTRA: 319 - Normal - A - 872 - 3 - A - IV - 6
+ENTRA: 320 - Normal - C - 281 - 4 - C - IV - 2
+ENTRA: 321 - Normal - B - 530 - 3 - B - II - 4
+ENTRA: 322 - Normal - A - 489 - 4 - A - II - 6
+ENTRA: 323 - Normal - B - 493 - 3 - B - IV - 4
+ENTRA: 324 - Normal - D - 1130 - 4 - D - II - 2
+ENTRA: 325 - Familiar - A - 467 - 4 - A - II - 3
+SALE: 161 - Familiar - A
+ENTRA: 326 - Normal - B - 641 - 4 - B - II - 4
+SALE: 9 - Normal - D
+ENTRA: 327 - Normal - D - 336 - 3 - D - I - 2
+SALE: 229 - Normal - D
+ENTRA: 328 - Familiar - B - 568 - 4 - B - II - 3
+SALE: 84 - Normal - B
+ENTRA: 329 - Familiar - A - 1030 - 2 - A - IV - 1
+SALE: 260 - Familiar - B
+ENTRA: 330 - Familiar - C - 383 - 2 - C - II - 3
+SALE: 266 - Normal - B
+ENTRA: 331 - Familiar - C - 31 - 2 - C - IV - 3
+ENTRA: 332 - Normal - B - 313 - 3 - B - I - 4
+SALE: 316 - Familiar - B
+ENTRA: 333 - Familiar - B - 376 - 1 - B - II - 5
+SALE: 118 - Familiar - D
+ENTRA: 334 - Familiar - C - 77 - 3 - C - II - 3
+ENTRA: 335 - Normal - B - 912 - 3 - B - II - 2
+ENTRA: 336 - Normal - D - 449 - 1 - D - II - 4
+ENTRA: 337 - Normal - A - 435 - 4 - A - IV - 6
+ENTRA: 338 - Normal - B - 122 - 4 - B - IV - 4
+ENTRA: 339 - Familiar - A - 803 - 4 - A - IV - 3
+ENTRA: 340 - Normal - D - 646 - 6 - D - IV - 4
+ENTRA: 341 - Familiar - A - 1048 - 5 - A - II - 3
+SALE: 235 - Familiar - D
+ENTRA: 342 - Normal - D - 34 - 1 - D - II - 6
+ENTRA: 343 - Normal - A - 511 - 5 - A - II - 6
+SALE: 150 - Normal - C
+ENTRA: 344 - Familiar - A - 1272 - 5 - A - IV - 3
+ENTRA: 345 - Normal - C - 700 - 4 - C - I - 6
+ENTRA: 346 - Familiar - D - 27 - 3 - D - I - 5
+ENTRA: 347 - Normal - D - 268 - 1 - D - IV - 6
+ENTRA: 348 - Familiar - D - 325 - 4 - D - IV - 1
+ENTRA: 349 - Normal - A - 46 - 5 - A - IV - 6
+ENTRA: 350 - Familiar - C - 336 - 3 - C - IV - 3
+SALE: 216 - Normal - A
+ENTRA: 351 - Familiar - B - 35 - 1 - B - IV - 5
+ENTRA: 352 - Normal - A - 483 - 1 - A - IV - 4
+ENTRA: 353 - Normal - D - 752 - 2 - D - II - 6
+ENTRA: 354 - Normal - A - 1356 - 6 - A - II - 6
+ENTRA: 355 - Familiar - A - 410 - 6 - A - II - 3
+SALE: 15 - Familiar - D
+ENTRA: 356 - Normal - A - 1079 - 6 - A - IV - 6
+SALE: 91 - Familiar - D
+ENTRA: 357 - Familiar - C - 931 - 4 - C - II - 3
+ENTRA: 358 - Normal - A - 744 - 1 - A - III - 2
+ENTRA: 359 - Familiar - D - 919 - 1 - D - I - 1
+ENTRA: 360 - Normal - C - 997 - 5 - C - II - 2
+ENTRA: 361 - Familiar - C - 480 - 4 - C - IV - 3
+SALE: 55 - Normal - C
+ENTRA: 362 - Normal - A - 693 - 2 - A - III - 2
+SALE: 331 - Familiar - C
+ENTRA: 363 - Normal - D - 1241 - 2 - D - IV - 6
+SALE: 39 - Familiar - C
+ENTRA: 364 - Familiar - B - 1001 - 2 - B - II - 5
+ENTRA: 365 - Familiar - C - 374 - 5 - C - I - 1
+ENTRA: 366 - Normal - D - 930 - 3 - D - II - 6
+ENTRA: 367 - Normal - D - 694 - 3 - D - IV - 6
+ENTRA: 368 - Familiar - B - 1230 - 2 - B - IV - 5
+ENTRA: 369 - Normal - B - 806 - 5 - B - II - 4
+ENTRA: 370 - Normal - A - 371 - 3 - A - III - 2
+SALE: 284 - Normal - C
+ENTRA: 371 - Familiar - C - 595 - 2 - C - IV - 3
+ENTRA: 372 - Familiar - D - 408 - 5 - D - I - 3
+ENTRA: 373 - Normal - A - 1343 - 4 - A - III - 2
+SALE: 346 - Familiar - D
+ENTRA: 374 - Familiar - C - 247 - 5 - C - II - 3
+ENTRA: 375 - Familiar - D - 568 - 3 - D - I - 5
+ENTRA: 376 - Familiar - C - 949 - 5 - C - IV - 3
+SALE: 342 - Normal - D
+ENTRA: 377 - Normal - B - 136 - 5 - B - IV - 4
+SALE: 46 - Normal - A
+ENTRA: 378 - Familiar - A - 1228 - 6 - A - IV - 3
+ENTRA: 379 - Familiar - A - 1308 - 1 - A - II - 5
+SALE: 207 - Normal - A
+ENTRA: 380 - Familiar - C - 1228 - 6 - C - II - 3
+ENTRA: 381 - Normal - C - 1271 - 5 - C - I - 2
+SALE: 245 - Familiar - D
+ENTRA: 382 - Normal - A - 1172 - 3 - A - I - 2
+ENTRA: 383 - Familiar - C - 254 - 6 - C - IV - 3
+ENTRA: 384 - Normal - C - 409 - 3 - C - IV - 2
+ENTRA: 385 - Familiar - A - 576 - 1 - A - IV - 5
+SALE: 165 - Normal - C
+ENTRA: 386 - Normal - D - 533 - 1 - D - II - 6
+SALE: 351 - Familiar - B
+ENTRA: 387 - Normal - A - 147 - 3 - A - I - 4
+ENTRA: 388 - Normal - D - 548 - 4 - D - II - 6
+ENTRA: 389 - Familiar - B - 1237 - 1 - B - IV - 5
+ENTRA: 390 - Normal - B - 1374 - 6 - B - II - 4
+ENTRA: 391 - Familiar - B - 1054 - 3 - B - II - 5
+ENTRA: 392 - Familiar - D - 1349 - 6 - D - I - 5
+ENTRA: 393 - Normal - C - 593 - 4 - C - I - 2
+ENTRA: 394 - Familiar - D - 705 - 1 - D - II - 3
+SALE: 56 - Normal - C
+ENTRA: 395 - Normal - D - 637 - 4 - D - IV - 6
+SALE: 349 - Normal - A
+ENTRA: 396 - Familiar - C - 26 - 1 - C - II - 5
+SALE: 94 - Normal - D
+ENTRA: 397 - Familiar - C - 213 - 1 - C - IV - 5
+SALE: 136 - Familiar - B
+ENTRA: 398 - Normal - D - 308 - 6 - D - I - 4
+ENTRA: 399 - Familiar - B - 349 - 1 - B - IV - 1
+ENTRA: 400 - Normal - C - 212 - 6 - C - I - 2
+ENTRA: 401 - Familiar - C - 498 - 2 - C - II - 5
+ENTRA: 402 - Normal - C - 252 - 5 - C - IV - 2
+ENTRA: 403 - Normal - A - 1196 - 5 - A - IV - 6
+ENTRA: 404 - Familiar - D - 1261 - 1 - D - IV - 3
+ENTRA: 405 - Familiar - D - 863 - 2 - D - II - 3
+ENTRA: 406 - Normal - A - 1026 - 5 - A - III - 2
+ENTRA: 407 - Familiar - C - 1207 - 2 - C - IV - 5
+SALE: 174 - Familiar - B
+ENTRA: 408 - Familiar - C - 23 - 3 - C - II - 5
+ENTRA: 409 - Normal - D - 1383 - 5 - D - II - 6
+ENTRA: 410 - Normal - D - 349 - 5 - D - IV - 6
+ENTRA: 411 - Familiar - D - 548 - 2 - D - IV - 3
+SALE: 334 - Familiar - C
+ENTRA: 412 - Familiar - B - 858 - 4 - B - II - 1
+SALE: 112 - Normal - A
+ENTRA: 413 - Familiar - A - 139 - 1 - A - II - 3
+SALE: 236 - Familiar - A
+ENTRA: 414 - Familiar - A - 1341 - 2 - A - II - 5
+SALE: 10 - Normal - D
+ENTRA: 415 - Familiar - C - 1086 - 3 - C - II - 3
+SALE: 220 - Familiar - C
+ENTRA: 416 - Normal - B - 1067 - 6 - B - IV - 4
+SALE: 223 - Normal - A
+ENTRA: 417 - Familiar - A - 31 - 2 - A - IV - 5
+ENTRA: 418 - Familiar - B - 581 - 3 - B - IV - 5
+SALE: 203 - Familiar - D
+ENTRA: 419 - Familiar - A - 696 - 3 - A - II - 5
+ENTRA: 420 - Familiar - D - 740 - 3 - D - II - 1
+SALE: 108 - Familiar - B
+ENTRA: 421 - Normal - D - 362 - 4 - D - I - 2
+ENTRA: 422 - Familiar - B - 164 - 5 - B - I - 5
+SALE: 396 - Familiar - C
+ENTRA: 423 - Normal - C - 427 - 6 - C - II - 2
+SALE: 77 - Normal - D
+ENTRA: 424 - Familiar - B - 752 - 4 - B - II - 5
+ENTRA: 425 - Familiar - D - 1207 - 3 - D - II - 3
+SALE: 300 - Familiar - C
+ENTRA: 426 - Normal - A - 358 - 4 - A - I - 6
+SALE: 92 - Familiar - D
+ENTRA: 427 - Familiar - C - 1292 - 4 - C - IV - 1
+ENTRA: 428 - Normal - B - 856 - 1 - B - II - 6
+ENTRA: 429 - Familiar - A - 1137 - 3 - A - IV - 5
+ENTRA: 430 - Familiar - D - 1186 - 6 - D - I - 3
+ENTRA: 431 - Normal - A - 19 - 2 - A - II - 4
+SALE: 408 - Familiar - C
+ENTRA: 432 - Normal - A - 869 - 6 - A - III - 2
+ENTRA: 433 - Normal - A - 1119 - 1 - A - III - 4
+ENTRA: 434 - Familiar - D - 841 - 3 - D - IV - 3
+ENTRA: 435 - Familiar - A - 675 - 4 - A - II - 5
+ENTRA: 436 - Familiar - C - 114 - 5 - C - IV - 1
+ENTRA: 437 - Familiar - B - 1207 - 4 - B - IV - 5
+ENTRA: 438 - Normal - D - 1094 - 5 - D - I - 4
+ENTRA: 439 - Normal - D - 1146 - 6 - D - II - 6
+ENTRA: 440 - Normal - D - 646 - 6 - D - IV - 6
+ENTRA: 441 - Familiar - A - 1055 - 4 - A - IV - 5
+ENTRA: 442 - Normal - A - 1145 - 2 - A - III - 4
+ENTRA: 443 - Familiar - D - 901 - 4 - D - II - 3
+SALE: 47 - Familiar - B
+ENTRA: 444 - Familiar - C - 899 - 1 - C - II - 5
+ENTRA: 445 - Normal - B - 423 - 1 - B - IV - 6
+ENTRA: 446 - Familiar - A - 262 - 5 - A - II - 5
+ENTRA: 447 - Familiar - A - 1253 - 5 - A - IV - 5
+ENTRA: 448 - Normal - A - 137 - 3 - A - III - 4
+SALE: 417 - Familiar - A
+ENTRA: 449 - Familiar - A - 388 - 2 - A - IV - 5
+ENTRA: 450 - Normal - D - 1270 - 1 - D - III - 2
+SALE: 431 - Normal - A
+ENTRA: 451 - Familiar - C - 1141 - 3 - C - II - 5
+ENTRA: 452 - Familiar - A - 1278 - 6 - A - II - 5
+SALE: 230 - Normal - B
+ENTRA: 453 - Familiar - D - 80 - 4 - D - I - 5
+SALE: 121 - Familiar - D
+ENTRA: 454 - Normal - D - 913 - 2 - D - III - 2
+ENTRA: 455 - Normal - A - 132 - 2 - A - II - 4
+ENTRA: 456 - Familiar - C - 967 - 3 - C - IV - 5
+ENTRA: 457 - Familiar - A - 1279 - 6 - A - IV - 5
+SALE: 253 - Familiar - B
+ENTRA: 458 - Normal - B - 232 - 1 - B - II - 2
+SALE: 242 - Familiar - B
+ENTRA: 459 - Familiar - C - 1342 - 4 - C - II - 5
+ENTRA: 460 - Normal - A - 931 - 4 - A - III - 4
+SALE: 338 - Normal - B
+ENTRA: 461 - Normal - C - 951 - 6 - C - IV - 2
+ENTRA: 462 - Normal - B - 358 - 4 - B - IV - 4
+ENTRA: 463 - Normal - B - 831 - 2 - B - II - 6
+ENTRA: 464 - Familiar - C - 745 - 4 - C - IV - 5
+ENTRA: 465 - Familiar - C - 977 - 5 - C - II - 5
+ENTRA: 466 - Familiar - A - 994 - 1 - A - III - 1
+ENTRA: 467 - Familiar - A - 352 - 2 - A - III - 1
+ENTRA: 468 - Normal - B - 319 - 2 - B - IV - 6
+ENTRA: 469 - Familiar - A - 632 - 3 - A - III - 1
+ENTRA: 470 - Familiar - D - 1263 - 4 - D - IV - 3
+ENTRA: 471 - Normal - B - 387 - 3 - B - II - 6
+ENTRA: 472 - Familiar - C - 1111 - 5 - C - IV - 5
+SALE: 85 - Normal - C
+ENTRA: 473 - Normal - B - 14 - 3 - B - IV - 6
+ENTRA: 474 - Familiar - B - 708 - 2 - B - I - 3
+ENTRA: 475 - Normal - A - 658 - 5 - A - III - 4
+ENTRA: 476 - Familiar - D - 175 - 5 - D - II - 3
+SALE: 119 - Normal - B
+ENTRA: 477 - Familiar - B - 1234 - 2 - B - II - 3
+ENTRA: 478 - Normal - D - 912 - 3 - D - III - 2
+ENTRA: 479 - Familiar - A - 417 - 4 - A - III - 1
+ENTRA: 480 - Familiar - C - 956 - 6 - C - II - 5
+SALE: 98 - Normal - D
+ENTRA: 481 - Familiar - D - 897 - 5 - D - IV - 3
+SALE: 70 - Normal - B
+ENTRA: 482 - Familiar - B - 366 - 3 - B - II - 3
+ENTRA: 483 - Normal - B - 1165 - 1 - B - I - 4
+ENTRA: 484 - Familiar - C - 773 - 6 - C - IV - 5
+ENTRA: 485 - Normal - D - 1070 - 1 - D - I - 6
+ENTRA: 486 - Normal - C - 182 - 2 - C - I - 4
+ENTRA: 487 - Familiar - A - 1124 - 5 - A - III - 1
+SALE: 473 - Normal - B
+ENTRA: 488 - Normal - D - 561 - 4 - D - III - 2
+ENTRA: 489 - Familiar - B - 1017 - 5 - B - II - 5
+ENTRA: 490 - Normal - B - 1295 - 2 - B - I - 6
+ENTRA: 491 - Familiar - D - 106 - 6 - D - II - 3
+SALE: 143 - Normal - A
+ENTRA: 492 - Normal - C - 1231 - 1 - C - II - 4
+ENTRA: 493 - Familiar - A - 495 - 6 - A - III - 1
+ENTRA: 494 - Normal - C - 1101 - 1 - C - IV - 4
+SALE: 73 - Normal - B
+ENTRA: 495 - Familiar - A - 545 - 1 - A - III - 3
+ENTRA: 496 - Familiar - A - 162 - 2 - A - III - 3
+ENTRA: 497 - Familiar - B - 1372 - 5 - B - IV - 5
+ENTRA: 498 - Normal - C - 1003 - 2 - C - II - 4
+ENTRA: 499 - Normal - C - 734 - 2 - C - IV - 4
+ENTRA: 500 - Normal - B - 940 - 2 - B - I - 4
+ENTRA: 501 - Normal - D - 889 - 5 - D - III - 2
+ENTRA: 502 - Normal - C - 482 - 3 - C - II - 4
+SALE: 137 - Normal - C
+ENTRA: 503 - Normal - C - 809 - 4 - C - I - 4
+ENTRA: 504 - Familiar - D - 341 - 6 - D - IV - 3
+ENTRA: 505 - Familiar - C - 1349 - 1 - C - III - 1
+SALE: 210 - Familiar - B
+ENTRA: 506 - Normal - D - 802 - 6 - D - III - 2
+ENTRA: 507 - Familiar - A - 324 - 3 - A - III - 3
+ENTRA: 508 - Familiar - A - 361 - 4 - A - III - 3
+SALE: 254 - Normal - B
+ENTRA: 509 - Familiar - B - 913 - 5 - B - I - 3
+SALE: 35 - Normal - A
+ENTRA: 510 - Familiar - C - 814 - 2 - C - III - 1
+SALE: 49 - Normal - D
+ENTRA: 511 - Familiar - D - 100 - 1 - D - II - 5
+SALE: 173 - Familiar - B
+ENTRA: 512 - Normal - D - 727 - 2 - D - I - 4
+SALE: 255 - Normal - B
+ENTRA: 513 - Normal - D - 1001 - 3 - D - II - 4
+SALE: 256 - Normal - D
+ENTRA: 514 - Familiar - B - 1023 - 4 - B - I - 1
+SALE: 271 - Familiar - D
+ENTRA: 515 - Familiar - D - 240 - 5 - D - IV - 1
+SALE: 377 - Normal - B
+ENTRA: 516 - Familiar - C - 506 - 6 - C - I - 1
+SALE: 40 - Familiar - C
+ENTRA: 517 - Familiar - A - 1126 - 5 - A - III - 3
+ENTRA: 518 - Normal - C - 162 - 3 - C - IV - 4
+ENTRA: 519 - Normal - A - 1031 - 5 - A - I - 2
+SALE: 297 - Normal - B
+ENTRA: 520 - Normal - D - 718 - 1 - D - III - 4
+SALE: 104 - Familiar - A
+ENTRA: 521 - Familiar - C - 1384 - 3 - C - III - 1
+ENTRA: 522 - Familiar - C - 102 - 4 - C - III - 1
+ENTRA: 523 - Normal - C - 281 - 4 - C - II - 4
+ENTRA: 524 - Normal - C - 899 - 4 - C - IV - 4
+SALE: 1 - Normal - D
+ENTRA: 525 - Familiar - A - 183 - 4 - A - I - 5
+ENTRA: 526 - Familiar - B - 1306 - 6 - B - II - 5
+ENTRA: 527 - Familiar - B - 1317 - 6 - B - IV - 5
+SALE: 110 - Normal - A
+ENTRA: 528 - Normal - A - 1162 - 3 - A - I - 6
+SALE: 62 - Normal - B
+ENTRA: 529 - Normal - B - 576 - 2 - B - I - 2
+SALE: 105 - Familiar - A
+ENTRA: 530 - Familiar - D - 1196 - 1 - D - IV - 5
+ENTRA: 531 - Familiar - D - 1174 - 2 - D - II - 5
+ENTRA: 532 - Normal - D - 1312 - 1 - D - I - 2
+ENTRA: 533 - Familiar - D - 947 - 2 - D - IV - 5
+SALE: 58 - Normal - A
+ENTRA: 534 - Familiar - A - 167 - 5 - A - I - 5
+SALE: 453 - Familiar - D
+ENTRA: 535 - Normal - B - 149 - 6 - B - I - 2
+SALE: 387 - Normal - A
+ENTRA: 536 - Familiar - B - 360 - 1 - B - III - 1
+SALE: 305 - Familiar - C
+ENTRA: 537 - Normal - D - 157 - 2 - D - III - 4
+ENTRA: 538 - Normal - B - 23 - 2 - B - IV - 2
+ENTRA: 539 - Familiar - D - 1123 - 4 - D - I - 5
+ENTRA: 540 - Familiar - A - 242 - 6 - A - III - 3
+ENTRA: 541 - Normal - D - 394 - 3 - D - III - 4
+ENTRA: 542 - Familiar - A - 861 - 1 - A - III - 5
+ENTRA: 543 - Familiar - C - 920 - 6 - C - II - 1
+ENTRA: 544 - Familiar - D - 1231 - 3 - D - II - 5
+ENTRA: 545 - Normal - C - 1048 - 5 - C - II - 4
+ENTRA: 546 - Normal - D - 875 - 4 - D - III - 4
+SALE: 18 - Familiar - C
+ENTRA: 547 - Familiar - C - 696 - 2 - C - I - 1
+ENTRA: 548 - Normal - B - 81 - 1 - B - II - 4
+ENTRA: 549 - Normal - C - 932 - 5 - C - IV - 4
+ENTRA: 550 - Familiar - A - 606 - 2 - A - III - 5
+SALE: 436 - Familiar - C
+ENTRA: 551 - Familiar - C - 1237 - 5 - C - IV - 1
+ENTRA: 552 - Normal - D - 702 - 5 - D - III - 4
+SALE: 413 - Familiar - A
+ENTRA: 553 - Normal - A - 502 - 3 - A - I - 4
+ENTRA: 554 - Familiar - D - 459 - 3 - D - IV - 5
+ENTRA: 555 - Familiar - C - 178 - 5 - C - III - 1
+ENTRA: 556 - Normal - D - 480 - 6 - D - III - 4
+ENTRA: 557 - Familiar - B - 726 - 2 - B - III - 1
+ENTRA: 558 - Familiar - C - 381 - 6 - C - III - 1
+ENTRA: 559 - Normal - B - 904 - 5 - B - IV - 4
+ENTRA: 560 - Normal - A - 96 - 4 - A - I - 4
+ENTRA: 561 - Familiar - D - 848 - 4 - D - II - 5
+SALE: 538 - Normal - B
+ENTRA: 562 - Normal - C - 509 - 6 - C - II - 4
+ENTRA: 563 - Normal - B - 212 - 2 - B - IV - 2
+SALE: 37 - Familiar - A
+ENTRA: 564 - Normal - C - 100 - 6 - C - IV - 4
+ENTRA: 565 - Normal - B - 977 - 3 - B - IV - 6
+SALE: 66 - Familiar - D
+ENTRA: 566 - Familiar - A - 1153 - 5 - A - I - 1
+ENTRA: 567 - Normal - A - 729 - 2 - A - II - 2
+ENTRA: 568 - Familiar - A - 337 - 1 - A - II - 3
+SALE: 44 - Familiar - A
+ENTRA: 569 - Normal - D - 128 - 1 - D - III - 6
+ENTRA: 570 - Normal - A - 782 - 6 - A - III - 4
+ENTRA: 571 - Normal - D - 610 - 2 - D - III - 6
+ENTRA: 572 - Familiar - D - 114 - 1 - D - I - 3
+ENTRA: 573 - Familiar - B - 852 - 3 - B - III - 1
+ENTRA: 574 - Normal - D - 1100 - 3 - D - III - 6
+ENTRA: 575 - Normal - B - 944 - 4 - B - II - 6
+ENTRA: 576 - Normal - C - 339 - 1 - C - II - 6
+ENTRA: 577 - Normal - D - 201 - 4 - D - III - 6
+ENTRA: 578 - Familiar - D - 1144 - 4 - D - IV - 5
+ENTRA: 579 - Familiar - C - 171 - 1 - C - III - 3
+ENTRA: 580 - Normal - B - 149 - 4 - B - IV - 6
+ENTRA: 581 - Normal - B - 1304 - 5 - B - II - 6
+ENTRA: 582 - Familiar - D - 473 - 5 - D - II - 5
+ENTRA: 583 - Normal - A - 679 - 1 - A - III - 6
+SALE: 57 - Normal - D
+ENTRA: 584 - Familiar - D - 410 - 5 - D - IV - 5
+ENTRA: 585 - Normal - D - 234 - 3 - D - I - 4
+SALE: 448 - Normal - A
+ENTRA: 586 - Familiar - B - 433 - 4 - B - III - 1
+SALE: 422 - Familiar - B
+ENTRA: 587 - Familiar - A - 1359 - 6 - A - I - 1
+SALE: 455 - Normal - A
+ENTRA: 588 - Normal - A - 462 - 2 - A - II - 4
+SALE: 34 - Familiar - C
+ENTRA: 589 - Normal - D - 17 - 5 - D - III - 6
+ENTRA: 590 - Normal - B - 172 - 5 - B - IV - 6
+ENTRA: 591 - Normal - C - 516 - 1 - C - IV - 6
+ENTRA: 592 - Normal - C - 608 - 2 - C - II - 6
+ENTRA: 593 - Normal - B - 1170 - 6 - B - II - 6
+ENTRA: 594 - Familiar - B - 446 - 5 - B - I - 5
+ENTRA: 595 - Familiar - C - 1215 - 3 - C - I - 1
+ENTRA: 596 - Familiar - A - 1164 - 3 - A - III - 5
+ENTRA: 597 - Normal - B - 127 - 6 - B - IV - 6
+SALE: 491 - Familiar - D
+ENTRA: 598 - Normal - C - 453 - 2 - C - IV - 6
+SALE: 280 - Familiar - B
+ENTRA: 599 - Normal - A - 522 - 3 - A - III - 4
+ENTRA: 600 - Normal - B - 1027 - 1 - B - III - 2
+SALE: 53 - Familiar - B
+ENTRA: 601 - Familiar - A - 259 - 4 - A - III - 5
+SALE: 320 - Normal - C
+ENTRA: 602 - Normal - A - 1261 - 2 - A - III - 6
+SALE: 227 - Familiar - B
+ENTRA: 603 - Familiar - B - 471 - 3 - B - I - 3
+ENTRA: 604 - Familiar - B - 853 - 6 - B - II - 1
+ENTRA: 605 - Normal - D - 1005 - 6 - D - III - 6
+ENTRA: 606 - Normal - C - 352 - 4 - C - IV - 2
+SALE: 589 - Normal - D
+ENTRA: 607 - Familiar - B - 1196 - 1 - B - IV - 3
+SALE: 166 - Normal - B
+ENTRA: 608 - Familiar - D - 707 - 6 - D - II - 3
+SALE: 117 - Familiar - A
+ENTRA: 609 - Familiar - A - 1325 - 6 - A - I - 5
+ENTRA: 610 - Normal - B - 996 - 6 - B - I - 6
+SALE: 397 - Familiar - C
+ENTRA: 611 - Normal - C - 769 - 3 - C - II - 6
+SALE: 511 - Familiar - D
+ENTRA: 612 - Normal - C - 264 - 3 - C - IV - 6
+SALE: 74 - Normal - C
+ENTRA: 613 - Normal - D - 291 - 5 - D - III - 6
+SALE: 400 - Normal - C
+ENTRA: 614 - Normal - D - 520 - 6 - C - I - 2
+ENTRA: 615 - Familiar - A - 703 - 5 - A - III - 5
+SALE: 347 - Normal - D
+ENTRA: 616 - Normal - B - 665 - 2 - B - III - 2
+SALE: 156 - Normal - A
+ENTRA: 617 - Familiar - C - 595 - 1 - C - IV - 5
+SALE: 153 - Familiar - A
+ENTRA: 618 - Normal - B - 944 - 3 - B - III - 2
+SALE: 115 - Familiar - C
+ENTRA: 619 - Normal - B - 794 - 4 - B - III - 2
+SALE: 176 - Normal - A
+ENTRA: 620 - Normal - D - 1337 - 4 - D - IV - 2
+SALE: 285 - Familiar - B
+ENTRA: 621 - Familiar - B - 714 - 4 - B - IV - 3
+SALE: 187 - Normal - D
+ENTRA: 622 - Familiar - B - 976 - 5 - B - III - 1
+SALE: 60 - Familiar - D
+ENTRA: 623 - Familiar - B - 655 - 6 - B - III - 1
+SALE: 374 - Familiar - C
+ENTRA: 624 - Familiar - A - 367 - 1 - A - IV - 1
+SALE: 307 - Normal - B
+ENTRA: 625 - Normal - B - 640 - 2 - B - II - 4
+SALE: 522 - Familiar - C
+ENTRA: 626 - Normal - A - 927 - 3 - A - II - 2
+ENTRA: 627 - Familiar - C - 1160 - 1 - C - I - 5
+ENTRA: 628 - Familiar - C - 516 - 5 - C - II - 3
+ENTRA: 629 - Familiar - A - 218 - 6 - A - III - 5
+SALE: 548 - Normal - B
+ENTRA: 630 - Familiar - C - 342 - 4 - C - III - 1
+SALE: 106 - Normal - B
+ENTRA: 631 - Familiar - A - 941 - 5 - D - I - 1
+ENTRA: 632 - Familiar - C - 790 - 2 - C - III - 3
+ENTRA: 633 - Familiar - B - 1074 - 1 - B - III - 3
+SALE: 149 - Normal - C
+ENTRA: 634 - Normal - A - 611 - 5 - A - IV - 2
+ENTRA: 635 - Normal - B - 963 - 6 - B - I - 4
+ENTRA: 636 - Normal - D - 899 - 1 - D - IV - 6
+SALE: 146 - Familiar - A
+ENTRA: 637 - Normal - B - 141 - 1 - B - II - 4
+SALE: 248 - Normal - D
+ENTRA: 638 - Familiar - D - 933 - 1 - D - II - 5
+SALE: 383 - Familiar - C
+ENTRA: 639 - Familiar - D - 661 - 6 - D - II - 5
+ENTRA: 640 - Familiar - C - 255 - 6 - C - IV - 3
+ENTRA: 641 - Familiar - D - 57 - 6 - D - IV - 5
+ENTRA: 642 - Normal - A - 1266 - 3 - A - III - 6
+ENTRA: 643 - Familiar - B - 896 - 2 - B - III - 3
+SALE: 124 - Familiar - C
+ENTRA: 644 - Normal - C - 1228 - 1 - C - I - 4
+ENTRA: 645 - Familiar - A - 481 - 1 - A - II - 1
+SALE: 332 - Normal - B
+ENTRA: 646 - Normal - A - 823 - 4 - A - III - 6
+SALE: 188 - Normal - B
+ENTRA: 647 - Familiar - A - 983 - 1 - D - III - 1
+ENTRA: 648 - Normal - B - 947 - 3 - B - I - 4
+ENTRA: 649 - Familiar - B - 807 - 3 - B - III - 3
+ENTRA: 650 - Familiar - B - 952 - 4 - B - III - 3
+ENTRA: 651 - Normal - A - 783 - 5 - A - III - 6
+SALE: 476 - Familiar - D
+ENTRA: 652 - Familiar - C - 1332 - 2 - C - I - 5
+SALE: 31 - Normal - A
+ENTRA: 653 - Normal - D - 580 - 2 - D - II - 4
+ENTRA: 654 - Familiar - A - 659 - 5 - D - II - 3
+SALE: 402 - Normal - C
+ENTRA: 655 - Familiar - A - 584 - 2 - D - III - 1
+ENTRA: 656 - Familiar - A - 156 - 3 - D - III - 1
+SALE: 560 - Normal - A
+ENTRA: 657 - Familiar - D - 1003 - 4 - D - III - 1
+ENTRA: 658 - Familiar - A - 348 - 5 - D - III - 1
+SALE: 496 - Familiar - A
+ENTRA: 659 - Familiar - A - 879 - 2 - A - III - 3
+ENTRA: 660 - Familiar - C - 1184 - 3 - C - III - 3
+ENTRA: 661 - Familiar - B - 1257 - 5 - B - III - 3
+ENTRA: 662 - Familiar - C - 697 - 4 - C - III - 3
+ENTRA: 663 - Familiar - B - 701 - 6 - B - III - 3
+SALE: 25 - Familiar - D
+ENTRA: 664 - Familiar - D - 1218 - 3 - D - I - 1
+SALE: 327 - Normal - D
+ENTRA: 665 - Familiar - D - 877 - 6 - D - III - 1
+SALE: 33 - Familiar - A
+ENTRA: 666 - Familiar - C - 1144 - 5 - C - III - 3
+SALE: 564 - Normal - C
+ENTRA: 667 - Familiar - D - 265 - 1 - D - III - 3
+SALE: 100 - Familiar - D
+ENTRA: 668 - Familiar - A - 723 - 4 - A - I - 1
+SALE: 237 - Familiar - B
+ENTRA: 669 - Normal - A - 1204 - 1 - A - I - 4
+SALE: 486 - Normal - C
+ENTRA: 670 - Familiar - C - 446 - 6 - C - III - 3
+ENTRA: 671 - Normal - B - 993 - 5 - B - I - 4
+ENTRA: 672 - Familiar - B - 1007 - 1 - B - II - 3
+ENTRA: 673 - Normal - D - 1151 - 3 - D - I - 2
+SALE: 348 - Familiar - D
+ENTRA: 674 - Familiar - C - 325 - 1 - C - III - 5
+ENTRA: 675 - Familiar - D - 1021 - 2 - D - I - 5
+ENTRA: 676 - Normal - B - 218 - 5 - B - III - 2
+ENTRA: 677 - Familiar - B - 1177 - 1 - B - III - 5
+ENTRA: 678 - Normal - B - 617 - 6 - B - III - 2
+SALE: 142 - Familiar - B
+ENTRA: 679 - Familiar - C - 574 - 2 - C - III - 5
+ENTRA: 680 - Normal - B - 176 - 1 - B - III - 4
+SALE: 518 - Normal - C
+ENTRA: 681 - Familiar - C - 388 - 3 - C - III - 5
+SALE: 292 - Normal - A
+ENTRA: 682 - Normal - B - 613 - 2 - B - III - 4
+SALE: 283 - Normal - D
+ENTRA: 683 - Familiar - A - 255 - 2 - B - IV - 1
+SALE: 132 - Normal - D
+ENTRA: 684 - Familiar - A - 1377 - 4 - D - IV - 1
+SALE: 144 - Normal - B
+ENTRA: 685 - Normal - B - 612 - 6 - B - I - 2
+SALE: 535 - Normal - B
+ENTRA: 686 - Familiar - C - 1281 - 4 - C - III - 5
+SALE: 249 - Familiar - B
+ENTRA: 687 - Familiar - D - 1351 - 1 - D - I - 3
+SALE: 572 - Familiar - D
+ENTRA: 688 - Normal - C - 1103 - 2 - C - I - 4
+SALE: 350 - Familiar - C
+ENTRA: 689 - Familiar - D - 319 - 2 - D - III - 3
+SALE: 27 - Normal - D
+ENTRA: 690 - Familiar - D - 734 - 3 - D - III - 3
+SALE: 148 - Normal - A
+ENTRA: 691 - Familiar - B - 999 - 2 - B - IV - 3
+SALE: 458 - Normal - B
+ENTRA: 692 - Normal - B - 1083 - 4 - B - I - 6
+ENTRA: 693 - Normal - D - 312 - 1 - D - I - 4
+ENTRA: 694 - Normal - A - 305 - 4 - A - I - 4
+SALE: 537 - Normal - D
+ENTRA: 695 - Normal - D - 702 - 3 - D - I - 6
+ENTRA: 696 - Normal - D - 984 - 4 - D - IV - 4
+ENTRA: 697 - Familiar - C - 280 - 3 - C - IV - 3
+SALE: 569 - Normal - D
+ENTRA: 698 - Normal - C - 512 - 3 - C - I - 6
+SALE: 79 - Familiar - B
+ENTRA: 699 - Familiar - B - 171 - 2 - B - I - 5
+SALE: 41 - Normal - B
+ENTRA: 700 - Normal - C - 874 - 5 - C - IV - 2
+SALE: 641 - Familiar - D
+ENTRA: 701 - Normal - B - 1251 - 4 - B - I - 2
+SALE: 534 - Familiar - A
+ENTRA: 702 - Normal - C - 711 - 3 - C - IV - 4
+ENTRA: 703 - Familiar - C - 730 - 5 - C - III - 5
+ENTRA: 704 - Familiar - D - 908 - 6 - D - IV - 5
+ENTRA: 705 - Familiar - B - 100 - 2 - B - III - 5
+ENTRA: 706 - Normal - D - 715 - 2 - D - III - 4
+SALE: 398 - Normal - D
+ENTRA: 707 - Familiar - B - 1211 - 3 - B - III - 5
+ENTRA: 708 - Normal - C - 849 - 6 - C - IV - 4
+SALE: 525 - Familiar - A
+ENTRA: 709 - Familiar - C - 1379 - 6 - C - III - 5
+SALE: 446 - Familiar - A
+ENTRA: 710 - Normal - B - 762 - 1 - B - II - 2
+SALE: 333 - Familiar - B
+ENTRA: 711 - Familiar - B - 280 - 1 - B - II - 5
+ENTRA: 712 - Normal - C - 65 - 4 - C - II - 6
+ENTRA: 713 - Familiar - B - 783 - 4 - B - III - 5
+SALE: 330 - Familiar - C
+ENTRA: 714 - Familiar - B - 891 - 5 - B - III - 5
+ENTRA: 715 - Familiar - B - 266 - 6 - B - III - 5
+ENTRA: 716 - Normal - B - 1034 - 3 - B - III - 4
+ENTRA: 717 - Familiar - C - 1257 - 2 - C - II - 3
+ENTRA: 718 - Familiar - A - 877 - 4 - A - I - 5
+ENTRA: 719 - Familiar - C - 1220 - 4 - D - III - 3
+SALE: 20 - Normal - B
+ENTRA: 720 - Familiar - C - 25 - 5 - D - III - 3
+SALE: 170 - Normal - A
+ENTRA: 721 - Familiar - D - 944 - 6 - D - III - 3
+ENTRA: 722 - Normal - B - 1127 - 3 - B - I - 2
+ENTRA: 723 - Familiar - D - 833 - 1 - D - III - 5
+ENTRA: 724 - Familiar - B - 118 - 5 - A - I - 5
+SALE: 597 - Normal - B
+ENTRA: 725 - Familiar - B - 540 - 5 - A - II - 5
+SALE: 157 - Normal - A
+ENTRA: 726 - Familiar - A - 1147 - 2 - D - III - 5
+SALE: 145 - Normal - D
+ENTRA: 727 - Normal - C - 304 - 4 - C - IV - 6
+SALE: 298 - Familiar - B
+ENTRA: 728 - Familiar - C - 1075 - 5 - B - II - 3
+SALE: 140 - Normal - D
+ENTRA: 729 - Familiar - B - 710 - 3 - D - III - 5
+SALE: 2 - Normal - C
+ENTRA: 730 - Normal - C - 792 - 1 - C - I - 2
+SALE: 580 - Normal - B
+ENTRA: 731 - Normal - B - 922 - 4 - B - IV - 6
+ENTRA: 732 - Familiar - A - 804 - 4 - D - III - 5
+SALE: 211 - Familiar - C
+ENTRA: 733 - Normal - B - 710 - 6 - B - IV - 6
+SALE: 302 - Familiar - B
+ENTRA: 734 - Normal - D - 1197 - 6 - D - I - 4
+SALE: 555 - Familiar - C
+ENTRA: 735 - Normal - B - 390 - 4 - B - III - 4
+SALE: 167 - Familiar - C
+ENTRA: 736 - Normal - C - 837 - 5 - C - II - 6
+ENTRA: 737 - Familiar - B - 300 - 5 - B - IV - 3
+ENTRA: 738 - Familiar - B - 411 - 4 - C - I - 5
+ENTRA: 739 - Familiar - C - 752 - 3 - C - II - 1
+SALE: 365 - Familiar - C
+ENTRA: 740 - Familiar - D - 1031 - 5 - D - III - 5
+ENTRA: 741 - Normal - D - 839 - 5 - D - I - 6
+SALE: 370 - Normal - A
+ENTRA: 742 - Familiar - D - 1039 - 6 - D - III - 5
+ENTRA: 743 - Familiar - C - 1293 - 5 - C - I - 1
+ENTRA: 744 - Familiar - D - 1073 - 5 - C - III - 1
+ENTRA: 745 - Normal - D - 920 - 6 - D - I - 6
+SALE: 720 - Familiar - C
+ENTRA: 746 - Familiar - C - 891 - 5 - D - III - 3
+ENTRA: 747 - Normal - A - 936 - 2 - A - IV - 2
+SALE: 399 - Familiar - B
+ENTRA: 748 - Familiar - B - 91 - 1 - B - IV - 1
+SALE: 129 - Normal - C
+SALE: 579 - Familiar - C
+ENTRA: 749 - Familiar - C - 48 - 1 - C - III - 3
+ENTRA: 750 - Normal - A - 448 - 3 - A - IV - 2
+ENTRA: 751 - Normal - A - 164 - 4 - A - II - 2
+ENTRA: 752 - Normal - D - 504 - 1 - D - III - 6
+ENTRA: 753 - Normal - B - 374 - 5 - B - III - 4
+SALE: 515 - Familiar - D
+ENTRA: 754 - Normal - A - 812 - 6 - A - IV - 4
+SALE: 128 - Familiar - B
+ENTRA: 755 - Familiar - B - 1285 - 1 - B - II - 1
+ENTRA: 756 - Normal - D - 993 - 1 - C - I - 6
+ENTRA: 757 - Normal - B - 1292 - 6 - B - III - 4
+SALE: 410 - Normal - D
+ENTRA: 758 - Familiar - A - 1146 - 5 - D - IV - 1
+ENTRA: 759 - Normal - A - 671 - 3 - A - III - 2
+ENTRA: 760 - Normal - D - 223 - 5 - D - IV - 6
+SALE: 590 - Normal - B
+SALE: 355 - Familiar - A
+ENTRA: 761 - Familiar - C - 737 - 6 - A - II - 3
+SALE: 32 - Normal - A
+SALE: 195 - Familiar - D
+ENTRA: 762 - Familiar - B - 450 - 2 - D - II - 1
+SALE: 337 - Normal - A
+SALE: 12 - Familiar - C
+ENTRA: 763 - Familiar - C - 1213 - 1 - C - I - 1
+SALE: 563 - Normal - B
+ENTRA: 764 - Normal - D - 537 - 2 - A - I - 4
+SALE: 52 - Familiar - C
+ENTRA: 765 - Familiar - C - 200 - 2 - C - I - 3
+SALE: 712 - Normal - C
+ENTRA: 766 - Normal - C - 520 - 4 - C - II - 6
+SALE: 122 - Normal - D
+SALE: 637 - Normal - B
+ENTRA: 767 - Familiar - B - 427 - 5 - D - I - 3
+SALE: 577 - Normal - D
+SALE: 372 - Familiar - D
+ENTRA: 768 - Familiar - B - 911 - 6 - A - III - 3
+SALE: 540 - Familiar - A
+ENTRA: 769 - Normal - A - 811 - 4 - A - IV - 6
+SALE: 421 - Normal - D
+SALE: 426 - Normal - A
+SALE: 336 - Normal - D
+SALE: 468 - Normal - B
+ENTRA: 770 - Familiar - C - 576 - 3 - D - I - 3
+SALE: 78 - Familiar - D
+ENTRA: 771 - Familiar - A - 773 - 2 - D - I - 1
+SALE: 19 - Familiar - D
+SALE: 272 - Normal - B
+SALE: 325 - Familiar - A
+ENTRA: 772 - Familiar - D - 490 - 4 - A - II - 3
+SALE: 384 - Normal - C
+ENTRA: 773 - Normal - C - 486 - 3 - C - IV - 2
+SALE: 290 - Familiar - D
+ENTRA: 774 - Familiar - A - 652 - 6 - D - II - 1
+SALE: 232 - Normal - B
+SALE: 204 - Normal - C
+SALE: 749 - Familiar - C
+ENTRA: 775 - Familiar - D - 605 - 1 - C - III - 3
+SALE: 65 - Familiar - D
+ENTRA: 776 - Familiar - C - 1325 - 6 - D - I - 1
+SALE: 523 - Normal - C
+SALE: 705 - Familiar - B
+ENTRA: 777 - Familiar - B - 987 - 2 - B - III - 5
+SALE: 164 - Normal - D
+SALE: 130 - Normal - A
+SALE: 322 - Normal - A
+SALE: 656 - Familiar - A
+ENTRA: 778 - Familiar - A - 903 - 3 - D - III - 1
+ENTRA: 779 - Normal - D - 168 - 4 - D - I - 2
+ENTRA: 780 - Normal - A - 982 - 4 - A - I - 6
+SALE: 95 - Familiar - A
+ENTRA: 781 - Familiar - B - 1384 - 1 - A - I - 5
+SALE: 323 - Normal - B
+ENTRA: 782 - Normal - B - 434 - 1 - B - IV - 2
+SALE: 218 - Familiar - C
+ENTRA: 783 - Normal - B - 1105 - 2 - B - IV - 2
+SALE: 135 - Normal - A
+ENTRA: 784 - Familiar - A - 794 - 4 - C - II - 1
+SALE: 198 - Normal - A
+ENTRA: 785 - Familiar - B - 933 - 2 - A - III - 1
+SALE: 467 - Familiar - A
+SALE: 585 - Normal - D
+SALE: 462 - Normal - B
+ENTRA: 786 - Familiar - C - 633 - 4 - C - I - 3
+SALE: 76 - Normal - D
+SALE: 152 - Familiar - C
+SALE: 193 - Normal - D
+ENTRA: 787 - Familiar - C - 454 - 5 - C - II - 1
+SALE: 226 - Familiar - C
+SALE: 507 - Familiar - A
+ENTRA: 788 - Familiar - C - 76 - 3 - A - III - 3
+SALE: 48 - Familiar - A
+ENTRA: 789 - Familiar - A - 941 - 3 - A - I - 1
+SALE: 258 - Normal - A
+ENTRA: 790 - Normal - D - 331 - 6 - D - I - 2
+SALE: 352 - Normal - A
+ENTRA: 791 - Normal - B - 504 - 4 - B - IV - 2
+SALE: 449 - Familiar - A
+ENTRA: 792 - Familiar - C - 140 - 2 - A - IV - 5
+SALE: 748 - Familiar - B
+ENTRA: 793 - Familiar - C - 179 - 1 - B - IV - 1
+SALE: 45 - Familiar - B
+ENTRA: 794 - Familiar - D - 263 - 4 - C - IV - 3
+SALE: 361 - Familiar - C
+ENTRA: 795 - Normal - C - 529 - 1 - C - II - 2
+SALE: 263 - Familiar - B
+ENTRA: 796 - Familiar - C - 160 - 1 - B - I - 3
+SALE: 724 - Familiar - B
+ENTRA: 797 - Normal - A - 1373 - 1 - A - II - 2
+SALE: 504 - Familiar - D
+ENTRA: 798 - Normal - B - 1175 - 1 - B - II - 4
+SALE: 68 - Familiar - D
+ENTRA: 799 - Familiar - C - 16 - 2 - D - I - 3
+SALE: 629 - Familiar - A
+ENTRA: 800 - Normal - A - 948 - 1 - A - IV - 2
+SALE: 482 - Familiar - B
+ENTRA: 801 - Familiar - A - 741 - 5 - A - I - 5
+ENTRA: 802 - Familiar - B - 720 - 2 - B - II - 1
+SALE: 423 - Normal - C
+ENTRA: 803 - Normal - A - 1282 - 1 - A - II - 4
+SALE: 321 - Normal - B
+ENTRA: 804 - Normal - A - 287 - 1 - A - IV - 4
+ENTRA: 805 - Familiar - C - 136 - 3 - B - II - 3
+ENTRA: 806 - Normal - C - 1056 - 6 - C - II - 2
+SALE: 200 - Familiar - D
+ENTRA: 807 - Familiar - D - 237 - 2 - D - IV - 1
+SALE: 343 - Normal - A
+ENTRA: 808 - Familiar - B - 351 - 6 - A - III - 5
+SALE: 680 - Normal - B
+ENTRA: 809 - Normal - D - 1128 - 3 - D - I - 4
+ENTRA: 810 - Normal - C - 28 - 4 - C - II - 4
+SALE: 471 - Normal - B
+ENTRA: 811 - Normal - C - 1155 - 5 - C - IV - 6
+ENTRA: 812 - Normal - B - 293 - 3 - B - II - 4
+SALE: 601 - Familiar - A
+ENTRA: 813 - Normal - D - 125 - 4 - D - I - 4
+ENTRA: 814 - Normal - D - 770 - 2 - D - II - 2
+SALE: 270 - Normal - B
+ENTRA: 815 - Normal - D - 905 - 5 - D - II - 2
+SALE: 799 - Familiar - C
+ENTRA: 816 - Normal - B - 415 - 4 - B - II - 2
+SALE: 286 - Normal - C
+ENTRA: 817 - Familiar - B - 1145 - 4 - A - III - 5
+SALE: 276 - Normal - A
+ENTRA: 818 - Familiar - D - 927 - 2 - D - I - 3
+ENTRA: 819 - Normal - B - 1153 - 3 - B - IV - 4
+ENTRA: 820 - Normal - B - 1146 - 4 - B - IV - 4
+SALE: 445 - Normal - B
+ENTRA: 821 - Normal - A - 1090 - 4 - A - IV - 4
+SALE: 508 - Familiar - A
+ENTRA: 822 - Normal - D - 405 - 1 - D - II - 4
+SALE: 699 - Familiar - B
+ENTRA: 823 - Normal - B - 805 - 1 - B - IV - 6
+ENTRA: 824 - Familiar - A - 1343 - 4 - A - III - 3
+ENTRA: 825 - Normal - C - 66 - 4 - C - II - 2
+ENTRA: 826 - Familiar - A - 995 - 2 - B - I - 5
+ENTRA: 827 - Familiar - C - 946 - 6 - D - IV - 3
+SALE: 612 - Normal - C
+SALE: 154 - Familiar - B
+ENTRA: 828 - Familiar - D - 391 - 3 - B - IV - 1
+SALE: 810 - Normal - C
+SALE: 247 - Normal - B
+SALE: 3 - Normal - A
+SALE: 23 - Normal - D
+SALE: 676 - Normal - B
+SALE: 640 - Familiar - C
+ENTRA: 829 - Familiar - B - 45 - 6 - C - IV - 3
+SALE: 536 - Familiar - B
+ENTRA: 830 - Familiar - D - 1047 - 4 - A - III - 1
+SALE: 479 - Familiar - A
+ENTRA: 831 - Familiar - B - 322 - 4 - B - II - 3
+SALE: 328 - Familiar - B
+ENTRA: 832 - Familiar - D - 74 - 1 - B - III - 1
+SALE: 116 - Normal - B
+ENTRA: 833 - Normal - A - 446 - 1 - A - I - 2
+SALE: 401 - Familiar - C
+ENTRA: 834 - Familiar - C - 666 - 2 - C - II - 5
+ENTRA: 835 - Normal - C - 602 - 4 - C - II - 4
+ENTRA: 836 - Normal - D - 710 - 5 - D - I - 2
+ENTRA: 837 - Normal - B - 896 - 1 - B - I - 6
+SALE: 613 - Normal - D
+SALE: 568 - Familiar - A
+ENTRA: 838 - Familiar - C - 1356 - 6 - A - II - 1
+SALE: 209 - Familiar - A
+ENTRA: 839 - Familiar - D - 428 - 1 - A - II - 3
+SALE: 306 - Normal - A
+ENTRA: 840 - Familiar - B - 477 - 3 - A - III - 3
+SALE: 788 - Familiar - C
+SALE: 576 - Normal - C
+SALE: 97 - Familiar - D
+ENTRA: 841 - Familiar - A - 79 - 1 - D - I - 5
+SALE: 751 - Normal - A
+ENTRA: 842 - Normal - D - 686 - 4 - D - III - 6
+SALE: 386 - Normal - D
+ENTRA: 843 - Normal - D - 373 - 1 - D - II - 6
+SALE: 54 - Normal - B
+ENTRA: 844 - Normal - A - 822 - 4 - A - II - 2
+SALE: 281 - Normal - B
+SALE: 667 - Familiar - D
+ENTRA: 845 - Familiar - D - 1388 - 1 - D - III - 3
+ENTRA: 846 - Normal - D - 1268 - 5 - D - III - 6
+ENTRA: 847 - Normal - B - 567 - 5 - B - I - 2
+SALE: 541 - Normal - D
+SALE: 103 - Normal - A
+SALE: 388 - Normal - D
+SALE: 683 - Familiar - A
+ENTRA: 848 - Familiar - C - 917 - 2 - B - IV - 1
+SALE: 825 - Normal - C
+ENTRA: 849 - Normal - D - 30 - 4 - D - II - 6
+SALE: 558 - Familiar - C
+ENTRA: 850 - Familiar - D - 1104 - 6 - C - III - 1
+SALE: 829 - Familiar - B
+ENTRA: 851 - Familiar - C - 857 - 6 - C - IV - 3
+ENTRA: 852 - Normal - D - 1260 - 3 - D - III - 4
+SALE: 375 - Familiar - D
+ENTRA: 853 - Normal - C - 1228 - 4 - C - II - 2
+ENTRA: 854 - Normal - A - 1165 - 2 - A - I - 6
+ENTRA: 855 - Familiar - B - 464 - 3 - D - I - 5
+ENTRA: 856 - Normal - A - 307 - 5 - A - IV - 4
+SALE: 274 - Normal - B
+ENTRA: 857 - Normal - C - 120 - 1 - C - II - 6
+SALE: 64 - Familiar - A
+ENTRA: 858 - Familiar - B - 1218 - 2 - A - I - 3
+SALE: 606 - Normal - C
+SALE: 411 - Familiar - D
+ENTRA: 859 - Familiar - A - 1011 - 2 - D - IV - 3
+ENTRA: 860 - Normal - D - 364 - 4 - C - IV - 2
+SALE: 385 - Familiar - A
+ENTRA: 861 - Familiar - B - 1089 - 1 - A - IV - 5
+ENTRA: 862 - Normal - D - 767 - 3 - A - II - 6
+ENTRA: 863 - Normal - C - 327 - 3 - C - IV - 6
+ENTRA: 864 - Normal - C - 685 - 6 - C - II - 6
+SALE: 371 - Familiar - C
+ENTRA: 865 - Familiar - D - 625 - 2 - C - IV - 3
+SALE: 326 - Normal - B
+ENTRA: 866 - Normal - B - 578 - 2 - B - II - 2
+SALE: 86 - Normal - B
+ENTRA: 867 - Normal - A - 266 - 4 - A - II - 6
+SALE: 849 - Normal - D
+SALE: 630 - Familiar - C
+ENTRA: 868 - Familiar - A - 415 - 4 - C - III - 1
+SALE: 832 - Familiar - D
+ENTRA: 869 - Familiar - A - 322 - 1 - B - III - 1
+SALE: 233 - Normal - D
+SALE: 275 - Normal - D
+ENTRA: 870 - Familiar - C - 1339 - 3 - C - IV - 3
+SALE: 697 - Familiar - C
+ENTRA: 871 - Normal - C - 1321 - 6 - C - IV - 6
+SALE: 792 - Familiar - C
+ENTRA: 872 - Normal - B - 214 - 4 - B - I - 4
+SALE: 765 - Familiar - C
+ENTRA: 873 - Familiar - D - 152 - 2 - C - I - 3
+SALE: 21 - Familiar - A
+ENTRA: 874 - Familiar - B - 1005 - 6 - B - III - 5
+SALE: 715 - Familiar - B
+ENTRA: 875 - Normal - C - 1313 - 1 - C - III - 2
+SALE: 779 - Normal - D
+ENTRA: 876 - Normal - B - 106 - 5 - B - II - 2
+SALE: 502 - Normal - C
+ENTRA: 877 - Normal - C - 548 - 3 - C - II - 4
+SALE: 760 - Normal - D
+ENTRA: 878 - Normal - D - 653 - 4 - D - I - 2
+SALE: 393 - Normal - C
+ENTRA: 879 - Familiar - A - 1247 - 2 - A - I - 1
+SALE: 813 - Normal - D
+ENTRA: 880 - Familiar - B - 1102 - 2 - A - IV - 5
+SALE: 340 - Normal - D
+ENTRA: 881 - Familiar - A - 827 - 6 - A - III - 1
+SALE: 5 - Normal - D
+ENTRA: 882 - Familiar - C - 977 - 3 - B - II - 3
+SALE: 493 - Familiar - A
+SALE: 805 - Familiar - C
+ENTRA: 883 - Familiar - C - 1264 - 1 - B - II - 5
+SALE: 240 - Normal - D
+ENTRA: 884 - Familiar - B - 878 - 1 - A - IV - 1
+SALE: 624 - Familiar - A
+ENTRA: 885 - Normal - B - 282 - 6 - B - II - 2
+SALE: 711 - Familiar - B
+ENTRA: 886 - Normal - C - 1363 - 4 - C - I - 2
+SALE: 315 - Familiar - A
+ENTRA: 887 - Familiar - D - 472 - 5 - D - IV - 5
+SALE: 584 - Familiar - D
+ENTRA: 888 - Familiar - B - 668 - 3 - A - IV - 3
+SALE: 841 - Familiar - A
+ENTRA: 889 - Familiar - B - 378 - 1 - D - I - 5
+SALE: 238 - Normal - C
+ENTRA: 890 - Normal - A - 304 - 5 - A - II - 6
+SALE: 243 - Normal - C
+ENTRA: 891 - Normal - A - 525 - 4 - A - I - 4
+SALE: 674 - Familiar - C
+ENTRA: 892 - Familiar - A - 1231 - 3 - B - IV - 5
+SALE: 418 - Familiar - B
+ENTRA: 893 - Normal - B - 781 - 4 - B - II - 4
+SALE: 694 - Normal - A
+ENTRA: 894 - Normal - D - 412 - 2 - D - I - 2
+SALE: 80 - Familiar - B
+ENTRA: 895 - Familiar - C - 1281 - 1 - C - III - 5
+SALE: 317 - Normal - D
+ENTRA: 896 - Familiar - B - 315 - 1 - B - I - 3
+SALE: 16 - Familiar - A
+ENTRA: 897 - Normal - A - 988 - 6 - A - III - 6
+SALE: 796 - Familiar - C
+ENTRA: 898 - Familiar - B - 508 - 3 - B - I - 5
+SALE: 693 - Normal - D
+ENTRA: 899 - Familiar - B - 1270 - 1 - A - I - 1
+SALE: 289 - Normal - B
+ENTRA: 900 - Familiar - D - 657 - 5 - D - III - 1
+SALE: 658 - Familiar - A
+ENTRA: 901 - Familiar - D - 351 - 2 - D - III - 3
+SALE: 689 - Familiar - D
+ENTRA: 902 - Normal - B - 1226 - 6 - B - IV - 2
+ENTRA: 903 - Normal - D - 438 - 1 - D - I - 4
+SALE: 554 - Familiar - D
+ENTRA: 904 - Familiar - D - 475 - 3 - D - IV - 5
+ENTRA: 905 - Normal - A - 731 - 4 - D - I - 4
+SALE: 293 - Normal - A
+SALE: 586 - Familiar - B
+ENTRA: 906 - Familiar - A - 605 - 4 - B - III - 1
+SALE: 793 - Familiar - C
+ENTRA: 907 - Normal - B - 628 - 2 - B - IV - 6
+ENTRA: 908 - Familiar - A - 688 - 1 - B - IV - 1
+SALE: 267 - Familiar - A
+ENTRA: 909 - Normal - D - 1022 - 2 - D - IV - 2
+SALE: 516 - Familiar - C
+ENTRA: 910 - Familiar - C - 256 - 6 - C - I - 1
+ENTRA: 911 - Familiar - D - 161 - 2 - A - IV - 3
+SALE: 727 - Normal - C
+ENTRA: 912 - Familiar - D - 1381 - 6 - C - I - 3
+SALE: 252 - Familiar - C
+SALE: 395 - Normal - D
+SALE: 38 - Familiar - C
+ENTRA: 913 - Familiar - A - 250 - 4 - C - I - 1
+SALE: 556 - Normal - D
+SALE: 737 - Familiar - B
+ENTRA: 914 - Familiar - D - 775 - 5 - B - IV - 3
+ENTRA: 915 - Normal - D - 1271 - 3 - D - IV - 2
+SALE: 495 - Familiar - A
+ENTRA: 916 - Familiar - B - 300 - 5 - B - I - 5
+SALE: 594 - Familiar - B
+ENTRA: 917 - Normal - B - 448 - 3 - B - II - 6
+ENTRA: 918 - Familiar - D - 954 - 1 - A - III - 3
+ENTRA: 919 - Normal - A - 929 - 1 - A - II - 6
+SALE: 131 - Familiar - C
+ENTRA: 920 - Familiar - B - 723 - 3 - C - I - 5
+SALE: 345 - Normal - C
+SALE: 488 - Normal - D
+SALE: 588 - Normal - A
+SALE: 598 - Normal - C
+SALE: 191 - Familiar - B
+ENTRA: 921 - Familiar - B - 1320 - 4 - B - IV - 1
+SALE: 362 - Normal - A
+ENTRA: 922 - Familiar - B - 178 - 5 - D - II - 5
+SALE: 553 - Normal - A
+ENTRA: 923 - Normal - B - 744 - 5 - B - IV - 6
+SALE: 582 - Familiar - D
+ENTRA: 924 - Normal - B - 482 - 5 - B - III - 2
+SALE: 205 - Normal - C
+ENTRA: 925 - Normal - D - 568 - 1 - D - IV - 4
+ENTRA: 926 - Normal - B - 813 - 1 - B - III - 4
+SALE: 264 - Normal - C
+SALE: 367 - Normal - D
+ENTRA: 927 - Familiar - A - 938 - 3 - B - II - 1
+SALE: 151 - Familiar - B
+ENTRA: 928 - Normal - B - 486 - 1 - B - III - 6
+SALE: 857 - Normal - C
+ENTRA: 929 - Familiar - C - 365 - 6 - A - IV - 1
+SALE: 219 - Familiar - A
+ENTRA: 930 - Familiar - C - 752 - 3 - C - III - 5
+SALE: 681 - Familiar - C
+ENTRA: 931 - Normal - D - 1245 - 4 - D - II - 4
+SALE: 222 - Familiar - D
+ENTRA: 932 - Familiar - D - 717 - 3 - D - IV - 1
+SALE: 562 - Normal - C
+ENTRA: 933 - Normal - C - 1082 - 4 - C - I - 6
+ENTRA: 934 - Normal - B - 184 - 2 - B - III - 6
+SALE: 603 - Familiar - B
+ENTRA: 935 - Familiar - B - 1207 - 3 - B - I - 3
+ENTRA: 936 - Normal - B - 238 - 3 - B - III - 6
+SALE: 261 - Normal - D
+ENTRA: 937 - Normal - C - 675 - 1 - C - IV - 2
+SALE: 75 - Normal - A
+SALE: 83 - Normal - A
+SALE: 87 - Familiar - A
+ENTRA: 938 - Familiar - C - 759 - 5 - A - I - 3
+SALE: 88 - Familiar - A
+ENTRA: 939 - Familiar - D - 1193 - 6 - A - I - 3
+ENTRA: 940 - Normal - D - 979 - 1 - D - II - 2
+SALE: 71 - Familiar - A
+ENTRA: 941 - Familiar - C - 341 - 3 - A - I - 3
+SALE: 440 - Normal - D
+SALE: 876 - Normal - B
+SALE: 807 - Familiar - D
+ENTRA: 942 - Familiar - C - 850 - 2 - D - IV - 1
+SALE: 228 - Familiar - D
+ENTRA: 943 - Normal - D - 1081 - 6 - D - IV - 4
+ENTRA: 944 - Normal - A - 819 - 3 - A - I - 4
+ENTRA: 945 - Normal - D - 1009 - 3 - D - IV - 6
+ENTRA: 946 - Familiar - D - 1320 - 4 - D - II - 1
+ENTRA: 947 - Normal - A - 1085 - 5 - A - I - 4
+SALE: 394 - Familiar - D
+ENTRA: 948 - Familiar - D - 654 - 1 - D - II - 3
+SALE: 469 - Familiar - A
+ENTRA: 949 - Familiar - B - 375 - 4 - A - II - 1
+SALE: 189 - Familiar - A
+ENTRA: 950 - Familiar - A - 102 - 3 - A - III - 1
+SALE: 171 - Normal - A
+ENTRA: 951 - Normal - D - 1171 - 4 - D - II - 6
+SALE: 358 - Normal - A
+SALE: 529 - Normal - B
+ENTRA: 952 - Familiar - A - 291 - 4 - C - IV - 3
+SALE: 353 - Normal - D
+ENTRA: 953 - Normal - A - 1034 - 6 - A - I - 4
+SALE: 794 - Familiar - D
+SALE: 591 - Normal - C
+SALE: 435 - Familiar - A
+ENTRA: 954 - Familiar - A - 210 - 4 - A - II - 5
+SALE: 419 - Familiar - A
+ENTRA: 955 - Familiar - C - 1299 - 3 - A - II - 5
+SALE: 670 - Familiar - C
+ENTRA: 956 - Normal - B - 735 - 2 - B - I - 2
+ENTRA: 957 - Familiar - C - 510 - 6 - C - III - 3
+ENTRA: 958 - Normal - B - 907 - 5 - B - II - 2
+SALE: 234 - Familiar - B
+ENTRA: 959 - Normal - B - 376 - 4 - B - III - 6
+ENTRA: 960 - Familiar - B - 101 - 6 - B - IV - 1
+SALE: 599 - Normal - A
+SALE: 4 - Normal - B
+SALE: 735 - Normal - B
+SALE: 645 - Familiar - A
+ENTRA: 961 - Familiar - B - 342 - 1 - A - II - 1
+ENTRA: 962 - Normal - B - 1141 - 1 - B - I - 2
+SALE: 753 - Normal - B
+SALE: 873 - Familiar - D
+ENTRA: 963 - Familiar - A - 544 - 2 - C - I - 3
+SALE: 475 - Normal - A
+SALE: 614 - Normal - D
+SALE: 804 - Normal - A
+SALE: 241 - Normal - A
+SALE: 339 - Familiar - A
+ENTRA: 964 - Familiar - A - 1167 - 4 - A - IV - 3
+ENTRA: 965 - Normal - A - 1227 - 4 - A - IV - 2
+SALE: 628 - Familiar - C
+ENTRA: 966 - Normal - D - 230 - 2 - D - II - 6
+ENTRA: 967 - Familiar - B - 918 - 5 - C - II - 3
+ENTRA: 968 - Normal - A - 302 - 1 - A - IV - 4
+SALE: 738 - Familiar - B
+ENTRA: 969 - Familiar - C - 474 - 4 - C - I - 5
+ENTRA: 970 - Normal - C - 405 - 6 - C - I - 2
+SALE: 114 - Normal - C
+ENTRA: 971 - Normal - C - 733 - 5 - C - I - 4
+SALE: 231 - Normal - A
+ENTRA: 972 - Normal - D - 770 - 4 - D - IV - 6
+SALE: 812 - Normal - B
+ENTRA: 973 - Normal - C - 1189 - 2 - C - II - 2
+SALE: 181 - Normal - A
+SALE: 550 - Familiar - A
+ENTRA: 974 - Familiar - A - 1183 - 2 - A - III - 5
+SALE: 141 - Familiar - D
+ENTRA: 975 - Familiar - B - 1071 - 5 - D - I - 5
+SALE: 180 - Familiar - A
+ENTRA: 976 - Familiar - C - 1350 - 3 - D - II - 1
+SALE: 420 - Familiar - D
+ENTRA: 977 - Familiar - B - 14 - 3 - A - IV - 1
+ENTRA: 978 - Normal - D - 1129 - 5 - D - IV - 6
+ENTRA: 979 - Normal - C - 984 - 2 - C - IV - 2
+ENTRA: 980 - Normal - D - 63 - 6 - D - IV - 6
+ENTRA: 981 - Normal - B - 674 - 3 - B - II - 4
+SALE: 182 - Familiar - D
+ENTRA: 982 - Normal - D - 556 - 6 - D - I - 2
+SALE: 790 - Normal - D
+ENTRA: 983 - Normal - C - 562 - 3 - C - II - 2
+ENTRA: 984 - Familiar - D - 44 - 1 - D - IV - 1
+SALE: 101 - Normal - C
+SALE: 314 - Normal - A
+SALE: 369 - Normal - B
+SALE: 977 - Familiar - B
+ENTRA: 985 - Familiar - D - 160 - 3 - A - IV - 1
+SALE: 424 - Familiar - B
+ENTRA: 986 - Normal - D - 545 - 4 - D - III - 2
+SALE: 257 - Familiar - B
+ENTRA: 987 - Familiar - A - 815 - 3 - B - IV - 3
+ENTRA: 988 - Familiar - D - 1380 - 4 - B - II - 5
+SALE: 571 - Normal - D
+SALE: 474 - Familiar - B
+ENTRA: 989 - Familiar - B - 687 - 2 - B - I - 3
+ENTRA: 990 - Normal - D - 885 - 6 - D - III - 4
+SALE: 133 - Familiar - D
+ENTRA: 991 - Familiar - B - 790 - 4 - D - I - 3
+SALE: 30 - Normal - C
+SALE: 911 - Familiar - D
+ENTRA: 992 - Familiar - A - 104 - 2 - A - IV - 3
+SALE: 51 - Familiar - C
+ENTRA: 993 - Familiar - C - 273 - 1 - C - I - 3
+SALE: 288 - Normal - D
+ENTRA: 994 - Normal - A - 1145 - 2 - A - I - 2
+SALE: 262 - Familiar - D
+ENTRA: 995 - Normal - B - 566 - 5 - B - II - 4
+SALE: 26 - Normal - C
+ENTRA: 996 - Normal - C - 307 - 2 - C - I - 2
+SALE: 319 - Normal - A
+ENTRA: 997 - Familiar - C - 971 - 5 - D - II - 1
+SALE: 872 - Normal - B
+SALE: 11 - Familiar - B
+ENTRA: 998 - Familiar - B - 1015 - 2 - B - I - 1
+SALE: 250 - Normal - D
+SALE: 592 - Normal - C
+SALE: 750 - Normal - A
+SALE: 139 - Normal - D
+SALE: 950 - Familiar - A
+ENTRA: 999 - Familiar - C - 1176 - 3 - A - III - 1
+SALE: 808 - Familiar - B
+SALE: 767 - Familiar - B
+SALE: 464 - Familiar - C
+SALE: 698 - Normal - C
+SALE: 617 - Familiar - C
+SALE: 984 - Familiar - D
+SALE: 120 - Normal - B
+SALE: 310 - Familiar - B
+SALE: 313 - Familiar - B
+SALE: 762 - Familiar - B
+SALE: 831 - Familiar - B
+SALE: 221 - Normal - B
+SALE: 960 - Familiar - B
+SALE: 299 - Normal - B
+SALE: 179 - Normal - D
+SALE: 980 - Normal - D
+SALE: 499 - Normal - C
+SALE: 653 - Normal - D
+SALE: 922 - Familiar - B
+SALE: 867 - Normal - A
+SALE: 59 - Familiar - A
+SALE: 520 - Normal - D
+SALE: 93 - Familiar - B
+SALE: 512 - Normal - D
+SALE: 655 - Familiar - A
+SALE: 547 - Familiar - C
+SALE: 214 - Normal - D
+SALE: 634 - Normal - A
+SALE: 43 - Familiar - D
+SALE: 335 - Normal - B
+SALE: 96 - Familiar - A
+SALE: 782 - Normal - B
+SALE: 679 - Familiar - C
+SALE: 856 - Normal - A
+SALE: 552 - Normal - D
+SALE: 484 - Familiar - C
+SALE: 752 - Normal - D
+SALE: 934 - Normal - B
+SALE: 278 - Familiar - B
+SALE: 583 - Normal - A
+SALE: 158 - Normal - C
+SALE: 625 - Normal - B
+SALE: 725 - Familiar - B
+SALE: 405 - Familiar - D
+SALE: 828 - Familiar - D
+SALE: 412 - Familiar - B
+SALE: 172 - Normal - A
+SALE: 822 - Normal - D
+SALE: 434 - Familiar - D
+SALE: 885 - Normal - B
+SALE: 359 - Familiar - D
+SALE: 623 - Familiar - B
+SALE: 816 - Normal - B
+SALE: 773 - Normal - C
+SALE: 787 - Familiar - C
+SALE: 910 - Familiar - C
+SALE: 616 - Normal - B
+SALE: 557 - Familiar - B
+SALE: 772 - Familiar - D
+SALE: 428 - Normal - B
+SALE: 913 - Familiar - A
+SALE: 357 - Familiar - C
+SALE: 72 - Familiar - A
+SALE: 992 - Familiar - A
+SALE: 863 - Normal - C
+SALE: 843 - Normal - D
+SALE: 463 - Normal - B
+SALE: 682 - Normal - B
+SALE: 678 - Normal - B
+SALE: 295 - Familiar - D
+SALE: 869 - Familiar - A
+SALE: 567 - Normal - A
+SALE: 366 - Normal - D
+SALE: 685 - Normal - B
+SALE: 190 - Normal - C
+SALE: 282 - Normal - A
+SALE: 766 - Normal - C
+SALE: 160 - Familiar - A
+SALE: 639 - Familiar - D
+SALE: 312 - Familiar - C
+SALE: 178 - Familiar - D
+SALE: 432 - Normal - A
+SALE: 185 - Normal - A
+SALE: 890 - Normal - A
+SALE: 296 - Normal - A
+SALE: 506 - Normal - D
+SALE: 212 - Familiar - B
+SALE: 503 - Normal - C
+SALE: 654 - Familiar - A
+SALE: 764 - Normal - D
+SALE: 936 - Normal - B
+SALE: 608 - Familiar - D
+SALE: 615 - Familiar - A
+SALE: 896 - Familiar - B
+SALE: 954 - Familiar - A
+SALE: 147 - Normal - C
+SALE: 17 - Normal - A
+SALE: 510 - Familiar - C
+SALE: 860 - Normal - D
+SALE: 376 - Familiar - C
+SALE: 304 - Normal - C
+SALE: 291 - Normal - D
+SALE: 309 - Familiar - C
+SALE: 839 - Familiar - D
+SALE: 621 - Familiar - B
+SALE: 985 - Familiar - D
+SALE: 791 - Normal - B
+SALE: 109 - Familiar - C
+SALE: 134 - Normal - A
+SALE: 916 - Familiar - B
+SALE: 67 - Familiar - B
+SALE: 444 - Familiar - C
+SALE: 443 - Familiar - D
+SALE: 273 - Familiar - B
+SALE: 833 - Normal - A
+SALE: 183 - Familiar - C
+SALE: 570 - Normal - A
+SALE: 360 - Normal - C
+SALE: 329 - Familiar - A
+SALE: 662 - Familiar - C
+SALE: 901 - Familiar - D
+SALE: 770 - Familiar - C
+SALE: 663 - Familiar - B
+SALE: 364 - Familiar - B
+SALE: 454 - Normal - D
+SALE: 795 - Normal - C
+SALE: 202 - Familiar - A
+SALE: 966 - Normal - D
+SALE: 208 - Normal - D
+SALE: 889 - Familiar - B
+SALE: 481 - Familiar - D
+SALE: 611 - Normal - C
+SALE: 225 - Familiar - B
+SALE: 0 - Familiar - B
+SALE: 163 - Familiar - A
+SALE: 840 - Familiar - B
+SALE: 269 - Normal - A
+SALE: 868 - Familiar - A
+SALE: 192 - Familiar - C
+SALE: 341 - Familiar - A
+SALE: 478 - Normal - D
+SALE: 501 - Normal - D
+SALE: 668 - Familiar - A
+SALE: 460 - Normal - A
+SALE: 125 - Normal - A
+SALE: 695 - Normal - D
+SALE: 952 - Familiar - A
+SALE: 199 - Familiar - C
+SALE: 542 - Familiar - A
+SALE: 775 - Familiar - D
+SALE: 561 - Familiar - D
+SALE: 855 - Familiar - B
+SALE: 461 - Normal - C
+SALE: 702 - Normal - C
+SALE: 619 - Normal - B
+SALE: 894 - Normal - D
+SALE: 81 - Familiar - C
+SALE: 706 - Normal - D
+SALE: 201 - Familiar - A
+SALE: 546 - Normal - D
+SALE: 632 - Familiar - C
+SALE: 509 - Familiar - B
+SALE: 456 - Familiar - C
+SALE: 524 - Normal - C
+SALE: 690 - Familiar - D
+SALE: 573 - Familiar - B
+SALE: 36 - Familiar - B
+SALE: 941 - Familiar - C
+SALE: 759 - Normal - A
+SALE: 265 - Normal - D
+SALE: 406 - Normal - A
+SALE: 244 - Familiar - A
+SALE: 69 - Familiar - B
+SALE: 703 - Familiar - C
+SALE: 651 - Normal - A
+SALE: 929 - Familiar - C
+SALE: 356 - Normal - A
+SALE: 480 - Familiar - C
+SALE: 729 - Familiar - B
+SALE: 500 - Normal - B
+SALE: 465 - Familiar - C
+SALE: 733 - Normal - B
+SALE: 391 - Familiar - B
+SALE: 774 - Familiar - A
+SALE: 90 - Normal - A
+SALE: 175 - Familiar - C
+SALE: 968 - Normal - A
+SALE: 224 - Normal - A
+SALE: 903 - Normal - D
+SALE: 206 - Familiar - A
+SALE: 324 - Normal - D
+SALE: 102 - Familiar - A
+SALE: 649 - Familiar - B
+SALE: 786 - Familiar - C
+SALE: 604 - Familiar - B
+SALE: 466 - Familiar - A
+SALE: 196 - Familiar - C
+SALE: 993 - Familiar - C
+SALE: 194 - Normal - D
+SALE: 559 - Normal - B
+SALE: 543 - Familiar - C
+SALE: 887 - Familiar - D
+SALE: 961 - Familiar - B
+SALE: 646 - Normal - A
+SALE: 277 - Familiar - C
+SALE: 710 - Normal - B
+SALE: 268 - Normal - B
+SALE: 949 - Familiar - B
+SALE: 533 - Familiar - D
+SALE: 197 - Familiar - B
+SALE: 549 - Normal - C
+SALE: 416 - Normal - B
+SALE: 904 - Familiar - D
+SALE: 917 - Normal - B
+SALE: 739 - Familiar - C
+SALE: 126 - Familiar - B
+SALE: 107 - Normal - D
+SALE: 441 - Familiar - A
+SALE: 713 - Familiar - B
+SALE: 959 - Normal - B
+SALE: 996 - Normal - C
+SALE: 498 - Normal - C
+SALE: 415 - Familiar - C
+SALE: 847 - Normal - B
+SALE: 761 - Familiar - C
+SALE: 835 - Normal - C
+SALE: 489 - Familiar - B
+SALE: 168 - Familiar - C
+SALE: 513 - Normal - D
+SALE: 898 - Familiar - B
+SALE: 575 - Normal - B
+SALE: 730 - Normal - C
+SALE: 891 - Normal - A
+SALE: 279 - Normal - B
+SALE: 438 - Normal - D
+SALE: 877 - Normal - C
+SALE: 636 - Normal - D
+SALE: 732 - Familiar - A
+SALE: 514 - Familiar - B
+SALE: 287 - Normal - D
+SALE: 659 - Familiar - A
+SALE: 159 - Normal - D
+SALE: 643 - Familiar - B
+SALE: 924 - Normal - B
+SALE: 565 - Normal - B
+SALE: 665 - Familiar - D
+SALE: 866 - Normal - B
+SALE: 928 - Normal - B
+SALE: 519 - Normal - A
+SALE: 433 - Normal - A
+SALE: 626 - Normal - A
+SALE: 382 - Normal - A
+SALE: 485 - Normal - D
+SALE: 723 - Familiar - D
+SALE: 970 - Normal - C
+SALE: 708 - Normal - C
+SALE: 771 - Familiar - A
+SALE: 618 - Normal - B
+SALE: 246 - Normal - A
+SALE: 429 - Familiar - A
+SALE: 834 - Familiar - C
+SALE: 754 - Normal - A
+SALE: 802 - Familiar - B
+SALE: 638 - Familiar - D
+SALE: 294 - Normal - A
+SALE: 631 - Familiar - A
+SALE: 736 - Normal - C
+SALE: 700 - Normal - C
+SALE: 741 - Normal - D
+SALE: 472 - Familiar - C
+SALE: 251 - Familiar - A
+SALE: 303 - Familiar - A
+SALE: 439 - Normal - D
+SALE: 442 - Normal - A
+SALE: 801 - Familiar - A
+SALE: 865 - Familiar - D
+SALE: 451 - Familiar - C
+SALE: 545 - Normal - C
+SALE: 494 - Normal - C
+SALE: 648 - Normal - B
+SALE: 718 - Familiar - A
+SALE: 769 - Normal - A
+SALE: 368 - Familiar - B
+SALE: 622 - Familiar - B
+SALE: 635 - Normal - B
+SALE: 403 - Normal - A
+SALE: 650 - Familiar - B
+SALE: 363 - Normal - D
+SALE: 842 - Normal - D
+SALE: 714 - Familiar - B
+SALE: 378 - Familiar - A
+SALE: 610 - Normal - B
+SALE: 380 - Familiar - C
+SALE: 605 - Normal - D
+SALE: 487 - Familiar - A
+SALE: 704 - Familiar - D
+SALE: 784 - Familiar - A
+SALE: 836 - Normal - D
+SALE: 407 - Familiar - C
+SALE: 344 - Familiar - A
+SALE: 430 - Familiar - D
+SALE: 301 - Normal - A
+SALE: 969 - Familiar - C
+SALE: 906 - Familiar - A
+SALE: 389 - Familiar - B
+SALE: 318 - Familiar - C
+SALE: 600 - Normal - B
+SALE: 925 - Normal - D
+SALE: 957 - Familiar - C
+SALE: 647 - Familiar - A
+SALE: 814 - Normal - D
+SALE: 425 - Familiar - D
+SALE: 746 - Familiar - C
+SALE: 878 - Normal - D
+SALE: 517 - Familiar - A
+SALE: 437 - Familiar - B
+SALE: 483 - Normal - B
+SALE: 907 - Normal - B
+SALE: 864 - Normal - C
+SALE: 381 - Normal - C
+SALE: 731 - Normal - B
+SALE: 657 - Familiar - D
+SALE: 539 - Familiar - D
+SALE: 671 - Normal - B
+SALE: 404 - Familiar - D
+SALE: 308 - Normal - B
+SALE: 888 - Familiar - B
+SALE: 745 - Normal - D
+SALE: 721 - Familiar - D
+SALE: 900 - Familiar - D
+SALE: 574 - Normal - D
+SALE: 823 - Normal - B
+SALE: 963 - Familiar - A
+SALE: 672 - Familiar - B
+SALE: 696 - Normal - D
+SALE: 747 - Normal - A
+SALE: 379 - Familiar - A
+SALE: 691 - Familiar - B
+SALE: 528 - Normal - A
+SALE: 311 - Normal - A
+SALE: 768 - Familiar - B
+SALE: 675 - Familiar - D
+SALE: 447 - Familiar - A
+SALE: 531 - Familiar - D
+SALE: 633 - Familiar - B
+SALE: 908 - Familiar - A
+SALE: 354 - Normal - A
+SALE: 477 - Familiar - B
+SALE: 778 - Familiar - A
+SALE: 373 - Normal - A
+SALE: 427 - Familiar - C
+SALE: 566 - Familiar - A
+SALE: 450 - Normal - D
+SALE: 578 - Familiar - D
+SALE: 492 - Normal - C
+SALE: 986 - Normal - D
+SALE: 982 - Normal - D
+SALE: 530 - Familiar - D
+SALE: 862 - Normal - D
+SALE: 983 - Normal - C
+SALE: 452 - Familiar - A
+SALE: 470 - Familiar - D
+SALE: 457 - Familiar - A
+SALE: 392 - Familiar - D
+SALE: 844 - Normal - A
+SALE: 905 - Normal - A
+SALE: 716 - Normal - B
+SALE: 756 - Normal - D
+SALE: 937 - Normal - C
+SALE: 785 - Familiar - B
+SALE: 948 - Familiar - D
+SALE: 414 - Familiar - A
+SALE: 995 - Normal - B
+SALE: 596 - Familiar - A
+SALE: 593 - Normal - B
+SALE: 390 - Normal - B
+SALE: 920 - Familiar - B
+SALE: 815 - Normal - D
+SALE: 740 - Familiar - D
+SALE: 789 - Familiar - A
+SALE: 544 - Familiar - D
+SALE: 692 - Normal - B
+SALE: 742 - Familiar - D
+SALE: 893 - Normal - B
+SALE: 490 - Normal - B
+SALE: 627 - Familiar - C
+SALE: 551 - Familiar - C
+SALE: 932 - Familiar - D
+SALE: 688 - Normal - C
+SALE: 409 - Normal - D
+SALE: 777 - Familiar - B
+SALE: 818 - Familiar - D
+SALE: 800 - Normal - A
+SALE: 780 - Normal - A
+SALE: 851 - Familiar - C
+SALE: 837 - Normal - B
+SALE: 459 - Familiar - C
+SALE: 923 - Normal - B
+SALE: 607 - Familiar - B
+SALE: 728 - Familiar - C
+SALE: 595 - Familiar - C
+SALE: 666 - Familiar - C
+SALE: 914 - Familiar - D
+SALE: 881 - Familiar - A
+SALE: 744 - Familiar - D
+SALE: 827 - Familiar - C
+SALE: 930 - Familiar - C
+SALE: 673 - Normal - D
+SALE: 526 - Familiar - B
+SALE: 981 - Normal - B
+SALE: 938 - Familiar - C
+SALE: 532 - Normal - D
+SALE: 660 - Familiar - C
+SALE: 527 - Familiar - B
+SALE: 722 - Normal - B
+SALE: 956 - Normal - B
+SALE: 677 - Familiar - B
+SALE: 505 - Familiar - C
+SALE: 848 - Familiar - C
+SALE: 602 - Normal - A
+SALE: 826 - Familiar - A
+SALE: 497 - Familiar - B
+SALE: 989 - Familiar - B
+SALE: 884 - Familiar - B
+SALE: 644 - Normal - C
+SALE: 669 - Normal - A
+SALE: 926 - Normal - B
+SALE: 726 - Familiar - A
+SALE: 664 - Familiar - D
+SALE: 581 - Normal - B
+SALE: 971 - Normal - C
+SALE: 521 - Familiar - C
+SALE: 758 - Familiar - A
+SALE: 642 - Normal - A
+SALE: 806 - Normal - C
+SALE: 944 - Normal - A
+SALE: 707 - Familiar - B
+SALE: 661 - Familiar - B
+SALE: 783 - Normal - B
+SALE: 972 - Normal - D
+SALE: 734 - Normal - D
+SALE: 609 - Familiar - A
+SALE: 719 - Familiar - C
+SALE: 942 - Familiar - C
+SALE: 830 - Familiar - D
+SALE: 587 - Familiar - A
+SALE: 701 - Normal - B
+SALE: 620 - Normal - D
+SALE: 821 - Normal - A
+SALE: 882 - Familiar - C
+SALE: 686 - Familiar - C
+SALE: 859 - Familiar - A
+SALE: 919 - Normal - A
+SALE: 717 - Familiar - C
+SALE: 991 - Familiar - B
+SALE: 652 - Familiar - C
+SALE: 809 - Normal - D
+SALE: 874 - Familiar - B
+SALE: 763 - Familiar - C
+SALE: 987 - Familiar - A
+SALE: 897 - Normal - A
+SALE: 918 - Familiar - D
+SALE: 927 - Familiar - A
+SALE: 817 - Familiar - B
+SALE: 820 - Normal - B
+SALE: 811 - Normal - C
+SALE: 819 - Normal - B
+SALE: 798 - Normal - B
+SALE: 958 - Normal - B
+SALE: 743 - Familiar - C
+SALE: 687 - Familiar - D
+SALE: 755 - Familiar - B
+SALE: 909 - Normal - D
+SALE: 850 - Familiar - D
+SALE: 861 - Familiar - B
+SALE: 757 - Normal - B
+SALE: 684 - Familiar - A
+SALE: 967 - Familiar - B
+SALE: 940 - Normal - D
+SALE: 990 - Normal - D
+SALE: 709 - Familiar - C
+SALE: 880 - Familiar - B
+SALE: 945 - Normal - D
+SALE: 854 - Normal - A
+SALE: 776 - Familiar - C
+SALE: 803 - Normal - A
+SALE: 953 - Normal - A
+SALE: 979 - Normal - C
+SALE: 933 - Normal - C
+SALE: 997 - Familiar - C
+SALE: 858 - Familiar - B
+SALE: 853 - Normal - C
+SALE: 943 - Normal - D
+SALE: 947 - Normal - A
+SALE: 781 - Familiar - B
+SALE: 846 - Normal - D
+SALE: 852 - Normal - D
+SALE: 998 - Familiar - B
+SALE: 824 - Familiar - A
+SALE: 797 - Normal - A
+SALE: 975 - Familiar - B
+SALE: 892 - Familiar - A
+SALE: 879 - Familiar - A
+SALE: 902 - Normal - B
+SALE: 883 - Familiar - C
+SALE: 838 - Familiar - C
+SALE: 962 - Normal - B
+SALE: 951 - Normal - D
+SALE: 899 - Familiar - B
+SALE: 939 - Familiar - D
+SALE: 935 - Familiar - B
+SALE: 895 - Familiar - C
+SALE: 978 - Normal - D
+SALE: 875 - Normal - C
+SALE: 871 - Normal - C
+SALE: 915 - Normal - D
+SALE: 964 - Familiar - A
+SALE: 931 - Normal - D
+SALE: 870 - Familiar - C
+SALE: 845 - Familiar - D
+SALE: 994 - Normal - A
+SALE: 974 - Familiar - A
+SALE: 973 - Normal - C
+SALE: 886 - Normal - C
+SALE: 965 - Normal - A
+SALE: 921 - Familiar - B
+SALE: 999 - Familiar - C
+SALE: 912 - Familiar - D
+SALE: 955 - Familiar - C
+SALE: 946 - Familiar - D
+SALE: 976 - Familiar - C
+SALE: 988 - Familiar - D
+
+
