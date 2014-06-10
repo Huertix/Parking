@@ -148,9 +148,9 @@ public class ParkingDispatcher {
 						System.out.println(line);
 						
 					}
-					//else{
-					//	vQueueIn.remove();				
-					//}
+					else{
+						vQueueIn.remove();				
+					}
 					
 					//System.out.println("Queue Length: "+vQueueIn.getLength());
 					//System.out.println("SpaceLeft: "+ParkingState.getSpaces());
