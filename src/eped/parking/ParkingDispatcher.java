@@ -14,10 +14,12 @@ public class ParkingDispatcher {
 	
 	
 	private static VehicleGenerator vGenerator;
+	private ParkingScheduler pScheduler;
 	private VehicleQueue vQueueIn;
 	private VehicleQueue vQueueOut;
 	private Parking parking;
 	private int time;
+
 	
 
 	public static void main(String[] args) {	
@@ -28,7 +30,7 @@ public class ParkingDispatcher {
 			
 			int n = Integer.parseInt(args[0]);
 			int seed = Integer.parseInt(args[1]);
-					
+							
 			ps.init(n, seed);
 				
 			ps.dispatch();
@@ -50,6 +52,8 @@ public class ParkingDispatcher {
 		time = 0;
 		
 		vGenerator  = new VehicleGenerator(seed);
+		
+		pScheduler = new ParkingScheduler();
 		
 		vQueueIn   = new VehicleQueue();
 		vQueueOut   = new VehicleQueue();
@@ -87,18 +91,16 @@ public class ParkingDispatcher {
 								" - "+v.getGate()+
 								" - "+v.getHour()+
 								" - "+s.toString();
+
 						w.write(line);
 						System.out.println(line);
 						
-					}
-					
-					//else
-						//vQueueIn.remove();					
+					}				
 				}		
 			}
 				
 			//---------- devuelve cola de las vehiculos en cola de salida. libera plaza.
-			vQueueOut = parking.getQueueOut(time);
+			vQueueOut = pScheduler.getQueueOut(time,parking.getStructure());
 		
 			// ------------------------- Gestion de salida
 			if(!vQueueOut.isEmpty()){
@@ -107,6 +109,7 @@ public class ParkingDispatcher {
 				String line = "SALE: "+v.getId()+
 						" - "+v.getType()+
 						" - "+v.getGate();
+
 				w.write(line);
 				System.out.println(line);			
 				vQueueOut.remove();
