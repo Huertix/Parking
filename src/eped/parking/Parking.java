@@ -416,6 +416,11 @@ public class Parking {
 			queueSpace.remove();
 		}
 		
+		
+		
+		
+		
+		
 		return pSpace;
 	}
 	
@@ -436,36 +441,11 @@ public class Parking {
 				ParkingSpace space = (ParkingSpace) element;
 				if(!space.hasVehicle() && space.getType()==type){
 					setDistance(gate,space);
-					queue.add(space);
-				}
-				/*else
-					if(space.getCurrentVehicle()!=null && space.getCurrentVehicle().getTimeToGo() <= time){ 
-						
-						 auxStack.push(space.getCurrentVehicle());
-											
-							ParkingState.updateUsedSpaces(-1);
-							
-							if(space.getCurrentVehicle().getType() == ParkingConf.TType.familiar)
-								ParkingState.updateFamiliarUsedSpaces(-1);
-							else
-								ParkingState.updateNormalUsedSpaces(-1);
-							
-							 space.setCurrentVehicle(null);
-				 
-					}*/
-			}
-			
-			
-			
+					queue.add(space);			
+				}					
+			}			
 		}
-		
-		//while(!auxStack.isEmpty()){
-		//	vQueueOut.add(auxStack.getTop());
-		//	auxStack.pop();
-		//}
-		
-
-		
+	
 		if(queue.isEmpty())
 			return null;
 		else{

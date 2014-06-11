@@ -129,6 +129,11 @@ public class ParkingDispatcher {
 					
 					
 					
+					
+					
+					
+					
+					
 					if(s!=null){
 						
 						//parking.setDistance(v.getGate(), s);
@@ -137,7 +142,7 @@ public class ParkingDispatcher {
 						v.setSpace(s);
 						s.setCurrentVehicle(v);
 						VehicleTimeTreeAVL = VehicleTimeTreeAVL.insert(v);
-						ParkingState.updateUsedSpaces(1);
+
 						vQueueIn.remove();
 						String line = "ENTRA: "+v.getId()+
 								" - "+v.getType()+
@@ -146,7 +151,7 @@ public class ParkingDispatcher {
 								" - "+s.toString();
 						w.write(line);
 						System.out.println(line);
-						
+	
 					}
 					else{
 						vQueueIn.remove();				
@@ -168,7 +173,7 @@ public class ParkingDispatcher {
 			//---------- devuelve cola de las vehiculos en cola de salida. libera plaza.
 			//vQueueOut = parking.getOverTimeVehicleQueue(vQueueOut, time);
 			
-			/*
+			
 			boolean stop = VehicleTimeTreeAVL==null;
 			
 			while(!stop){
@@ -184,13 +189,13 @@ public class ParkingDispatcher {
 						ParkingSpace s2Out = v2Out.getSpace();
 						s2Out.setCurrentVehicle(null);
 						vQueueOut.add(v2Out);
-						ParkingState.updateUsedSpaces(-1);
+						/*ParkingState.updateUsedSpaces(-1);
 						
 						if(v2Out.getType()== ParkingConf.TType.familiar)
 							ParkingState.updateFamiliarUsedSpaces(-1);
 						else
 							ParkingState.updateNormalUsedSpaces(-1);
-						
+						*/
 						VehicleTimeTreeAVL = VehicleTimeTreeAVL.remove(v2Out);
 						if(VehicleTimeTreeAVL==null){
 							stop=true;
@@ -199,16 +204,21 @@ public class ParkingDispatcher {
 					}
 					else
 						stop=true;
-					
+					/*
 					if(!stop && !VehicleTimeTreeAVL.isEmpty()){
 						v2Out = (Vehicle) VehicleTimeTreeAVL.findMin().getRoot();
 						stop = v2Out.getTimeToGo()<=time;
-					}
+					}*/
 				}
+				
+				else
+					stop=true;
 			
 			}
-				*/	
-			vQueueOut = parking.getQueueOut(time);
+			
+
+			
+			//vQueueOut = parking.getQueueOut(time);
 			
 			
 			
@@ -220,11 +230,17 @@ public class ParkingDispatcher {
 				//if(vQueueOut.getLength()> 1)
 					//System.out.println(time);
 				Vehicle v = vQueueOut.getFirst();
+				
+			
+
+				
+				
 				String line = "SALE: "+v.getId()+
 						" - "+v.getType()+
 						" - "+v.getGate();
 				w.write(line);
-				System.out.println(line);			
+				System.out.println(line);	
+				
 				vQueueOut.remove();
 			}
 			time++;
@@ -244,8 +260,8 @@ public class ParkingDispatcher {
 			
 			
 			//bothQueuesEmpty = vQueueIn.isEmpty() && vQueueOut.isEmpty();
-			bothQueuesEmpty = vQueueIn.isEmpty() && ParkingState.getUsedSpaces()==0;
-			//bothQueuesEmpty = vQueueIn.isEmpty() && VehicleTimeTreeAVL==null;
+			//bothQueuesEmpty = vQueueIn.isEmpty() && ParkingState.getUsedSpaces()==0;
+			bothQueuesEmpty = vQueueIn.isEmpty() && VehicleTimeTreeAVL==null;
 			//System.out.println("Plazas ocupadas: "+ParkingState.getUsedSpaces());
 		}
 		

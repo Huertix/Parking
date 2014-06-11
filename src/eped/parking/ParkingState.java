@@ -60,7 +60,7 @@ public class ParkingState {
 	}
 	
 	public static int getUsedSpaces(){
-		return usedSpaces;
+		return getNormalSpaces() + getFamiliarSpaces();
 	}
 	
 	
