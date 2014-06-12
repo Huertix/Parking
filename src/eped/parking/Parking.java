@@ -106,17 +106,14 @@ public class Parking {
 			IteratorIF<TreeIF<ParkingElement>> sectionsIT = floorTree.getChildren().getIterator(); // Iterador de Secciones
 			QueueIF<ParkingElement> queueSections = new QueueDynamic<ParkingElement>();
 			
-			int count = 0;
+			
 			while(sectionsIT.hasNext()){ // While que pasa por las secciones
 				ParkingElement result = null;
 			
-				/*if(count>1)
-					result = getTicket(sectionsIT.getNext(),TreeIF.RLBREADTH, gate,type, time);
-				else*/
-					result = getTicket(sectionsIT.getNext(),TreeIF.PREORDER, gate,type, time);
+				result = getTicket(sectionsIT.getNext(),TreeIF.PREORDER, gate,type, time);
 			
 				queueSections.add(result);
-				count++;			
+						
 			}
 			
 			

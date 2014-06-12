@@ -51,8 +51,17 @@ public class VehicleTree implements BTreeIF<Vehicle>{
 			tree.setRightChild(insert(element,tree.getRightChild()));
 		}
 		
-		else
-			tree.setLeftChild(insert(element,tree.getLeftChild()));
+		else{
+			if(element.getSpace().getFloor()<tree.getRoot().getSpace().getFloor())
+				tree.setLeftChild(insert(element,tree.getLeftChild()));
+			
+			else{
+				tree.setRightChild(insert(element,tree.getRightChild()));
+			}
+			
+			
+		}
+			
 			
 			
 		return balance(tree);

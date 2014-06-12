@@ -12,14 +12,12 @@ import eped.Writer;
 
 import java.util.Date;
 
-import eped.parking.structure.ParkingElement;
+
 import eped.parking.structure.ParkingSpace;
 import eped.parking.vehicle.Vehicle;
 import eped.parking.vehicle.VehicleGenerator;
 import eped.parking.vehicle.VehicleQueue;
 import eped.parking.vehicle.VehicleTree;
-import eped.queue.QueueDynamic;
-import eped.queue.QueueIF;
 import eped.tree.BTreeIF;
 
 
@@ -98,8 +96,7 @@ public class ParkingDispatcher {
 			if(!vQueueIn.isEmpty()){
 				Vehicle v = vQueueIn.getFirst();
 				v.setTimeToGo(v.getHour()+time);
-					
-								
+	
 				if(parking.hasSpace(v.getType())){
 	
 					ParkingSpace s = parking.getTicket(v.getType(),v.getGate(),time);
@@ -153,7 +150,7 @@ public class ParkingDispatcher {
 			// ------------------------- Gestion de salida
 			if(!vQueueOut.isEmpty()){
 				
-				//vQueueOut = queueSort(vQueueOut);
+				
 				
 				Vehicle v = vQueueOut.getFirst();			
 				String line = "SALE: "+v.getId()+
@@ -170,35 +167,6 @@ public class ParkingDispatcher {
 	}
 	
 	
-	public VehicleQueue queueSort(VehicleQueue q){
-		
-		
-		
-		if(q.isEmpty()) return q;
-		
-		VehicleQueue aux = new VehicleQueue();
-		
-		Vehicle v = (Vehicle) q.getFirst();
-		q = (VehicleQueue) q.remove();
-		VehicleQueue returnedQueue = queueSort(q);
-		
-		if(returnedQueue.isEmpty())
-			return (VehicleQueue) returnedQueue.add(v);
-		else{
-		
-			while(!returnedQueue.isEmpty()){
-				if(v.getSpace().getFloor()<=returnedQueue.getFirst().getSpace().getFloor())
-					aux.add(v);
-				else
-					aux.add(returnedQueue.getFirst());
-				
-				
-				returnedQueue = (VehicleQueue) returnedQueue.remove();
-				
-			}
-			
-			return aux;
-		}
-	}
+
 	
 }
