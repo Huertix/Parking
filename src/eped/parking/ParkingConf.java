@@ -1,6 +1,10 @@
 /*
- * Esta clase se encarga del control de los mensajes de erros producidos 
- * por interacciones con los argumentos a la hora de ejecutar la aplicaciÃ³n
+ * Esta clase sirve como configuraci—n de los parametros del programa en tiempo de compilaci—n
+ * Aqu’ se pueden definir parametros como:
+ * 
+ * 		- Nœmero de plantas, areas, secci—n plazas de cada tipo
+ * 		- Asignar valores a las zonas, secci—nes y tipos de plaza
+ * 		- Definir las rutas de busqueda segœn la puerta objetivo.
  * 
  */ 
 
@@ -10,7 +14,6 @@ package eped.parking;
  * @author David Huerta - 47489624Y - 1Âº EPED 2013-2014 - Las Tablas
  * @version Version 1
  */
-
 public final class ParkingConf {
 	
 	public static final int FLOORS = 6;
@@ -22,10 +25,9 @@ public final class ParkingConf {
 	private static Integer[] c= {3,4,2,1};
 	private static Integer[] d= {4,1,3,2};
 	private static Integer[] areasPath = {1,2,4,3,4,1,3,2,2,3,1,4,3,4,2,1}; 
-	private static Integer[] areasPath0 = {1,2,4,3};
-	private static Integer[] areasPath1 = {4,1,3,2};
-	private static Integer[] areasPath2 = {2,3,1,4};
-	private static Integer[] areasPath3 = {3,4,2,1};
+
+	
+	
 	
 	public enum TGate{
 		A,
@@ -42,16 +44,25 @@ public final class ParkingConf {
 	}
 	
 	public enum TType {
-		normal,
-		familiar
+		Normal,
+		Familiar
 	}
 	
+	
+	
+	/**
+	 * @return Retorna la ruta de busqueda a nivel de areas.
+	 */
 	public static Integer[] getAreasPath(){
 		return areasPath;
 		
 	}
 
 	
+	/**
+	 * @param gate Puerta Objetivo
+	 * @return Retorna la ruta de busqueda en funci—n de la puerta objetivo.
+	 */
 	public static Integer[] getSearchingPath(TGate gate){
 		
 		switch(gate){
@@ -64,13 +75,19 @@ public final class ParkingConf {
 		}
 	}
 	
-public static Integer[] getNextAreaPath(int a){
+	
+	
+	/**
+	 * @param a Valor que corresponde al area a examinar en ese momento
+	 * @return Retorna la ruta de busqueda anivel de area en funci—n de la puerta objetivo.
+	 **/
+	public static Integer[] getNextAreaPath(int k){
 		
-		switch(a){
-		case 0: return areasPath0;
-		case 1: return areasPath1;
-		case 2: return areasPath2;
-		case 3: return areasPath3;
+		switch(k){
+		case 0: return a;
+		case 1: return d;
+		case 2: return b;
+		case 3: return c;
 		default: return null;
 		
 		}

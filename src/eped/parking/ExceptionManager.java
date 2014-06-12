@@ -17,7 +17,8 @@ public class ExceptionManager extends Exception {
 	
 	
 	/**
-	 * @param Excepción
+	 * Sec colecta todas las errores de programa en tiempo de ejecucion para su tratamiento
+	 * @param Excepcion
 	 */
 	public static void getMessage(Exception ex){
 		String message = ex.getMessage();
@@ -34,7 +35,7 @@ public class ExceptionManager extends Exception {
 	}
 	
 	/**
-	 * 
+	 * Cola de mensaje.
 	 */
 	private static void tailMessage(){
 		System.out.println("\nDebes introducir un valor Integer como argumento.");

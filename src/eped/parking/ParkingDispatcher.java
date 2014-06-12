@@ -1,18 +1,18 @@
 /*
- * Esta clase se encarga del control de los mensajes de erros producidos 
- * por interacciones con los argumentos a la hora de ejecutar la aplicaci√≥n
- * 
- */ 
+*Esta clase dispone del método main necesario para arrancar
+*el sistema. Cuando se arranca, esta clase invoca a init y genera con ánimo simulativo una colección
+*de vehículos aleatoria invocando iterativamente a los métodos que a tal efecto dispone la clase
+*VehicleGenerator. Cada llamada invoca al constructor de la clase Vehicle con unos parámetros
+*reales de valor aleatorio sobre el número de matricula, tipo de vehículo y puerta de acceso
+*objetivo. La clase ParkingDispatcher recogerá estos vehículos y los encolará consecutivamente en la
+*cola de entrada asociada a dicha clase representada por el artefacto VehicleQueue.
+*/ 
 
 package eped.parking;
 
 import java.io.IOException;
 
 import eped.Writer;
-
-import java.util.Date;
-
-
 import eped.parking.structure.ParkingSpace;
 import eped.parking.vehicle.Vehicle;
 import eped.parking.vehicle.VehicleGenerator;
@@ -22,7 +22,7 @@ import eped.tree.BTreeIF;
 
 
 /**
- * @author David Huerta - 47489624Y - 1¬∫ EPED 2013-2014 - Las Tablas
+ * @author David Huerta - 47489624Y - 1º EPED 2013-2014 - Las Tablas
  * @version Version 1
  */
 public class ParkingDispatcher {
@@ -35,11 +35,14 @@ public class ParkingDispatcher {
 	private int time;
 	
 	
+	/**
+	 * @param args 1º argumento: cantidad de vehículos en la cola de entrada
+	 * 			2º argumento: la semilla para generación de vehículos con datos aleatorios
+	 */
 	public static void main(String[] args) {
 	
-		try{
-			
-			long lStartTime = new Date().getTime();
+		try{	
+
 			ParkingDispatcher pDispatcher = new ParkingDispatcher();
 			
 			int n = Integer.parseInt(args[0]);
@@ -49,20 +52,16 @@ public class ParkingDispatcher {
 				
 			pDispatcher.dispatch();
 			
-			long lEndTime = new Date().getTime(); // end time
-	        
-			long difference = lEndTime - lStartTime; // check different
-			 
-			System.out.println("Elapsed milliseconds: " + difference);
-				
 		}catch(Exception ex){
 			ExceptionManager.getMessage(ex);	
-		}
-		
-		
-		
+		}	
 	}
 	
+
+	/**
+	 * @param n cantidad de vehículos en la cola de entrada
+	 * @param seed semilla para generación de vehículos con datos aleatorios
+	 */
 	private void init(int n, int seed){
 				
 		time = 0;
@@ -75,12 +74,25 @@ public class ParkingDispatcher {
 		for(int i=0; i<=n;i++)
 			vQueueIn.add(vGenerator.generate());
 		
-		 parking = new Parking();
-		 
-		 
+		 parking = new Parking();	 
 	}
 	
 	
+	
+	
+	/**
+	 * Método encargado de gestionar la entrada y la salida de vehículos.
+	 * Se utiliza una estructura de arbol binario AVL auxiliar, implementada
+	 * especificamente para este ejercicio, donde se insertan los vehículos 
+	 * en función del tiempo de permanencia. El método entra en un bucle while
+	 * del que se sale cuando se acaban los vehículos en la cola de entrada y
+	 * no quedan vehículos dentro del parking.
+	 * 
+	 * Para la gestión de la salida de vehículos se apoya en encontrar el/los vehículos
+	 * con menor tiempo de permanencia dentro de la estructura arbol binario auxiliar.
+	 * 
+	 * @throws IOException
+	 */
 	private void dispatch() throws IOException{
 				
 		VehicleTimeTreeAVL = new VehicleTree();
@@ -91,8 +103,7 @@ public class ParkingDispatcher {
 		
 		while(!bothQueuesEmpty){
 			
-		
-			//------------------------- Gesti√≥n de entrada
+			//------------------------- Gestión de entrada
 			if(!vQueueIn.isEmpty()){
 				Vehicle v = vQueueIn.getFirst();
 				v.setTimeToGo(v.getHour()+time);
@@ -120,15 +131,14 @@ public class ParkingDispatcher {
 			}
 			
 
+			//------------ Bloque para encontrar los vehículos con tiempo de permanecia superado.
 			boolean stop = VehicleTimeTreeAVL==null;
 			
 			while(!stop){
 				
 				if(!VehicleTimeTreeAVL.isEmpty()){
 					Vehicle v2out = VehicleTimeTreeAVL.findMin().getRoot();
-					
-					
-					
+			
 					if(v2out.getTimeToGo()<=time){
 						ParkingSpace s2out = v2out.getSpace();
 						s2out.setCurrentVehicle(null);
@@ -149,9 +159,7 @@ public class ParkingDispatcher {
 			
 			// ------------------------- Gestion de salida
 			if(!vQueueOut.isEmpty()){
-				
-				
-				
+		
 				Vehicle v = vQueueOut.getFirst();			
 				String line = "SALE: "+v.getId()+
 						" - "+v.getType()+
@@ -165,8 +173,5 @@ public class ParkingDispatcher {
 			bothQueuesEmpty = vQueueIn.isEmpty() && VehicleTimeTreeAVL==null;
 		}
 	}
-	
-	
 
-	
 }

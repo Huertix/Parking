@@ -23,6 +23,7 @@ public class Writer {
 
 	
 	/**
+	 * Dentro del método write se utiliza la clase Date para nombrar el fichero de salida
 	 * @throws IOException
 	 */
 	public Writer() throws IOException{

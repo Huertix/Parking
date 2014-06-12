@@ -1,6 +1,19 @@
 /*
- * Esta clase se encarga del control de los mensajes de erros producidos 
- * por interacciones con los argumentos a la hora de ejecutar la aplicaci√≥n
+ * Esta clase es la base de la estructura jerarquica del parking. Aquí se instancia la clase
+ * TreeIF como "parkingT", que será el elemento raiz de la estructura arborera del parking.
+ * 
+ * Descripción de los métodos principales:
+ * 
+ *   - setDistance: Este método se utiliza para asignar pesos a las plazas en función
+ *   				de la puerta objetivo. Cada plaza tiene una variable "value" donde se 
+ *   				acumula el valor. Para lograr este objetivo, se hace uso de arreglos 
+ *   				pre-establecidos en la clase estática "ParkingConfig", los cuales definen
+ *   				el  path o la ruta de busqueda en cada planta. 
+ *   
+ *   
+ *   - getTicket: Método encargado de encontrar la mejor plaza. Se encolan las plazas con menor distancia
+ *  			  a la puerta objetivo de cada sección, se clasifican y se retorna la mejor plaza para la
+ *   			  demanda en curso.
  * 
  */ 
 
@@ -25,12 +38,24 @@ import eped.tree.TreeIterator;
  * @author David Huerta - 47489624Y - 1¬∫ EPED 2013-2014 - Las Tablas
  * @version Version 1
  */
+/**
+ * @author Huertix
+ *
+ */
+/**
+ * @author Huertix
+ *
+ */
 public class Parking {	
 	
 	private TreeIF<ParkingElement> parkingT;
 	public static ListIF<Integer[]> sectionSearcher;
 
 
+	/**
+	 *Constructor Parking. Llama al método "setFloors" para instancias las plantas.
+	 *el número de plantas está definido en la clase ParkingConfig 
+	 */
 	public Parking(){
 		parkingT = new TreeDynamic<ParkingElement>();
 		parkingT.setRoot(null);	
@@ -39,6 +64,9 @@ public class Parking {
 	}
 	
 	
+	/**
+	 * @param floors Define el número de plantas de la estructura
+	 */
 	public void setFloors(int floors){
 		
 		for(int i=1; i<=floors;i++){
@@ -49,6 +77,15 @@ public class Parking {
 		
 //--------------------------------------  Nuevas Rutinas Asignacion pesos plazas ------------------------------- 
 	
+	/**
+	 * Este método se utiliza para asignar pesos a las plazas en función
+	 * de la puerta objetivo. Cada plaza tiene una variable "value" donde se 
+	 * acumula el valor. Para lograr este objetivo, se hace uso de arreglos 
+	 * pre-establecidos en la clase estática "ParkingConfig", los cuales definen
+	 * el  path o la ruta de busqueda en cada planta.
+	 * @param gate Puerta objetivo
+	 * @param space Plaza a valorar
+	 */
 	public void setDistance(ParkingConf.TGate gate, ParkingSpace space){
 		
 		Integer[] path = ParkingConf.getSearchingPath(gate);
@@ -71,6 +108,12 @@ public class Parking {
 	}
 	
 	
+	/**
+	 * Este método es una función auxiliar al método "setDistance(gate, space)". Se valora todas las zonas dentro de cada planta.
+	 * @param loop Corresponde al area a supervisar en el método "setDistance(gate, space)"
+	 * @param spaceZone la zona a la que pertenece la plaza que se esta valorando.
+	 * @return
+	 */
 	private int setDistance(int loop, ParkingConf.TZone spaceZone){
 		
 		ParkingConf.TZone[] zoneValues =  ParkingConf.TZone.values();
@@ -93,6 +136,16 @@ public class Parking {
     
 	// ---------------------------------- Nuevas Rutinas busqueda mejor plaza ------------------------------------------
 	
+	
+	/**
+	 * Método encargado de encontrar la mejor plaza. Se encolan las plazas con menor distancia
+	 * a la puerta objetivo de cada sección, se clasifican y se retorna la mejor plaza para la
+	 * demanda en curso.
+	 * @param type Tipo de planza normal o familiar
+	 * @param gate Puerta Objetivo
+	 * @param time Tiempo actual del parking
+	 * @return retorna la mejor plaza libre en función de los parametros "type" y "gate" 
+	 */
 	public ParkingSpace getTicket(ParkingConf.TType type, ParkingConf.TGate gate, int time){
 	
 		ParkingSpace pSpace = null;
@@ -101,28 +154,32 @@ public class Parking {
 	
 		IteratorIF <TreeIF <ParkingElement>> floorsIT = parkingT.getChildren ().getIterator ();
 			
+		// Primero Itera las plantas
 		while(floorsIT.hasNext()){
 			TreeIF<ParkingElement> floorTree = floorsIT.getNext(); // Arbol de Niveles
 			IteratorIF<TreeIF<ParkingElement>> sectionsIT = floorTree.getChildren().getIterator(); // Iterador de Secciones
 			QueueIF<ParkingElement> queueSections = new QueueDynamic<ParkingElement>();
 			
-			
-			while(sectionsIT.hasNext()){ // While que pasa por las secciones
-				ParkingElement result = null;
-			
-				result = getTicket(sectionsIT.getNext(),TreeIF.PREORDER, gate,type, time);
-			
+			// En cada planta, se itera sobre las areas / secciones
+			while(sectionsIT.hasNext()){ 
+				ParkingElement result = getTicket(sectionsIT.getNext(),TreeIF.PREORDER, gate,type, time);
+	
+				// acumula las plazas en una estructura de cola
 				queueSections.add(result);
 						
 			}
 			
-			
+			// Se ordenan las plazas en función de peso definido en el método "setDistance"
 			quickSort(queueSections);
 			
+			
+			// En la estructura queueSpace acumula las mejores plazas encontradas en cada planta
 			if(!queueSections.isEmpty())
 				queueSpace.add(queueSections.getFirst());			
 		}	
 		
+		
+		// Se valora cual es la plaza dentro de queueSpace con planta más baja
 		while(!queueSpace.isEmpty()){
 			if(pSpace==null)
 				pSpace = (ParkingSpace) queueSpace.getFirst();
@@ -139,6 +196,18 @@ public class Parking {
 	
 	
 
+	/**
+	 * 
+	 * Método auxilar  a getTicket(gate, type, time). Recorre las plazas del parking, distinguiendo las que están libres.
+	 * En el caso de encontrar una plaza libre, esta se somete a una valoración de la distancia a la puerta objetivo.
+	 * 
+	 * @param tree Argumento estructura arborera. La raiz es la sección dentro de la planta a valorar, dependiente del método getTicket(gate, type, time).
+	 * @param order Orden de creación del Iterador
+	 * @param gate Puerta Objetivo
+	 * @param type	Tipo de plaza
+	 * @param time	Tiempo del parking
+	 * @return Retorna la plaza libre de menor distancia a la puerta objetivo.
+	 */
 	private ParkingElement getTicket(TreeIF<ParkingElement> tree, int order, ParkingConf.TGate gate, ParkingConf.TType type, int time){
 		
 		QueueIF<ParkingElement> queue = new QueueDynamic<ParkingElement>();
@@ -167,6 +236,10 @@ public class Parking {
 	
    
     
+    /**
+     * Ordena la estructura cola en función del peso definido en el método "setDistance"
+     * @param queue Cola de plazas con distancia a puerta objetivo valorada.
+     */
     public void quickSort(QueueIF<ParkingElement> queue) {
 	    // Caso base
 	    if (queue.getLength() <=1)
@@ -176,8 +249,8 @@ public class Parking {
 	    QueueIF<ParkingElement> menores = new QueueDynamic<ParkingElement>(); // Una cola para los menores que x
 	    QueueIF<ParkingElement> mayores = new QueueDynamic<ParkingElement>(); // Una cola para los mayores que x
 	    QueueIF<ParkingElement> iguales = new QueueDynamic<ParkingElement>(); // Una cola para los mayores que x
+	    
 	    // Particionamiento
-	   
 	    iguales.add(queue.getFirst());
 	    queue.remove();
 	    
@@ -213,10 +286,18 @@ public class Parking {
 	}
 	   
 
+	/**
+	 * @return Retorna si quedan espacios libres en el parking.
+	 */
 	public boolean hasSpace(){
 		return ParkingState.hasSpaces();
 	}
 	
+	
+	/**
+	 * @param type Tipo de plaza: normal o familiar
+	 * @return Retorna si quedan espacios libres en el parking para el tipo de plaza.
+	 */
 	public boolean hasSpace(ParkingConf.TType type){
 		return ParkingState.hasSpaces(type);
 	}	
