@@ -1,7 +1,15 @@
+/*
+ * Esta clase se encarga del control de los mensajes de erros producidos 
+ * por interacciones con los argumentos a la hora de ejecutar la aplicación
+ * 
+ */ 
+
 package eped.parking;
 
-import eped.list.ListIF;
-import eped.list.ListStatic;
+/**
+ * @author David Huerta - 47489624Y - 1º EPED 2013-2014 - Las Tablas
+ * @version Version 1
+ */
 
 public final class ParkingConf {
 	
@@ -13,9 +21,7 @@ public final class ParkingConf {
 	private static Integer[] b= {2,3,1,4};
 	private static Integer[] c= {3,4,2,1};
 	private static Integer[] d= {4,1,3,2};
-	private static Integer[] areasPath = {1,2,4,3,4,1,3,2,2,3,1,4,3,4,2,1}; // TGATE (0,3,1,2)
-	//										0 1 1 2 3 4 4 5 6 7 7 8 9 10 10 11
-
+	private static Integer[] areasPath = {1,2,4,3,4,1,3,2,2,3,1,4,3,4,2,1}; 
 	private static Integer[] areasPath0 = {1,2,4,3};
 	private static Integer[] areasPath1 = {4,1,3,2};
 	private static Integer[] areasPath2 = {2,3,1,4};
