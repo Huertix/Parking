@@ -110,9 +110,9 @@ public class Parking {
 			while(sectionsIT.hasNext()){ // While que pasa por las secciones
 				ParkingElement result = null;
 			
-				if(count>1)
+				/*if(count>1)
 					result = getTicket(sectionsIT.getNext(),TreeIF.RLBREADTH, gate,type, time);
-				else
+				else*/
 					result = getTicket(sectionsIT.getNext(),TreeIF.PREORDER, gate,type, time);
 			
 				queueSections.add(result);

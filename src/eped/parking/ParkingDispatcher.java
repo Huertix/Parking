@@ -7,13 +7,19 @@
 package eped.parking;
 
 import java.io.IOException;
+
 import eped.Writer;
+
 import java.util.Date;
+
+import eped.parking.structure.ParkingElement;
 import eped.parking.structure.ParkingSpace;
 import eped.parking.vehicle.Vehicle;
 import eped.parking.vehicle.VehicleGenerator;
 import eped.parking.vehicle.VehicleQueue;
 import eped.parking.vehicle.VehicleTree;
+import eped.queue.QueueDynamic;
+import eped.queue.QueueIF;
 import eped.tree.BTreeIF;
 
 
@@ -30,12 +36,9 @@ public class ParkingDispatcher {
 	private Parking parking;
 	private int time;
 	
-
 	
 	public static void main(String[] args) {
-		
-		
-		
+	
 		try{
 			
 			long lStartTime = new Date().getTime();
@@ -81,7 +84,7 @@ public class ParkingDispatcher {
 	
 	
 	private void dispatch() throws IOException{
-		
+				
 		VehicleTimeTreeAVL = new VehicleTree();
 		
 		Writer w = new Writer();
@@ -95,7 +98,7 @@ public class ParkingDispatcher {
 			if(!vQueueIn.isEmpty()){
 				Vehicle v = vQueueIn.getFirst();
 				v.setTimeToGo(v.getHour()+time);
-		
+					
 								
 				if(parking.hasSpace(v.getType())){
 	
@@ -115,23 +118,26 @@ public class ParkingDispatcher {
 								" - "+s.toString();
 						w.write(line);
 						System.out.println(line);	
-					}
+					}	
 				}
 			}
+			
 
 			boolean stop = VehicleTimeTreeAVL==null;
 			
 			while(!stop){
 				
 				if(!VehicleTimeTreeAVL.isEmpty()){
-					Vehicle v2Out = VehicleTimeTreeAVL.findMin().getRoot();
+					Vehicle v2out = VehicleTimeTreeAVL.findMin().getRoot();
+					
+					
+					
+					if(v2out.getTimeToGo()<=time){
+						ParkingSpace s2out = v2out.getSpace();
+						s2out.setCurrentVehicle(null);
+						vQueueOut.add(v2out);
 
-					if(v2Out.getTimeToGo()<=time){
-						ParkingSpace s2Out = v2Out.getSpace();
-						s2Out.setCurrentVehicle(null);
-						vQueueOut.add(v2Out);
-
-						VehicleTimeTreeAVL = VehicleTimeTreeAVL.remove(v2Out);
+						VehicleTimeTreeAVL = VehicleTimeTreeAVL.remove(v2out);
 						if(VehicleTimeTreeAVL==null){
 							stop=true;
 							continue;
@@ -146,6 +152,9 @@ public class ParkingDispatcher {
 			
 			// ------------------------- Gestion de salida
 			if(!vQueueOut.isEmpty()){
+				
+				//vQueueOut = queueSort(vQueueOut);
+				
 				Vehicle v = vQueueOut.getFirst();			
 				String line = "SALE: "+v.getId()+
 						" - "+v.getType()+
@@ -159,4 +168,37 @@ public class ParkingDispatcher {
 			bothQueuesEmpty = vQueueIn.isEmpty() && VehicleTimeTreeAVL==null;
 		}
 	}
+	
+	
+	public VehicleQueue queueSort(VehicleQueue q){
+		
+		
+		
+		if(q.isEmpty()) return q;
+		
+		VehicleQueue aux = new VehicleQueue();
+		
+		Vehicle v = (Vehicle) q.getFirst();
+		q = (VehicleQueue) q.remove();
+		VehicleQueue returnedQueue = queueSort(q);
+		
+		if(returnedQueue.isEmpty())
+			return (VehicleQueue) returnedQueue.add(v);
+		else{
+		
+			while(!returnedQueue.isEmpty()){
+				if(v.getSpace().getFloor()<=returnedQueue.getFirst().getSpace().getFloor())
+					aux.add(v);
+				else
+					aux.add(returnedQueue.getFirst());
+				
+				
+				returnedQueue = (VehicleQueue) returnedQueue.remove();
+				
+			}
+			
+			return aux;
+		}
+	}
+	
 }

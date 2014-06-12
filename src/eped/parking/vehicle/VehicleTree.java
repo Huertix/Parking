@@ -51,9 +51,9 @@ public class VehicleTree implements BTreeIF<Vehicle>{
 			tree.setRightChild(insert(element,tree.getRightChild()));
 		}
 		
-		else{
-			//System.out.println("Repetido " + element);
-			}
+		else
+			tree.setLeftChild(insert(element,tree.getLeftChild()));
+			
 			
 		return balance(tree);
 	}
@@ -75,13 +75,25 @@ public class VehicleTree implements BTreeIF<Vehicle>{
 				tree.setLeftChild(remove(element, tree.getLeftChild()));
 		}
 		
+		
 		else if(comp.isGreater(element.getTimeToGo(), tree.getRoot().getTimeToGo())){
 			tree.setRightChild(remove(element,tree.getRightChild()));
 		}
 		
 		else if(tree.getLeftChild()!=null && tree.getRightChild()!= null){
-			tree.setRoot(findMin(tree.getRightChild()).getRoot());
-			tree.setRightChild(remove(tree.getRoot(),tree.getRightChild()));
+			
+			if(tree.getLeftChild().getRoot().getTimeToGo()==element.getTimeToGo()){
+				tree.setLeftChild(remove(element, tree.getLeftChild()));
+			}
+			
+			else if(tree.getRightChild().getRoot().getTimeToGo()==element.getTimeToGo()){
+				tree.setRightChild(remove(element, tree.getRightChild()));
+			}
+			
+			else{
+				tree.setRoot(findMin(tree.getRightChild()).getRoot());
+				tree.setRightChild(remove(tree.getRoot(),tree.getRightChild()));
+			}
 		}
 	
 		
