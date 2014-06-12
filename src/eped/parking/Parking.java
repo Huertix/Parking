@@ -38,14 +38,6 @@ import eped.tree.TreeIterator;
  * @author David Huerta - 47489624Y - 1º EPED 2013-2014 - Las Tablas
  * @version Version 1
  */
-/**
- * @author Huertix
- *
- */
-/**
- * @author Huertix
- *
- */
 public class Parking {	
 	
 	private TreeIF<ParkingElement> parkingT;

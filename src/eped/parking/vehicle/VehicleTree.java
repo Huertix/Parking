@@ -1,3 +1,22 @@
+ /*
+ * Clase que implementa las caracteristicas de los arboles binarios AVL.
+ * Esta clase esta modificada para cumplir las espectativas de la gestión 
+ * del turno de salidas de los vehículos.
+ * 
+ * La función, basicamente, es la de insertar los vehiculos de forma ordenada
+ * teniendo en cuenta su tiempo de salida. Es por esta razón que los vehículos 
+ * con menor tiempo se ubicar a la izquierda del arbol.
+ * 
+ * En caso de empate en tiempo, se verifica a que planta pertenece cada elemento 
+ * para poder asignarlo a la hoja derecho o izquierda. De esta forma la salida de
+ * elementos cuando se requiera siempre será ordenada.
+ * 
+ *Para la recuperación del primer vehñiculo en salir del parking se utiliza el
+ *método findMin(); 
+ *
+ */
+
+
 package eped.parking.vehicle;
 
 import eped.ComparatorBase;
@@ -8,6 +27,12 @@ import eped.tree.BTreeIF;
 import eped.tree.BTreeIterator;
 
 
+
+
+/**
+ * @author David Huerta - 47489624Y - 1º EPED 2013-2014 - Las Tablas
+ * @version Version 1
+ */
 public class VehicleTree implements BTreeIF<Vehicle>{
 	
 	Vehicle root;
@@ -30,11 +55,22 @@ public class VehicleTree implements BTreeIF<Vehicle>{
 
 	
 	
+	/**
+	 * @return Retorna la estrutura arborera actualizada con el nuevo elemento insertado
+	 */
 	public BTreeIF<Vehicle> insert (Vehicle element){
 		return insert(element, this);
 	}
 	
 	
+	
+	
+	/**
+	 * Método auxiliar recurviso para la insercción de elementos
+	 * @param element Elemento a insertar
+	 * @param tree estructura arborera 
+	 * @return Retorna la estrutura arborera actualizada con el nuevo elemento insertado 
+	 */
 	private BTreeIF<Vehicle> insert(Vehicle element, BTreeIF<Vehicle> tree){
 		
 		if(tree==null || tree.isEmpty()) return new VehicleTree(element);
@@ -57,19 +93,18 @@ public class VehicleTree implements BTreeIF<Vehicle>{
 			
 			else{
 				tree.setRightChild(insert(element,tree.getRightChild()));
-			}
-			
-			
-		}
-			
-			
-			
+			}				
+		}		
 		return balance(tree);
 	}
 	
 	
 	
 	
+	/**
+	 * @param element Elemento a eliminar
+	 * @return Retorna la estrutura arborera actualizada depues de borrar el elemento
+	 */
 	public BTreeIF<Vehicle> remove(Vehicle element){
 		return remove(element, this);
 	}
@@ -113,6 +148,11 @@ public class VehicleTree implements BTreeIF<Vehicle>{
 		return balance(tree);
 	}
 
+	
+	
+	/**
+	 * @return Retorna la estrutura arborera balanceada
+	 */
 	public BTreeIF<Vehicle> balance(){
 		return balance(this);
 	}
@@ -157,6 +197,12 @@ public class VehicleTree implements BTreeIF<Vehicle>{
 	}
 
 	
+	/**
+	 * Rotación simple con hijo izquierdo
+	 * 
+	 * @param tree
+	 * @return
+	 */
 	public BTreeIF<Vehicle> rotateWithLeftChild(BTreeIF<Vehicle> tree){
 		BTreeIF<Vehicle> leftTree =tree.getLeftChild();
 		tree.setLeftChild(leftTree.getRightChild());
@@ -171,12 +217,22 @@ public class VehicleTree implements BTreeIF<Vehicle>{
 		return leftTree;
 	}
 	
+	/**
+	 * Rotación doble con hijo izquierdo
+	 * @param tree
+	 * @return
+	 */
 	public BTreeIF<Vehicle> doubleWithLeftChild(BTreeIF<Vehicle> tree){
 		tree.setLeftChild(rotateWithRightChild((BTreeIF<Vehicle>) tree.getLeftChild()));
 		return rotateWithLeftChild( (BTreeIF<Vehicle>) tree);
 	}
 	
 
+	/**
+	 * Rotación simple con hijo derecho
+	 * @param tree
+	 * @return
+	 */
 	public BTreeIF<Vehicle> rotateWithRightChild(BTreeIF<Vehicle>tree){
 		BTreeIF<Vehicle> rightTree = tree.getRightChild();
 		tree.setRightChild(rightTree.getLeftChild());
@@ -191,6 +247,12 @@ public class VehicleTree implements BTreeIF<Vehicle>{
 		return rightTree;
 	}
 		
+	
+	/**
+	 * Rotación doble con hijo derecho
+	 * @param tree
+	 * @return
+	 */
 	public BTreeIF<Vehicle> doubleWithRightChild(BTreeIF<Vehicle> tree){
 		tree.setRightChild(rotateWithLeftChild( (BTreeIF<Vehicle>) tree.getRightChild()));
 		return rotateWithRightChild( (BTreeIF<Vehicle>) tree);
@@ -200,6 +262,9 @@ public class VehicleTree implements BTreeIF<Vehicle>{
 
 	
 	
+	/**
+	 * @return retorna elemento mínimo
+	 */
 	public BTreeIF<Vehicle> findMin(){
 		
 		return findMin(this);
@@ -210,6 +275,10 @@ public class VehicleTree implements BTreeIF<Vehicle>{
 		return findMin(tree.getLeftChild());
 	}
 	
+	
+	/**
+	 * @return retorna elemento máximo
+	 */
 	public BTreeIF<Vehicle> findMax(){
 		
 		return findMax(this);

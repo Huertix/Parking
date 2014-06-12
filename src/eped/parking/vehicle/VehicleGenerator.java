@@ -1,16 +1,22 @@
+ /*
+ *Genera con ‡nimo simulativo una colecci—n de veh’culos aleatoria
+ */
+
+
 package eped.parking.vehicle;
 
 
 
 import java.util.Random;
-
 import eped.parking.ParkingConf;
 
 
 
-public class VehicleGenerator {
+/**
+ * @author Equipo Docente 1¼ EPED 2013-2014 - Las Tablas
+ * @version Version 1
+ */public class VehicleGenerator {
     
-    private int seed;
     private Random random;
     private static int ids;
     
@@ -20,7 +26,6 @@ public class VehicleGenerator {
     */
     public VehicleGenerator (int seed) {
     
-        this.seed = seed;
         this.random = new Random (seed);
         ids = 0;
     }

@@ -1,9 +1,19 @@
+ /*
+ *Estructura que encolar‡ consecutivamente en la
+ *cola de entrada asociada a dicha clase representada por el artefacto VehicleQueue.
+ */
+
+
 package eped.parking.vehicle;
 
-import eped.IteratorIF;
+
 import eped.list.ListIF;
 import eped.queue.*;
 
+/**
+ * @author David Huerta - 47489624Y - 1¼ EPED 2013-2014 - Las Tablas
+ * @version Version 1
+ */
 public class VehicleQueue extends QueueDynamic<Vehicle> {
 	
 	private QueueIF<Vehicle> queue;

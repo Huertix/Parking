@@ -17,8 +17,6 @@ import eped.parking.structure.ParkingSpace;
 import eped.parking.vehicle.Vehicle;
 import eped.parking.vehicle.VehicleGenerator;
 import eped.parking.vehicle.VehicleQueue;
-import eped.parking.vehicle.VehicleTree;
-import eped.tree.BTreeIF;
 
 
 /**
@@ -30,7 +28,7 @@ public class ParkingDispatcher {
 	private static VehicleGenerator vGenerator;
 	private VehicleQueue vQueueIn;
 	private VehicleQueue vQueueOut;
-	private BTreeIF<Vehicle> VehicleTimeTreeAVL;
+	private ParkingScheduler pScheduler;
 	private Parking parking;
 	private int time;
 	
@@ -67,6 +65,7 @@ public class ParkingDispatcher {
 		time = 0;
 		
 		vGenerator  = new VehicleGenerator(seed);
+		pScheduler = new ParkingScheduler();
 		
 		vQueueIn   = new VehicleQueue();
 		vQueueOut   = new VehicleQueue();
@@ -81,12 +80,7 @@ public class ParkingDispatcher {
 	
 	
 	/**
-	 * Método encargado de gestionar la entrada y la salida de vehículos.
-	 * Se utiliza una estructura de arbol binario AVL auxiliar, implementada
-	 * especificamente para este ejercicio, donde se insertan los vehículos 
-	 * en función del tiempo de permanencia. El método entra en un bucle while
-	 * del que se sale cuando se acaban los vehículos en la cola de entrada y
-	 * no quedan vehículos dentro del parking.
+	 *
 	 * 
 	 * Para la gestión de la salida de vehículos se apoya en encontrar el/los vehículos
 	 * con menor tiempo de permanencia dentro de la estructura arbol binario auxiliar.
@@ -95,7 +89,6 @@ public class ParkingDispatcher {
 	 */
 	private void dispatch() throws IOException{
 				
-		VehicleTimeTreeAVL = new VehicleTree();
 		
 		Writer w = new Writer();
 		
@@ -116,14 +109,18 @@ public class ParkingDispatcher {
 		
 						v.setSpace(s);
 						s.setCurrentVehicle(v);
-						VehicleTimeTreeAVL = VehicleTimeTreeAVL.insert(v);
+						
+						pScheduler.insertVehicle(v);
 
 						vQueueIn.remove();
-						String line = "ENTRA: "+v.getId()+
+						/*String line = "ENTRA: "+v.getId()+
 								" - "+v.getType()+
 								" - "+v.getGate()+
 								" - "+v.getHour()+
-								" - "+s.toString();
+								" - "+s.toString();*/
+						
+						
+						String line = "ENTRA: "+v.toString()+" - "+s.toString();
 						w.write(line);
 						System.out.println(line);	
 					}	
@@ -132,30 +129,7 @@ public class ParkingDispatcher {
 			
 
 			//------------ Bloque para encontrar los vehículos con tiempo de permanecia superado.
-			boolean stop = VehicleTimeTreeAVL==null;
-			
-			while(!stop){
-				
-				if(!VehicleTimeTreeAVL.isEmpty()){
-					Vehicle v2out = VehicleTimeTreeAVL.findMin().getRoot();
-			
-					if(v2out.getTimeToGo()<=time){
-						ParkingSpace s2out = v2out.getSpace();
-						s2out.setCurrentVehicle(null);
-						vQueueOut.add(v2out);
-
-						VehicleTimeTreeAVL = VehicleTimeTreeAVL.remove(v2out);
-						if(VehicleTimeTreeAVL==null){
-							stop=true;
-							continue;
-						}
-					}
-					else
-						stop=true;
-				}		
-				else
-					stop=true;		
-			}
+			vQueueOut = pScheduler.getNext(vQueueOut, time);
 			
 			// ------------------------- Gestion de salida
 			if(!vQueueOut.isEmpty()){
@@ -170,7 +144,7 @@ public class ParkingDispatcher {
 				vQueueOut.remove();
 			}
 			time++;
-			bothQueuesEmpty = vQueueIn.isEmpty() && VehicleTimeTreeAVL==null;
+			bothQueuesEmpty = vQueueIn.isEmpty() && !pScheduler.hasNext();
 		}
 	}
 
