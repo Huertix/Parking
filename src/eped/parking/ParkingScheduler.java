@@ -1,7 +1,7 @@
  /*
  * Esta clase, encargada de gestionar ‡gilmente el tiempo de permanencia 
  * de los veh’culos dentro del parking, utiliza una estructura de arbol binario 
- * AVL auxiliar, implementada especificamente para este ejercicio, donde se insert‡n 
+ * AVL auxiliar, implementada especificamente para este ejercicio, donde se insertan 
  * los veh’culos en funci—n del tiempo de permanencia.
  */
 
@@ -28,6 +28,9 @@ public class ParkingScheduler{
 	
 	
 	
+	/**
+	 * @param v Veh’culo a insertar
+	 */
 	public void insertVehicle(Vehicle v){
 		VehicleTimeTreeAVL = VehicleTimeTreeAVL.insert(v);
 	}
@@ -76,6 +79,4 @@ public class ParkingScheduler{
 	public boolean hasNext(){
 		return VehicleTimeTreeAVL!=null;
 	}
-	
-
 }
