@@ -1,18 +1,18 @@
 /*
- * Esta clase es la base de la estructura jerarquica del parking. Aqu’ se instancia la clase
- * TreeIF como "parkingT", que ser‡ el elemento raiz de la estructura arborera del parking.
+ * Esta clase es la base de la estructura jerarquica del parking. Aquï¿½ se instancia la clase
+ * TreeIF como "parkingT", que serï¿½ el elemento raiz de la estructura arborera del parking.
  * 
- * Descripci—n de los mŽtodos principales:
+ * Descripciï¿½n de los mï¿½todos principales:
  * 
- *   - setDistance: Este mŽtodo se utiliza para asignar pesos a las plazas en funci—n
+ *   - setDistance: Este mï¿½todo se utiliza para asignar pesos a las plazas en funciï¿½n
  *   				de la puerta objetivo. Cada plaza tiene una variable "value" donde se 
  *   				acumula el valor. Para lograr este objetivo, se hace uso de arreglos 
- *   				pre-establecidos en la clase est‡tica "ParkingConfig", los cuales definen
+ *   				pre-establecidos en la clase estï¿½tica "ParkingConfig", los cuales definen
  *   				el  path o la ruta de busqueda en cada planta. 
  *   
  *   
- *   - getTicket: MŽtodo encargado de encontrar la mejor plaza. Se encolan las plazas con menor distancia
- *  			  a la puerta objetivo de cada secci—n, se clasifican y se retorna la mejor plaza para la
+ *   - getTicket: Mï¿½todo encargado de encontrar la mejor plaza. Se encolan las plazas con menor distancia
+ *  			  a la puerta objetivo de cada secciï¿½n, se clasifican y se retorna la mejor plaza para la
  *   			  demanda en curso.
  * 
  */ 
@@ -45,8 +45,8 @@ public class Parking {
 
 
 	/**
-	 *Constructor Parking. Llama al mŽtodo "setFloors" para instancias las plantas.
-	 *el nœmero de plantas est‡ definido en la clase ParkingConfig 
+	 *Constructor Parking. Llama al mï¿½todo "setFloors" para instancias las plantas.
+	 *el nï¿½mero de plantas estï¿½ definido en la clase ParkingConfig 
 	 */
 	public Parking(){
 		parkingT = new TreeDynamic<ParkingElement>();
@@ -57,7 +57,7 @@ public class Parking {
 	
 	
 	/**
-	 * @param floors Define el nœmero de plantas de la estructura
+	 * @param floors Define el nï¿½mero de plantas de la estructura
 	 */
 	public void setFloors(int floors){
 		
@@ -70,10 +70,10 @@ public class Parking {
 //--------------------------------------  Nuevas Rutinas Asignacion pesos plazas ------------------------------- 
 	
 	/**
-	 * Este mŽtodo se utiliza para asignar pesos a las plazas en funci—n
+	 * Este mï¿½todo se utiliza para asignar pesos a las plazas en funciï¿½n
 	 * de la puerta objetivo. Cada plaza tiene una variable "value" donde se 
 	 * acumula el valor. Para lograr este objetivo, se hace uso de arreglos 
-	 * pre-establecidos en la clase est‡tica "ParkingConfig", los cuales definen
+	 * pre-establecidos en la clase estï¿½tica "ParkingConfig", los cuales definen
 	 * el  path o la ruta de busqueda en cada planta.
 	 * @param gate Puerta objetivo
 	 * @param space Plaza a valorar
@@ -101,8 +101,8 @@ public class Parking {
 	
 	
 	/**
-	 * Este mŽtodo es una funci—n auxiliar al mŽtodo "setDistance(gate, space)". Se valora todas las zonas dentro de cada planta.
-	 * @param loop Corresponde al area a supervisar en el mŽtodo "setDistance(gate, space)"
+	 * Este mï¿½todo es una funciï¿½n auxiliar al mï¿½todo "setDistance(gate, space)". Se valora todas las zonas dentro de cada planta.
+	 * @param loop Corresponde al area a supervisar en el mï¿½todo "setDistance(gate, space)"
 	 * @param spaceZone la zona a la que pertenece la plaza que se esta valorando.
 	 * @return
 	 */
@@ -130,13 +130,13 @@ public class Parking {
 	
 	
 	/**
-	 * MŽtodo encargado de encontrar la mejor plaza. Se encolan las plazas con menor distancia
-	 * a la puerta objetivo de cada secci—n, se clasifican y se retorna la mejor plaza para la
+	 * Mï¿½todo encargado de encontrar la mejor plaza. Se encolan las plazas con menor distancia
+	 * a la puerta objetivo de cada secciï¿½n, se clasifican y se retorna la mejor plaza para la
 	 * demanda en curso.
 	 * @param type Tipo de planza normal o familiar
 	 * @param gate Puerta Objetivo
 	 * @param time Tiempo actual del parking
-	 * @return retorna la mejor plaza libre en funci—n de los parametros "type" y "gate" 
+	 * @return retorna la mejor plaza libre en funciï¿½n de los parametros "type" y "gate" 
 	 */
 	public ParkingSpace getTicket(ParkingConf.TType type, ParkingConf.TGate gate, int time){
 	
@@ -161,7 +161,7 @@ public class Parking {
 						
 			}
 			
-			// Se ordenan las plazas en funci—n de peso definido en el mŽtodo "setDistance"
+			// Se ordenan las plazas en funciï¿½n de peso definido en el mï¿½todo "setDistance"
 			quickSort(queueSections);
 			
 			
@@ -171,7 +171,7 @@ public class Parking {
 		}	
 		
 		
-		// Se valora cual es la plaza dentro de queueSpace con planta m‡s baja
+		// Se valora cual es la plaza dentro de queueSpace con planta mï¿½s baja
 		while(!queueSpace.isEmpty()){
 			if(pSpace==null)
 				pSpace = (ParkingSpace) queueSpace.getFirst();
@@ -182,7 +182,10 @@ public class Parking {
 					pSpace = auxSpace;
 			}
 			queueSpace.remove();
-		}			
+		}
+		
+		
+		
 		return pSpace;
 	}
 	
@@ -190,11 +193,10 @@ public class Parking {
 
 	/**
 	 * 
-	 * MŽtodo auxilar  a getTicket(gate, type, time). Recorre las plazas del parking, distinguiendo las que est‡n libres.
-	 * En el caso de encontrar una plaza libre, esta se somete a una valoraci—n de la distancia a la puerta objetivo.
-	 * 
-	 * @param tree Argumento estructura arborera. La raiz es la secci—n dentro de la planta a valorar, dependiente del mŽtodo getTicket(gate, type, time).
-	 * @param order Orden de creaci—n del Iterador
+	 * Mï¿½todo auxilar  a getTicket(gate, type, time). Recorre las plazas del parking, distinguiendo las que estï¿½n libres.
+	 * En el caso de encontrar una plaza libre, esta se somete a una valoraciï¿½n de la distancia a la puerta objetivo.
+	 * @param tree Argumento estructura arborera. La raiz es la secciï¿½n dentro de la planta a valorar, dependiente del mï¿½todo getTicket(gate, type, time).
+	 * @param order Orden de creaciï¿½n del Iterador
 	 * @param gate Puerta Objetivo
 	 * @param type	Tipo de plaza
 	 * @param time	Tiempo del parking
@@ -229,7 +231,7 @@ public class Parking {
    
     
     /**
-     * Ordena la estructura cola en funci—n del peso definido en el mŽtodo "setDistance"
+     * Ordena la estructura cola en funciï¿½n del peso definido en el mï¿½todo "setDistance"
      * @param queue Cola de plazas con distancia a puerta objetivo valorada.
      */
     public void quickSort(QueueIF<ParkingElement> queue) {

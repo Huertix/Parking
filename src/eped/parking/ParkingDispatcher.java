@@ -1,10 +1,10 @@
 /*
-*Esta clase dispone del mŽtodo main necesario para arrancar
-*el sistema. Cuando se arranca, esta clase invoca a init y genera con ‡nimo simulativo una colecci—n
-*de veh’culos aleatoria invocando iterativamente a los mŽtodos que a tal efecto dispone la clase
-*VehicleGenerator. Cada llamada invoca al constructor de la clase Vehicle con unos par‡metros
-*reales de valor aleatorio sobre el nœmero de matricula, tipo de veh’culo y puerta de acceso
-*objetivo. La clase ParkingDispatcher recoger‡ estos veh’culos y los encolar‡ consecutivamente en la
+*Esta clase dispone del mï¿½todo main necesario para arrancar
+*el sistema. Cuando se arranca, esta clase invoca a init y genera con ï¿½nimo simulativo una colecciï¿½n
+*de vehï¿½culos aleatoria invocando iterativamente a los mï¿½todos que a tal efecto dispone la clase
+*VehicleGenerator. Cada llamada invoca al constructor de la clase Vehicle con unos parï¿½metros
+*reales de valor aleatorio sobre el nï¿½mero de matricula, tipo de vehï¿½culo y puerta de acceso
+*objetivo. La clase ParkingDispatcher recogerï¿½ estos vehï¿½culos y los encolarï¿½ consecutivamente en la
 *cola de entrada asociada a dicha clase representada por el artefacto VehicleQueue.
 */ 
 
@@ -20,7 +20,7 @@ import eped.parking.vehicle.VehicleQueue;
 
 
 /**
- * @author David Huerta - 47489624Y - 1¼ EPED 2013-2014 - Las Tablas
+ * @author David Huerta - 47489624Y - 1ï¿½ EPED 2013-2014 - Las Tablas
  * @version Version 1
  */
 public class ParkingDispatcher {
@@ -34,13 +34,17 @@ public class ParkingDispatcher {
 	
 	
 	/**
-	 * @param args 1¼ argumento: cantidad de veh’culos en la cola de entrada
-	 * 			2¼ argumento: la semilla para generaci—n de veh’culos con datos aleatorios
+	 * @param args 1ï¿½ argumento: cantidad de vehï¿½culos en la cola de entrada
+	 * 			2ï¿½ argumento: la semilla para generaciï¿½n de vehï¿½culos con datos aleatorios
+	 * @throws Throwable 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Throwable {
 	
 		try{	
 
+			if(args.length!=2)
+				throw new Exception("Fallo Argumentos");
+					
 			ParkingDispatcher pDispatcher = new ParkingDispatcher();
 			
 			int n = Integer.parseInt(args[0]);
@@ -57,8 +61,8 @@ public class ParkingDispatcher {
 	
 
 	/**
-	 * @param n cantidad de veh’culos en la cola de entrada
-	 * @param seed semilla para generaci—n de veh’culos con datos aleatorios
+	 * @param n cantidad de vehï¿½culos en la cola de entrada
+	 * @param seed semilla para generaciï¿½n de vehï¿½culos con datos aleatorios
 	 */
 	private void init(int n, int seed){
 				
@@ -77,12 +81,10 @@ public class ParkingDispatcher {
 	}
 	
 	
-	
-	
+		
 	/**
 	 *
-	 * 
-	 * Para la gesti—n de la salida de veh’culos se apoya en encontrar el/los veh’culos
+	 * Para la gestiï¿½n de la salida de vehï¿½culos se apoya en encontrar el/los vehï¿½culos
 	 * con menor tiempo de permanencia dentro de la estructura arbol binario auxiliar.
 	 * 
 	 * @throws IOException
@@ -96,7 +98,7 @@ public class ParkingDispatcher {
 		
 		while(!bothQueuesEmpty){
 			
-			//------------------------- Gesti—n de entrada
+			//------------------------- Gestiï¿½n de entrada
 			if(!vQueueIn.isEmpty()){
 				Vehicle v = vQueueIn.getFirst();
 				v.setTimeToGo(v.getHour()+time);
@@ -110,15 +112,16 @@ public class ParkingDispatcher {
 						v.setSpace(s);
 						s.setCurrentVehicle(v);
 						
+						if(v.getType().equals(ParkingConf.TType.Familiar))
+							ParkingState.updateFamiliarUsedSpaces(1);
+						else
+							ParkingState.updateNormalUsedSpaces(1);
+						
+					
+						
 						pScheduler.insertVehicle(v);
 
-						vQueueIn.remove();
-						/*String line = "ENTRA: "+v.getId()+
-								" - "+v.getType()+
-								" - "+v.getGate()+
-								" - "+v.getHour()+
-								" - "+s.toString();*/
-						
+						vQueueIn.remove();				
 						
 						String line = "ENTRA: "+v.toString()+" - "+s.toString();
 						w.write(line);
@@ -128,7 +131,7 @@ public class ParkingDispatcher {
 			}
 			
 
-			//------------ Bloque para encontrar los veh’culos con tiempo de permanecia superado.
+			//------------ Bloque para encontrar los vehï¿½culos con tiempo de permanecia superado.
 			vQueueOut = pScheduler.getNext(vQueueOut, time);
 			
 			// ------------------------- Gestion de salida

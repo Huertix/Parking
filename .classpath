@@ -3,6 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry excluding="src/" kind="src" path=""/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/EPED.Library"/>
+	<classpathentry kind="lib" path="/home/comercial/git/Parking/EPED.Library.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

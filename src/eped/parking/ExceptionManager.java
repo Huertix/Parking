@@ -22,7 +22,7 @@ public class ExceptionManager extends Exception {
 	 */
 	public static void getMessage(Exception ex){
 		String message = ex.getMessage();
-		 if(message.contains("string")){
+		 if(message.contains("Fallo Argumentos")){
 			 System.out.println("Argumento no valido.");//ex.printStackTrace();
 			 tailMessage();
 		 }
@@ -38,8 +38,8 @@ public class ExceptionManager extends Exception {
 	 * Cola de mensaje.
 	 */
 	private static void tailMessage(){
-		System.out.println("\nDebes introducir un valor Integer como argumento.");
-		System.out.println("\nEjempo: 1234");
+		System.out.println("\nDebe introducir valores Integer como argumentos.");
+		System.out.println("\nEjemplo: parking.jar 999 1234");
 		System.out.println("\nFin de Programa.");
 		
 	}

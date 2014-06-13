@@ -1,8 +1,8 @@
  /*
- * Esta clase, encargada de gestionar ‡gilmente el tiempo de permanencia 
- * de los veh’culos dentro del parking, utiliza una estructura de arbol binario 
+ * Esta clase, encargada de gestionar ï¿½gilmente el tiempo de permanencia 
+ * de los vehï¿½culos dentro del parking, utiliza una estructura de arbol binario 
  * AVL auxiliar, implementada especificamente para este ejercicio, donde se insertan 
- * los veh’culos en funci—n del tiempo de permanencia.
+ * los vehï¿½culos en funciï¿½n del tiempo de permanencia.
  */
 
 package eped.parking;
@@ -15,7 +15,7 @@ import eped.tree.BTreeIF;
 
 
 /**
- * @author David Huerta - 47489624Y - 1¼ EPED 2013-2014 - Las Tablas
+ * @author David Huerta - 47489624Y - 1ï¿½ EPED 2013-2014 - Las Tablas
  * @version Version 1
  */
 public class ParkingScheduler{
@@ -29,7 +29,7 @@ public class ParkingScheduler{
 	
 	
 	/**
-	 * @param v Veh’culo a insertar
+	 * @param v Vehï¿½culo a insertar
 	 */
 	public void insertVehicle(Vehicle v){
 		VehicleTimeTreeAVL = VehicleTimeTreeAVL.insert(v);
@@ -39,9 +39,15 @@ public class ParkingScheduler{
 	/**
 	 * @param queue Cola de salida existente
 	 * @param time Tiempo del parking
-	 * @return Retorna la cola de veh’culos actualizada.
+	 * @return Retorna la cola de vehï¿½culos actualizada.
 	 */
 	public VehicleQueue getNext(VehicleQueue queue, int time){
+		
+		if(queue==null){
+			
+			ParkingState.updateNormalUsedSpaces(-1);
+			return queue;
+		}
 		
 		boolean stop = VehicleTimeTreeAVL==null;
 		
@@ -51,6 +57,7 @@ public class ParkingScheduler{
 				Vehicle v2out = VehicleTimeTreeAVL.findMin().getRoot();
 		
 				if(v2out.getTimeToGo()<=time){
+					
 					ParkingSpace s2out = v2out.getSpace();
 					s2out.setCurrentVehicle(null);
 					queue.add(v2out);
@@ -60,6 +67,11 @@ public class ParkingScheduler{
 						stop=true;
 						continue;
 					}
+					
+					if(v2out.getType().equals(ParkingConf.TType.Familiar))
+						ParkingState.updateFamiliarUsedSpaces(-1);
+					else
+						ParkingState.updateNormalUsedSpaces(-1);
 				}
 				else
 					stop=true;
@@ -73,9 +85,7 @@ public class ParkingScheduler{
 	}
 	
 	
-	/**
-	 * @return Retorna verdad 
-	 */
+	
 	public boolean hasNext(){
 		return VehicleTimeTreeAVL!=null;
 	}
